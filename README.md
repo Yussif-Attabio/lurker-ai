@@ -10,8 +10,10 @@ Milestones M0 through M4 have their recorded approvals, M5 is technically
 complete with a preserved model-performance **NO-GO**, and M6 has a
 project-owner-approved **FINAL GO**. M6 approval is based on a successful
 controlled recovery deployment; it is not production-readiness approval and
-M7 local submission packaging is now in progress. External publication, new
-AWS resources, and Bedrock calls remain unapproved.
+the M7 local submission package is ready. The source repository is publicly
+available at [Yussif-Attabio/lurker-ai](https://github.com/Yussif-Attabio/lurker-ai).
+The Builder Center article, demo video, and final M7 approval remain pending;
+new AWS resources and Bedrock calls remain unapproved.
 
 ## Architecture
 
@@ -109,10 +111,11 @@ preserved separately; it was never overwritten by the successful recovery.
 
 ## Hackathon submission package
 
-M7 local packaging is in progress. Qualification still requires a human to
-publish all three external parts: an AWS Builder Center article, this repository
-as a public MIT-licensed repository, and a public demo video under three
-minutes. The final entry requires `#strands-decider-2b` and `#policy`.
+The public MIT-licensed repository requirement is now satisfied at
+[Yussif-Attabio/lurker-ai](https://github.com/Yussif-Attabio/lurker-ai), and
+the latest full offline regression suite has **126 passing tests**. Qualification
+still requires the AWS Builder Center article and a public demo video under
+three minutes. The final entry requires `#strands-decider-2b` and `#policy`.
 
 - Article facts: [`ARTICLE_NOTES.md`](ARTICLE_NOTES.md)
 - Recording plan: [`DEMO_SCRIPT.md`](DEMO_SCRIPT.md)
@@ -311,8 +314,9 @@ manifest are under `data/m6_recovery_acceptance/20261018T201525Z/`.
 M5's documented performance NO-GO and Bedrock-baseline deviation remain
 unchanged. M6 FINAL GO does not establish production readiness, high
 availability, sustained-load performance, or model quality, and it does not
-authorize M7, another AWS deployment, or additional Bedrock calls. See
-`M6_ACCEPTANCE.md`.
+authorize M7, another AWS deployment, or additional Bedrock calls. M7 local
+packaging and this repository publication were authorized separately; no new
+AWS resource or Bedrock call was used. See `M6_ACCEPTANCE.md`.
 
 Useful offline verification commands:
 

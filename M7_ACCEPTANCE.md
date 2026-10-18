@@ -1,6 +1,6 @@
 # Milestone M7 local submission-package acceptance
 
-Status: **LOCAL PACKAGE READY - HUMAN PUBLICATION AND FINAL GO PENDING**
+Status: **PUBLIC REPOSITORY PUBLISHED - ARTICLE, VIDEO, AND FINAL GO PENDING**
 
 Date: 2026-10-18
 
@@ -19,12 +19,16 @@ phase launched no AWS resource and made no Decider or Bedrock call.
 - [x] Reusable package guide, standalone gate wrapper, minimal example, and
   official Strands intervention wiring.
 - [x] Offline regression and documentation validation.
+- [x] Public MIT-licensed source repository:
+  `https://github.com/Yussif-Attabio/lurker-ai`.
 - [ ] Human review and final M7 GO/NO-GO.
 
 ## Local verification
 
 - Targeted M7, frozen-policy, M6 reliability, and IAM recovery suite: **28
   passed** in 2.72 seconds.
+- Final pre-publication full offline regression suite: **126 passed** in 3.92
+  seconds.
 - Python compilation for the new reusable modules: PASS.
 - Frontend JavaScript syntax: PASS.
 - Required local files and MIT license: PASS.
@@ -52,14 +56,16 @@ The official rules require all three parts; missing any part is a pass/fail
 qualification failure:
 
 1. Publish the article on AWS Builder Center.
-2. Publish this repository publicly under the MIT License.
+2. ~~Publish this repository publicly under the MIT License.~~ Completed at
+   `https://github.com/Yussif-Attabio/lurker-ai`.
 3. Record and publicly upload a demo video under three minutes.
 4. Add `#strands-decider-2b` and `#policy` to the entry.
 5. Confirm entrant eligibility, ownership, and the final submitter.
 6. Submit before October 23, 2026 at 11:59 p.m. PT.
 
-No external publication, repository visibility change, video upload, AWS
-deployment, or Bedrock invocation is authorized by this local phase.
+The owner separately authorized this public GitHub publication. Article and
+video publication, final hackathon submission, AWS deployment, and Bedrock
+invocation still require their applicable approvals.
 
 ## Acceptance gate
 

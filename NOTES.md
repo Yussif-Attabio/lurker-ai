@@ -1083,3 +1083,20 @@ scan passed. AWS resources, real Decider calls, and Bedrock calls were all zero.
 M7 is locally ready but remains open pending human publication and verification
 of the Builder Center article, public MIT repository, public sub-three-minute
 video, required tags, eligibility, and final submission.
+
+## M7 public repository publication - 2026-10-18
+
+The owner authorized publication to GitHub. A sanitized public release was
+prepared with explicit ignore guards for the locked M5 held-out rows, the
+105-scenario recovery reserve, evaluator source sheets, the unredacted M6 AWS
+denial record, and a terminated host's historical public IP. These artifacts
+remain preserved locally and were not deleted or modified.
+
+The candidate public tree passed credential, private-key, account-identifier,
+personal-path, email, AWS role-session, live-resource-ID, and non-local-IP
+checks. The full offline regression suite passed 126 tests in 3.92 seconds.
+The MIT-licensed repository was created as Public at
+`https://github.com/Yussif-Attabio/lurker-ai`. This satisfies the repository
+part of M7 only; the Builder Center article, public demo video, required tags,
+eligibility confirmation, final submission, and owner final M7 GO remain
+pending. No AWS resource, real Decider call, or Bedrock call was used.
