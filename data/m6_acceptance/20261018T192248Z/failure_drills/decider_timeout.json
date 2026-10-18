@@ -1,0 +1,115 @@
+{
+  "drill": "decider_timeout",
+  "status": "PASS",
+  "fault_injected": true,
+  "real_decider_calls": 0,
+  "real_bedrock_calls": 0,
+  "events": [
+    {
+      "type": "chat",
+      "id": "aaa88e75-3c40-4049-8c90-678b453a7f28",
+      "sender": "Lea",
+      "text": "Can you help?",
+      "is_agent": false,
+      "ts": "2026-10-18T19:32:35.998016+00:00"
+    },
+    {
+      "type": "decision",
+      "message_id": "aaa88e75-3c40-4049-8c90-678b453a7f28",
+      "raw_choice": null,
+      "confidence": 0.0,
+      "final_action": "SILENT",
+      "downgraded": true,
+      "reason": "decider_error",
+      "decider_latency_ms": 12.5,
+      "mock": true,
+      "ts": "2026-10-18T19:32:35.998684+00:00"
+    },
+    {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 1,
+        "silent": 1,
+        "react": 0,
+        "reply": 0,
+        "downgraded": 1,
+        "errors": 1,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 1
+      },
+      "ts": "2026-10-18T19:32:35.998684+00:00"
+    }
+  ],
+  "decision": {
+    "id": "d1bfd7ec-3340-4a42-aa52-4e61fb4b3a37",
+    "ts": "2026-10-18T19:32:35.998684Z",
+    "message_id": "aaa88e75-3c40-4049-8c90-678b453a7f28",
+    "sender": "Lea",
+    "text": "Can you help?",
+    "context_k": 3,
+    "raw_choice": null,
+    "confidence": 0.0,
+    "final_action": "SILENT",
+    "downgraded": true,
+    "reason": "decider_error",
+    "decider_latency_ms": 12.5,
+    "bedrock_latency_ms": null,
+    "bedrock_input_tokens": null,
+    "bedrock_output_tokens": null,
+    "bedrock_called": false,
+    "direct_mention": false,
+    "mock": true,
+    "error": "timeout"
+  },
+  "metrics": {
+    "counters": {
+      "messages_read": 1,
+      "silent": 1,
+      "react": 0,
+      "reply": 0,
+      "downgraded": 1,
+      "errors": 1,
+      "bedrock_calls_made": 0,
+      "bedrock_calls_avoided_vs_every_message": 1
+    },
+    "decider_latency_ms": {
+      "count": 1,
+      "p50": 12.5,
+      "p95": 12.5
+    }
+  },
+  "durable_log_rows": [
+    {
+      "id": "d1bfd7ec-3340-4a42-aa52-4e61fb4b3a37",
+      "ts": "2026-10-18T19:32:35.998684Z",
+      "message_id": "aaa88e75-3c40-4049-8c90-678b453a7f28",
+      "sender": "Lea",
+      "text": "Can you help?",
+      "context_k": 3,
+      "raw_choice": null,
+      "confidence": 0.0,
+      "final_action": "SILENT",
+      "downgraded": true,
+      "reason": "decider_error",
+      "decider_latency_ms": 12.5,
+      "bedrock_latency_ms": null,
+      "bedrock_input_tokens": null,
+      "bedrock_output_tokens": null,
+      "bedrock_called": false,
+      "direct_mention": false,
+      "mock": true,
+      "error": "timeout"
+    }
+  ],
+  "assertions": {
+    "one_decider_call": true,
+    "safe_final_action": true,
+    "timeout_recorded": true,
+    "reason_is_decider_error": true,
+    "zero_reply_attempts": true,
+    "zero_real_bedrock_calls": true,
+    "one_message_one_decision": true,
+    "api_still_healthy": true,
+    "no_duplicate_events": true
+  }
+}

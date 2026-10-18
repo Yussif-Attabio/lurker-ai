@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "milestone_status": "TECHNICAL_PASS_AWAITING_OWNER_GO",
+  "run_time_utc": "2026-10-16T21:38:50Z",
+  "mode": "mock",
+  "base_url": "http://127.0.0.1:8766/",
+  "required_three_participant_flow": {
+    "actions": ["SILENT", "REACT", "REPLY"],
+    "participants": ["Alex", "Lea", "Sam"],
+    "editable_third_participant": true,
+    "reaction": "🎉",
+    "mock_agent_reply": "[MOCK] Here is a short test reply.",
+    "checkpoint_counters": {
+      "messages_read": 3,
+      "silent": 1,
+      "react": 1,
+      "reply": 1,
+      "bedrock_calls_made": 0,
+      "bedrock_calls_avoided_vs_every_message": 3
+    }
+  },
+  "keyboard_check": {
+    "message": "Keyboard-only test update.",
+    "sent_with_enter": true,
+    "final_action": "SILENT"
+  },
+  "visual_checks": {
+    "target_viewport": "1280x900",
+    "target_horizontal_overflow": false,
+    "zoom_equivalent_viewport": "640x900",
+    "zoom_equivalent_horizontal_overflow": false,
+    "mock_banner_visible": true,
+    "browser_console_errors": 0,
+    "screenshot": "live-dashboard-1280.jpg"
+  },
+  "about_check": {
+    "sourced_from_backend": true,
+    "options": ["SILENT", "REACT", "REPLY"],
+    "context_k": 3,
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04,
+    "direct_mention_override": false
+  },
+  "verification": {
+    "pytest_passed": 61,
+    "dependency_check": "PASS",
+    "javascript_syntax": "PASS",
+    "unsafe_frontend_patterns": 0,
+    "container_frontend_smoke": "PASS",
+    "container_removed": true,
+    "image": "lurker-ai:m4-amd64",
+    "image_id": "sha256:7a139786fa86601577d340d1e8467c068b3cc843fab905199f3ec0dd049f672f",
+    "image_architecture": "amd64",
+    "image_size_bytes": 1908686323
+  },
+  "cost_usd": 0,
+  "aws_resources_launched": 0,
+  "bedrock_calls": 0,
+  "held_out_dataset_accessed": false,
+  "m5_started": false
+}

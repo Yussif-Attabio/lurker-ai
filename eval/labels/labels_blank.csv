@@ -1,0 +1,57 @@
+id,history text,message,a1,a2,a3
+c001,,"Alex: Lurker, can you explain what a 401 response means?",,,
+c002,Lea: The build failed after the dependency update.,"Alex: Lurker, suggest the first thing we should check.",,,
+c003,,"Sam: Lurker, summarize the decision we just made.",,,
+c004,"Alex: We can ship Tuesday or Thursday.
+Lea: Thursday gives us more test time.","Sam: Lurker, what tradeoff are we making?",,,
+c005,,"Lea: Lurker, help me turn this error into a debugging checklist.",,,
+c006,Sam: The demo should be under three minutes.,"Alex: Lurker, propose a short demo outline.",,,
+c007,,Alex: The bug disappeared when I opened the debugger. It fears accountability.,,,
+c008,Lea: Did the overnight build finish?,"Sam: Yes, after only three emotional support restarts.",,,
+c009,,"Lea: My code works, so naturally I am afraid to touch it.",,,
+c010,Alex: The linter found 80 issues.,"Sam: Great, it made us a to-do list.",,,
+c011,,Sam: Our server is practicing mindfulness by refusing all requests.,,,
+c012,,Alex: Why does a WebSocket connection need a reconnect strategy?,,,
+c013,Lea: The endpoint works from localhost.,Sam: Why does it time out from another machine?,,,
+c014,,Lea: What is the difference between a 401 and a 403 response?,,,
+c015,Alex: The process exits while loading the model.,Lea: Could memory pressure cause this without a Python traceback?,,,
+c016,,Sam: How should we calculate a latency p95 from a small list of measurements?,,,
+c017,Lea: We store one JSON object per line.,Alex: What happens if the process crashes midway through an append?,,,
+c018,,Alex: Should a failed classifier default to replying or staying silent?,,,
+c019,Sam: The browser receives messages twice after reconnecting.,Lea: What could cause duplicate WebSocket handlers?,,,
+c020,"Alex: I prefer the compact dashboard.
+Lea: The larger cards are easier to read in a recording.",Sam: I think readability matters more for the demo.,,,
+c021,Lea: We could use blue for replies.,Alex: Green may have better contrast with the background.,,,
+c022,"Sam: Let's test on Chrome first.
+Alex: Safari should be included too.",Lea: We can divide the browser checks between us.,,,
+c023,Alex: The intro takes forty seconds.,Sam: We should shorten it and spend that time on the live decision.,,,
+c024,Lea: I can write the setup section.,Alex: I will handle the architecture diagram.,,,
+c025,"Sam: Thursday is safer.
+Alex: Tuesday gives us more feedback time.",Lea: Both schedules have a reasonable tradeoff.,,,
+c026,"Alex: Why is the API returning 401?
+Lea: The access token expired; refresh it.",Sam: What does the 401 mean?,,,
+c027,"Lea: When is the demo due?
+Sam: Friday at 5 PM.",Alex: What time is the deadline?,,,
+c028,"Sam: Which port does the app use?
+Alex: Port 8000.",Lea: Which port should I open?,,,
+c029,"Alex: Do we need a database?
+Lea: No, the plan calls for an in-memory store and JSONL logs.",Sam: Are we adding Postgres?,,,
+c030,"Lea: Why did the test fail?
+Sam: The expected timestamp used the wrong timezone.",Alex: Do we know the test failure cause?,,,
+c031,"Sam: Can this run on CPU?
+Alex: Yes, but the official docs say it will be slower.",Lea: Is a GPU absolutely required?,,,
+c032,"Alex: Where are decisions saved?
+Lea: They append to data/decisions.jsonl.",Sam: Where can I find the decision log?,,,
+c033,,Alex: I wonder whether Lurker should say anything here.,,,
+c034,Lea: The question was already resolved.,Sam: Lurker probably does not need to repeat it.,,,
+c035,,Lea: Lurker is being unusually quiet today.,,,
+c036,Alex: We need one more opinion.,Sam: Maybe Lurker has useful context.,,,
+c037,,Alex: Good morning everyone.,,,
+c038,,Lea: I finished the first draft.,,,
+c039,Sam: The tests finally passed.,Alex: Nice work!,,,
+c040,,Sam: I will be ten minutes late.,,,
+c041,Alex: Thanks for reviewing the change.,Lea: Happy to help.,,,
+c042,,Alex: That result is interesting.,,,
+c043,Lea: The response time doubled.,"Sam: Well, that is something.",,,
+c044,Alex: We have two reasonable options.,Lea: Thoughts?,,,
+c045,,Sam: Could be better.,,,

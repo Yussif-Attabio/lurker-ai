@@ -1,0 +1,45 @@
+{
+  "artifact_version": "lurker-m7-local-validation-v1",
+  "status": "PASS_LOCAL_PACKAGE_READY",
+  "generated_at": "2026-10-18T21:30:56Z",
+  "test_result": {
+    "tests_passed": 28,
+    "tests_failed": 0,
+    "duration_seconds": 2.72,
+    "scope": [
+      "m7_submission",
+      "frozen_policy_and_context",
+      "m6_reliability",
+      "m6_iam_recovery"
+    ]
+  },
+  "checks": {
+    "python_compilation": "PASS",
+    "javascript_syntax": "PASS",
+    "required_files": "PASS",
+    "credential_and_identifier_scan": "PASS",
+    "minimal_example_nonblank_lines": 11,
+    "minimal_example_limit": 25
+  },
+  "artifact_sha256": {
+    "README.md": "847fe43ba85a41985db1874c4663b14af2250b1e6d54eb6f8a1ed7ebfd3c1018",
+    "ARTICLE_NOTES.md": "c03e33a3d39346a63bbf774a243fc8dca0909675aeaa1f3704861bf74cd1e129",
+    "DEMO_SCRIPT.md": "bb6aef95a5e91b3d4ad502afe1f31aecb76ecd8abb03bc307f3f84e9ba5c3446",
+    "decision_pattern/lurker_gate.py": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b",
+    "decision_pattern/chime_in_gate.py": "208a0d1e3e1ec1848f62eeb6dc976a9dc655c32f868cfa5997d2e795c883a589",
+    "decision_pattern/strands_hook.py": "f3eded1c943999e3f751162b0b2bc65baf4fb3dce8d99d24659be6b98c97d1f6",
+    "decision_pattern/README.md": "3c371aef36905e78cf9a0de5c55c70846d8d017fe7de8f4c12e85ced1fdf0061",
+    "decision_pattern/example_usage.py": "23b405c4cf9c47c26d0dce8a18f7c704c0fd95edb07a8cde08690bf5076f611e",
+    "tests/test_m7_submission.py": "66c72f69bebf9fae6306ac7c053e90a4c4809d16e0df1d3c80a3b5360abd659f"
+  },
+  "preserved_evidence_sha256": {
+    "config/default.yaml": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+    "results/published.json": "35d97340eebba2a2a34ecdfd816246f8a81fdd00712531b2dba1d92ed239805c",
+    "original_m6_no_go_summary": "c34f2cfacdb4102e9d4ca8b290e141da3640784254e29db310bf8020501b384b"
+  },
+  "aws_resources_launched": 0,
+  "real_decider_calls": 0,
+  "bedrock_calls": 0,
+  "external_publication_performed": false,
+  "production_readiness": false
+}

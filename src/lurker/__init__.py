@@ -1,0 +1,2 @@
+"""Lurker AI application package."""
+

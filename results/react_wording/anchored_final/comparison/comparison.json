@@ -1,0 +1,66 @@
+{
+  "baseline": {
+    "reply_threshold": 0.4,
+    "react_threshold": 0.05,
+    "accuracy": {
+      "numerator": 25,
+      "denominator": 31,
+      "rate": 0.8064516129032258
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 2,
+      "denominator": 17,
+      "rate": 0.11764705882352941
+    },
+    "missed_help_rate": {
+      "numerator": 1,
+      "denominator": 10,
+      "rate": 0.1
+    },
+    "react": {
+      "actual": 4,
+      "predicted": 1,
+      "true_positive": 1,
+      "precision": 1.0,
+      "recall": 0.25
+    },
+    "ordinary": {
+      "total": 17,
+      "kept_silent": 15,
+      "false_reactions": 0,
+      "false_replies": 2
+    }
+  },
+  "candidate": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04,
+    "accuracy": {
+      "numerator": 26,
+      "denominator": 31,
+      "rate": 0.8387096774193549
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 3,
+      "denominator": 17,
+      "rate": 0.17647058823529413
+    },
+    "missed_help_rate": {
+      "numerator": 1,
+      "denominator": 10,
+      "rate": 0.1
+    },
+    "react": {
+      "actual": 4,
+      "predicted": 3,
+      "true_positive": 3,
+      "precision": 1.0,
+      "recall": 0.75
+    },
+    "ordinary": {
+      "total": 17,
+      "kept_silent": 14,
+      "false_reactions": 0,
+      "false_replies": 3
+    }
+  }
+}

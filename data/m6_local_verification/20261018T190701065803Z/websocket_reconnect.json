@@ -1,0 +1,201 @@
+{
+  "drill": "websocket_reconnect",
+  "status": "PASS",
+  "fault_injected": true,
+  "connection_count": 2,
+  "real_decider_calls": 0,
+  "real_bedrock_calls": 0,
+  "events": [
+    {
+      "type": "chat",
+      "id": "4a2f49a1-0c78-463b-af58-a2ee12780410",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "is_agent": false,
+      "ts": "2026-10-18T19:07:01.082565+00:00"
+    },
+    {
+      "type": "decision",
+      "message_id": "4a2f49a1-0c78-463b-af58-a2ee12780410",
+      "raw_choice": "SILENT",
+      "confidence": 0.9,
+      "final_action": "SILENT",
+      "downgraded": false,
+      "reason": "chosen",
+      "decider_latency_ms": 0.1,
+      "mock": true,
+      "ts": "2026-10-18T19:07:01.082979+00:00"
+    },
+    {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 1,
+        "silent": 1,
+        "react": 0,
+        "reply": 0,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 1
+      },
+      "ts": "2026-10-18T19:07:01.082979+00:00"
+    },
+    {
+      "type": "chat",
+      "id": "f2bf25b9-c6ff-4be7-9e57-afe3979ee9c4",
+      "sender": "Lea",
+      "text": "Congratulations, we shipped!",
+      "is_agent": false,
+      "ts": "2026-10-18T19:07:01.083562+00:00"
+    },
+    {
+      "type": "reaction",
+      "message_id": "f2bf25b9-c6ff-4be7-9e57-afe3979ee9c4",
+      "emoji": "\ud83c\udf89",
+      "ts": "2026-10-18T19:07:01.083696+00:00"
+    },
+    {
+      "type": "decision",
+      "message_id": "f2bf25b9-c6ff-4be7-9e57-afe3979ee9c4",
+      "raw_choice": "REACT",
+      "confidence": 0.9,
+      "final_action": "REACT",
+      "downgraded": false,
+      "reason": "confident",
+      "decider_latency_ms": 0.1,
+      "mock": true,
+      "ts": "2026-10-18T19:07:01.083726+00:00"
+    },
+    {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 2,
+        "silent": 1,
+        "react": 1,
+        "reply": 0,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 2
+      },
+      "ts": "2026-10-18T19:07:01.083726+00:00"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "a31c1705-eaab-4ade-951e-23d8cbdf5580",
+      "ts": "2026-10-18T19:07:01.082979Z",
+      "message_id": "4a2f49a1-0c78-463b-af58-a2ee12780410",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "context_k": 3,
+      "raw_choice": "SILENT",
+      "confidence": 0.9,
+      "final_action": "SILENT",
+      "downgraded": false,
+      "reason": "chosen",
+      "decider_latency_ms": 0.1,
+      "bedrock_latency_ms": null,
+      "bedrock_input_tokens": null,
+      "bedrock_output_tokens": null,
+      "bedrock_called": false,
+      "direct_mention": false,
+      "mock": true,
+      "error": null
+    },
+    {
+      "id": "613355f6-f07e-4291-a576-75fc711b179a",
+      "ts": "2026-10-18T19:07:01.083726Z",
+      "message_id": "f2bf25b9-c6ff-4be7-9e57-afe3979ee9c4",
+      "sender": "Lea",
+      "text": "Congratulations, we shipped!",
+      "context_k": 3,
+      "raw_choice": "REACT",
+      "confidence": 0.9,
+      "final_action": "REACT",
+      "downgraded": false,
+      "reason": "confident",
+      "decider_latency_ms": 0.1,
+      "bedrock_latency_ms": null,
+      "bedrock_input_tokens": null,
+      "bedrock_output_tokens": null,
+      "bedrock_called": false,
+      "direct_mention": false,
+      "mock": true,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "counters": {
+      "messages_read": 2,
+      "silent": 1,
+      "react": 1,
+      "reply": 0,
+      "downgraded": 0,
+      "errors": 0,
+      "bedrock_calls_made": 0,
+      "bedrock_calls_avoided_vs_every_message": 2
+    },
+    "decider_latency_ms": {
+      "count": 2,
+      "p50": 0.1,
+      "p95": 0.1
+    }
+  },
+  "durable_log_rows": [
+    {
+      "id": "a31c1705-eaab-4ade-951e-23d8cbdf5580",
+      "ts": "2026-10-18T19:07:01.082979Z",
+      "message_id": "4a2f49a1-0c78-463b-af58-a2ee12780410",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "context_k": 3,
+      "raw_choice": "SILENT",
+      "confidence": 0.9,
+      "final_action": "SILENT",
+      "downgraded": false,
+      "reason": "chosen",
+      "decider_latency_ms": 0.1,
+      "bedrock_latency_ms": null,
+      "bedrock_input_tokens": null,
+      "bedrock_output_tokens": null,
+      "bedrock_called": false,
+      "direct_mention": false,
+      "mock": true,
+      "error": null
+    },
+    {
+      "id": "613355f6-f07e-4291-a576-75fc711b179a",
+      "ts": "2026-10-18T19:07:01.083726Z",
+      "message_id": "f2bf25b9-c6ff-4be7-9e57-afe3979ee9c4",
+      "sender": "Lea",
+      "text": "Congratulations, we shipped!",
+      "context_k": 3,
+      "raw_choice": "REACT",
+      "confidence": 0.9,
+      "final_action": "REACT",
+      "downgraded": false,
+      "reason": "confident",
+      "decider_latency_ms": 0.1,
+      "bedrock_latency_ms": null,
+      "bedrock_input_tokens": null,
+      "bedrock_output_tokens": null,
+      "bedrock_called": false,
+      "direct_mention": false,
+      "mock": true,
+      "error": null
+    }
+  ],
+  "assertions": {
+    "two_distinct_connections_completed": true,
+    "expected_actions": true,
+    "two_messages_two_decisions": true,
+    "one_reaction_only": true,
+    "two_decision_events": true,
+    "two_metrics_events": true,
+    "zero_reply_attempts": true,
+    "zero_real_bedrock_calls": true,
+    "no_duplicate_events": true,
+    "api_still_healthy": true
+  }
+}

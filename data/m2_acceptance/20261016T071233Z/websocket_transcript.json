@@ -1,0 +1,118 @@
+[
+  {
+    "type": "chat",
+    "id": "54a27116-31f1-4039-af15-6f259a41d0e5",
+    "sender": "Alex",
+    "text": "Let's meet at four tomorrow.",
+    "is_agent": false,
+    "ts": "2026-10-16T07:12:29.821206+00:00"
+  },
+  {
+    "type": "decision",
+    "message_id": "54a27116-31f1-4039-af15-6f259a41d0e5",
+    "raw_choice": "SILENT",
+    "confidence": 0.4553,
+    "final_action": "SILENT",
+    "downgraded": false,
+    "reason": "chosen",
+    "decider_latency_ms": 1068.2800409995252,
+    "mock": false,
+    "ts": "2026-10-16T07:12:30.889890+00:00"
+  },
+  {
+    "type": "metrics",
+    "counters": {
+      "messages_read": 1,
+      "silent": 1,
+      "react": 0,
+      "reply": 0,
+      "downgraded": 0,
+      "errors": 0,
+      "bedrock_calls_made": 0,
+      "bedrock_calls_avoided_vs_every_message": 1
+    },
+    "ts": "2026-10-16T07:12:30.889890+00:00"
+  },
+  {
+    "type": "chat",
+    "id": "7088a647-e7b9-40b0-8c52-4f28bdf4075d",
+    "sender": "Lea",
+    "text": "Congratulations everyone\u2014we made the hackathon finals! \ud83c\udf89",
+    "is_agent": false,
+    "ts": "2026-10-16T07:12:30.890728+00:00"
+  },
+  {
+    "type": "reaction",
+    "message_id": "7088a647-e7b9-40b0-8c52-4f28bdf4075d",
+    "emoji": "\ud83c\udf89",
+    "ts": "2026-10-16T07:12:31.490733+00:00"
+  },
+  {
+    "type": "decision",
+    "message_id": "7088a647-e7b9-40b0-8c52-4f28bdf4075d",
+    "raw_choice": "REACT",
+    "confidence": 0.2398,
+    "final_action": "REACT",
+    "downgraded": false,
+    "reason": "confident",
+    "decider_latency_ms": 599.7785840008873,
+    "mock": false,
+    "ts": "2026-10-16T07:12:31.490826+00:00"
+  },
+  {
+    "type": "metrics",
+    "counters": {
+      "messages_read": 2,
+      "silent": 1,
+      "react": 1,
+      "reply": 0,
+      "downgraded": 0,
+      "errors": 0,
+      "bedrock_calls_made": 0,
+      "bedrock_calls_avoided_vs_every_message": 2
+    },
+    "ts": "2026-10-16T07:12:31.490826+00:00"
+  },
+  {
+    "type": "chat",
+    "id": "1afc5fe4-2f33-45f1-9b1d-183dfc455968",
+    "sender": "Maya",
+    "text": "Lurker, please answer: why does the API return 401?",
+    "is_agent": false,
+    "ts": "2026-10-16T07:12:31.491169+00:00"
+  },
+  {
+    "type": "chat",
+    "id": "f176fbe5-7f32-4676-8bc4-5281689f9c3b",
+    "sender": "Lurker",
+    "text": "I'm not sure\u2014I haven't seen the API error logs or recent code changes. Have you checked if the authentication token might be expired?",
+    "is_agent": true,
+    "ts": "2026-10-16T07:12:33.252657+00:00"
+  },
+  {
+    "type": "decision",
+    "message_id": "1afc5fe4-2f33-45f1-9b1d-183dfc455968",
+    "raw_choice": "REPLY",
+    "confidence": 0.3842,
+    "final_action": "REPLY",
+    "downgraded": false,
+    "reason": "confident",
+    "decider_latency_ms": 688.5639579995768,
+    "mock": false,
+    "ts": "2026-10-16T07:12:33.252981+00:00"
+  },
+  {
+    "type": "metrics",
+    "counters": {
+      "messages_read": 3,
+      "silent": 1,
+      "react": 1,
+      "reply": 1,
+      "downgraded": 0,
+      "errors": 0,
+      "bedrock_calls_made": 1,
+      "bedrock_calls_avoided_vs_every_message": 2
+    },
+    "ts": "2026-10-16T07:12:33.252981+00:00"
+  }
+]

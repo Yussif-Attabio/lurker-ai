@@ -1,0 +1,86 @@
+{
+  "artifact_version": "lurker-m6-iam-recovery-verification-v1",
+  "status": "PASS_WITH_SCP_PREFLIGHT_GATE",
+  "prepared_at": "2026-10-18T19:53:06Z",
+  "execution_scope": {
+    "ec2_instances_launched": 0,
+    "iam_mutations": 0,
+    "bedrock_model_invocations": 0,
+    "protected_evaluation_data_accessed": false
+  },
+  "diagnosis": {
+    "denied_action": "bedrock:InvokeModel",
+    "denied_resource": "arn:aws:bedrock:us-east-2:<ACCOUNT_ID>:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "principal": "temporary M6 EC2 role session (identifiers redacted)",
+    "aws_reason": "no identity-based policy allowed the action",
+    "root_cause": "bedrock:InferenceProfileArn was incorrectly applied to the inference-profile resource evaluation, where AWS does not populate that condition key",
+    "original_policy_simulation": {
+      "profile_decision": "implicitDeny",
+      "missing_context": [
+        "bedrock:InferenceProfileArn"
+      ]
+    }
+  },
+  "role_review": {
+    "source": "read-only CloudTrail reconstruction after temporary role cleanup",
+    "inline_allow_actions": [
+      "bedrock:InvokeModel"
+    ],
+    "explicit_denies": 0,
+    "permissions_boundary": false,
+    "managed_policy_attachments_observed": 0,
+    "instance_role_deleted_after_failed_run": true
+  },
+  "profile_destinations_read_only_check": {
+    "status": "PASS",
+    "source_region": "us-east-2",
+    "foundation_model_regions": [
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ]
+  },
+  "candidate_policy": {
+    "path": "deploy/m6_bedrock_invoke_policy.template.json",
+    "sha256": "bdb470ee82a2d4093ec3819167380aba2f89e6afedea1ec58aaa9b7e95c63242",
+    "aws_access_analyzer_findings": [],
+    "iam_simulator": {
+      "profile_resource": "allowed",
+      "foundation_model_resources": {
+        "us-east-1": "allowed",
+        "us-east-2": "allowed",
+        "us-west-2": "allowed"
+      },
+      "foundation_model_context": "exact profile ARN supplied"
+    },
+    "offline_tests": {
+      "passed": 4,
+      "failed": 0,
+      "warning": "pytest cache could not be written because the project path was read-only to the sandbox; test execution and results were unaffected"
+    }
+  },
+  "deny_layer_review": {
+    "identity_explicit_deny": "NOT_PRESENT",
+    "permissions_boundary": "NOT_PRESENT_ON_DELETED_ROLE",
+    "session_policy": "NOT_USED_BY_EC2_INSTANCE_PROFILE",
+    "bedrock_vpc_endpoint_policy": "NOT_APPLICABLE_NO_ENDPOINT_DEPLOYED",
+    "organization_membership": "CONFIRMED",
+    "scp_inventory": "NOT_VISIBLE_TO_CURRENT_IDENTITY",
+    "scp_diagnosis": "NOT_INDICATED_BY_ORIGINAL_ERROR",
+    "scp_recovery_gate": "REQUIRED_BEFORE_ANY NEW LAUNCH"
+  },
+  "preservation_hashes": {
+    "M6_ACCEPTANCE.md": "270e2412fec79ed97a79d62017ab2b00e123fecb8b9aa05007914457159de9d4",
+    "data/m6_acceptance/20261018T192248Z/summary.json": "c34f2cfacdb4102e9d4ca8b290e141da3640784254e29db310bf8020501b384b",
+    "data/m6_acceptance/20261018T192248Z/deployment_measurements.json": "9927c3d810ae1330d8ffa25c63eb99fd4d38b1b7a8dfdf00e84efe90308ea4be",
+    "data/m6_acceptance/20261018T192248Z/replays/20261018T193946930548Z/replay_01/post_failure_decisions_redacted.json": "e0cff83d816483089965d1a5fc30116076afeb0d7ce917181452c8ee71f339c2",
+    "config/default.yaml": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+    "decision_pattern/lurker_gate.py": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b",
+    "scripts/run_eval.py": "efa7a8107f322e045ab03ee686ebfe78d7289b89158134e5a2819095aa87724a",
+    "results/published.json": "35d97340eebba2a2a34ecdfd816246f8a81fdd00712531b2dba1d92ed239805c"
+  },
+  "cost_usd": 0,
+  "m6_status": "NO_GO",
+  "m5_performance_no_go_preserved": true,
+  "production_readiness": false
+}

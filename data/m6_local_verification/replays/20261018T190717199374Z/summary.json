@@ -1,0 +1,34 @@
+{
+  "artifact_version": "lurker-m6-replay-summary-v1",
+  "status": "PASS",
+  "acceptance_eligible": false,
+  "mode": "mock",
+  "started_at": "2026-10-18T19:07:17.199807+00:00",
+  "completed_at": "2026-10-18T19:07:22.788945+00:00",
+  "fixture_artifact_version": "lurker-m6-demo-conversation-v1",
+  "actions": [
+    "SILENT",
+    "REACT",
+    "REPLY"
+  ],
+  "message_count": 3,
+  "event_counts": {
+    "chat": 4,
+    "decision": 3,
+    "metrics": 3,
+    "reaction": 1
+  },
+  "bedrock_calls_made": 0,
+  "real_bedrock_calls": 0,
+  "observed_delay_seconds": [
+    1.00117441600014,
+    2.0012217089970363,
+    2.5012370829936117
+  ],
+  "realistic_delays_enforced": true,
+  "duplicate_events": 0,
+  "runtime_errors": 0,
+  "protected_evaluation_data_accessed": false,
+  "m5_configuration_changed": false,
+  "production_readiness": false
+}

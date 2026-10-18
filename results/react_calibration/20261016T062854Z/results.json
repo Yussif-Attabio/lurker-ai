@@ -1,0 +1,289 @@
+{
+  "generated_at": "2026-10-16T06:28:54.176805+00:00",
+  "split": "tuning",
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "device": "cpu",
+  "hardware": "Darwin arm64 / arm",
+  "policy_mode": "unthresholded_tuning",
+  "thresholds": {
+    "reply_threshold": null,
+    "react_threshold": null
+  },
+  "criteria": {
+    "accuracy_min": 0.7,
+    "unnecessary_interruption_rate_max": 0.2,
+    "missed_help_rate_max": 0.25
+  },
+  "context_metrics": {
+    "0": {
+      "total_count": 15,
+      "non_ambiguous_count": 11,
+      "ambiguous_count": 4,
+      "accuracy": {
+        "numerator": 7,
+        "denominator": 11,
+        "rate": 0.6363636363636364
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 0,
+        "denominator": 7,
+        "rate": 0.0
+      },
+      "missed_help_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "low_confidence": {
+        "downgraded_count": 0,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 5,
+          "denominator": 9,
+          "rate": 0.5555555555555556
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 2,
+          "denominator": 2,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 15,
+        "p50": 471.2463329997263,
+        "p95": 971.4326796020016
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "r003",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.3524
+        },
+        {
+          "id": "r012",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.4473
+        },
+        {
+          "id": "r013",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.4569
+        },
+        {
+          "id": "r014",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.3651
+        }
+      ]
+    },
+    "3": {
+      "total_count": 15,
+      "non_ambiguous_count": 11,
+      "ambiguous_count": 4,
+      "accuracy": {
+        "numerator": 7,
+        "denominator": 11,
+        "rate": 0.6363636363636364
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 1,
+        "denominator": 7,
+        "rate": 0.14285714285714285
+      },
+      "missed_help_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "low_confidence": {
+        "downgraded_count": 0,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 7,
+          "denominator": 11,
+          "rate": 0.6363636363636364
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 15,
+        "p50": 536.6232919986942,
+        "p95": 611.3885296013905
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "r003",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.3524
+        },
+        {
+          "id": "r012",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2392
+        },
+        {
+          "id": "r013",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.0537
+        },
+        {
+          "id": "r014",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2473
+        }
+      ]
+    },
+    "5": {
+      "total_count": 15,
+      "non_ambiguous_count": 11,
+      "ambiguous_count": 4,
+      "accuracy": {
+        "numerator": 7,
+        "denominator": 11,
+        "rate": 0.6363636363636364
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 1,
+        "denominator": 7,
+        "rate": 0.14285714285714285
+      },
+      "missed_help_rate": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "low_confidence": {
+        "downgraded_count": 0,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 7,
+          "denominator": 11,
+          "rate": 0.6363636363636364
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 15,
+        "p50": 547.4770839973644,
+        "p95": 591.7375588021969
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "r003",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.3524
+        },
+        {
+          "id": "r012",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2392
+        },
+        {
+          "id": "r013",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.0537
+        },
+        {
+          "id": "r014",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2473
+        }
+      ]
+    }
+  }
+}

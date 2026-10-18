@@ -1,0 +1,39 @@
+{
+  "artifact_version": "lurker-m5-recovery-single-rater-run-v1",
+  "status": "EXPLORATORY_ONLY",
+  "development_only": true,
+  "label_basis": "single_evaluator",
+  "evaluator_id": "a1",
+  "human_consensus": false,
+  "scenario_path": "eval/recovery/single_rater/development/development.jsonl",
+  "scenario_sha256": "7da2779e4b6cf39e14c264293dc80cb6b5a92c024364712657473d82d5ba2d85",
+  "split_manifest_sha256": "dc44afae58ea3af3898d3284247f6a3daabfbf68679af2006b53452da2da2efb",
+  "scenario_count": 90,
+  "expected_predictions": 270,
+  "actual_predictions": 270,
+  "context_values": [
+    0,
+    3,
+    5
+  ],
+  "mock": false,
+  "aws_or_bedrock_calls": 0,
+  "original_heldout_opened": false,
+  "single_rater_reserve_opened": false,
+  "new_heldout_created": false,
+  "production_configuration_changed": false,
+  "config_sha256": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+  "starting_baseline_thresholds": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "uses_starting_baseline_thresholds": true,
+  "error_count": 0,
+  "observability": {
+    "adapter_initialization_ms": 11730.112249999365,
+    "peak_rss_bytes": 6006587392,
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.12.14"
+  }
+}

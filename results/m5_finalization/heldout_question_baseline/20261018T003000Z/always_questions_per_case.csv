@@ -1,0 +1,16 @@
+category,confidence,consensus,context_k,decider_latency_ms,downgraded,error,final_action,id,raw_choice,reason,split
+direct_request,1.0,REPLY,3,0.0,False,,SILENT,c003,SILENT,baseline,heldout
+direct_request,1.0,REPLY,3,0.0,False,,SILENT,c006,SILENT,baseline,heldout
+joke,1.0,AMBIGUOUS,3,0.0,False,,SILENT,c008,SILENT,baseline,heldout
+joke,1.0,AMBIGUOUS,3,0.0,False,,SILENT,c011,SILENT,baseline,heldout
+technical_question,1.0,REPLY,3,0.0,False,,REPLY,c013,REPLY,baseline,heldout
+technical_question,1.0,REPLY,3,0.0,False,,REPLY,c016,REPLY,baseline,heldout
+technical_question,1.0,REPLY,3,0.0,False,,REPLY,c019,REPLY,baseline,heldout
+ongoing_discussion,1.0,SILENT,3,0.0,False,,SILENT,c022,SILENT,baseline,heldout
+ongoing_discussion,1.0,AMBIGUOUS,3,0.0,False,,SILENT,c025,SILENT,baseline,heldout
+already_answered,1.0,AMBIGUOUS,3,0.0,False,,REPLY,c027,REPLY,baseline,heldout
+already_answered,1.0,SILENT,3,0.0,False,,REPLY,c030,REPLY,baseline,heldout
+mention,1.0,AMBIGUOUS,3,0.0,False,,SILENT,c035,SILENT,baseline,heldout
+casual,1.0,AMBIGUOUS,3,0.0,False,,SILENT,c038,SILENT,baseline,heldout
+casual,1.0,SILENT,3,0.0,False,,SILENT,c041,SILENT,baseline,heldout
+ambiguous,1.0,REPLY,3,0.0,False,,REPLY,c044,REPLY,baseline,heldout

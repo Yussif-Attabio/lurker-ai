@@ -1,0 +1,36 @@
+[
+  {
+    "type": "chat",
+    "id": "6ce90577-88e0-4680-a94f-91465525025e",
+    "sender": "Alex",
+    "text": "Let's meet at four tomorrow.",
+    "is_agent": false,
+    "ts": "2026-10-16T19:44:47.034695+00:00"
+  },
+  {
+    "type": "decision",
+    "message_id": "6ce90577-88e0-4680-a94f-91465525025e",
+    "raw_choice": "SILENT",
+    "confidence": 0.4553,
+    "final_action": "SILENT",
+    "downgraded": false,
+    "reason": "chosen",
+    "decider_latency_ms": 1279.0314470000226,
+    "mock": false,
+    "ts": "2026-10-16T19:44:48.314478+00:00"
+  },
+  {
+    "type": "metrics",
+    "counters": {
+      "messages_read": 1,
+      "silent": 1,
+      "react": 0,
+      "reply": 0,
+      "downgraded": 0,
+      "errors": 0,
+      "bedrock_calls_made": 0,
+      "bedrock_calls_avoided_vs_every_message": 1
+    },
+    "ts": "2026-10-16T19:44:48.314478+00:00"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "artifact_version": "lurker-m6-acceptance-run-v1",
+  "status": "NO_GO",
+  "started_at": "2026-10-18T19:39:46.930548+00:00",
+  "target": "deployed_instance",
+  "expected_replays": 3,
+  "completed_replays": 1,
+  "retry_policy": "none; any failure ends this authorized sequence",
+  "confirmed_server_bedrock_call_cap": 3,
+  "fixture": "data/demo/m6_conversation_v1.json",
+  "protected_evaluation_data_accessed": false,
+  "m5_configuration_changed": false,
+  "failed_replay": 1
+}

@@ -1,0 +1,20 @@
+.git
+.gitignore
+.DS_Store
+.env
+.venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.ruff_cache
+
+# Runtime/evaluation evidence stays on the host and is never baked into images.
+data/
+results/
+eval/labels/labels_a*.csv
+eval/labels/annotator_*.csv
+
+# Local editor and operating-system files.
+.idea/
+.vscode/
+*.swp

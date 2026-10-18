@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.DS_Store
+data/*.jsonl
+eval/labels/labels_a*.csv
+eval/labels/annotator_*.csv
+!data/.gitkeep
+
+# Public-release privacy and evaluation-integrity guards. These files remain
+# available locally but must never enter Git history.
+eval/scenarios.jsonl
+eval/scenario_candidates.jsonl
+eval/recovery/candidates.jsonl
+eval/recovery/label_templates/
+eval/recovery/single_rater/reserve/
+eval/recovery/single_rater/source/
+eval/recovery/single_rater/split_manifest.json
+results/m5_heldout/
+
+# The original failed M6 evidence is preserved locally. Publish only the
+# redacted denial record and summarized acceptance documents.
+data/m6_acceptance/20261018T192248Z/replays/20261018T193946930548Z/replay_01/post_failure_decisions.json
+
+# Historical terminated-host address; the acceptance document carries the
+# measurements without publishing a public IP.
+data/m3_acceptance/20261016T194448Z/summary.json

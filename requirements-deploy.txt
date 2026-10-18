@@ -1,0 +1,5 @@
+# Reproducible Linux CPU serving versions from the official Decider inference
+# instructions. This file is used as a pip constraint by the Dockerfile.
+torch==2.7.1
+transformers==5.17.0
+peft==0.21.0

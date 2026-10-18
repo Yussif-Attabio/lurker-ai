@@ -1,0 +1,36 @@
+artifact_version: lurker-wording-candidate-v2
+candidate_id: m5-recovery-concise-boundaries-v2
+status: development_only_not_production
+created_at: 2026-10-17
+baseline:
+  question_sha256: 9105c49e09721aa04094151739add6f3be7ea63b015f45a9f91b80f7a9794589
+  reply_threshold: 0.20
+  react_threshold: 0.04
+model:
+  id: StrandsAgents/strands-decider-2B-qwen3.5-v1-2610
+  revision: 216d1ccb46a9e9b036eb9187b248db98480f77d4
+  architecture_changed: false
+decision_contract:
+  question: >-
+    REPLY for an unanswered question, request, or need for help or action; answers
+    to earlier questions are not requests. Otherwise REACT if one emoji
+    adds value to a meaningful achievement, impact, important news, gratitude,
+    support, or shared humor, even without expressive punctuation. SILENT for
+    routine updates, ordinary positivity or politeness, closure, or already-handled
+    points. Judge meaning and context, not punctuation.
+  options: [SILENT, REACT, REPLY]
+  policy_changed: false
+  context_changed: false
+evaluation:
+  dataset: eval/recovery/combined_reference/development/development.jsonl
+  expected_cases: 90
+  context_values: [3]
+  primary_context_k: 3
+  label_basis: combined_three_contributor_reference
+  contributor_count: 3
+  independent_decisions_available: false
+  group_consensus_verified: false
+  reserve_allowed: false
+  heldout_allowed: false
+  aws_or_bedrock_allowed: false
+approval_required_before_production: true

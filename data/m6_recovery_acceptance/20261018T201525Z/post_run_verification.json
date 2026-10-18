@@ -1,0 +1,19 @@
+{
+  "artifact_version": "lurker-m6-recovery-post-run-verification-v1",
+  "status": "PASS",
+  "checked_on": "2026-10-18",
+  "m6_targeted_tests": 13,
+  "m6_targeted_test_failures": 0,
+  "javascript_syntax_check": "PASS",
+  "json_validation": "PASS",
+  "credential_and_identifier_scan": "PASS",
+  "frozen_config_checksum_preserved": true,
+  "decision_pattern_checksum_preserved": true,
+  "m5_published_artifact_checksum_preserved": true,
+  "previous_local_safe_regression_tests": 76,
+  "previous_linux_amd64_safe_regression_tests": 76,
+  "previous_network_isolated_m6_tests": 9,
+  "protected_evaluation_data_accessed": false,
+  "aws_or_bedrock_calls_during_post_run_tests": 0,
+  "production_readiness": false
+}

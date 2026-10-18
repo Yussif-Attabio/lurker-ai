@@ -1,0 +1,470 @@
+{
+  "context_k": 3,
+  "criteria": {
+    "accuracy_min": 0.7,
+    "unnecessary_interruption_rate_max": 0.2,
+    "missed_help_rate_max": 0.25
+  },
+  "counts": {
+    "original_scenarios": 30,
+    "calibration_scenarios": 15,
+    "combined_scenarios": 45
+  },
+  "calibration_consensus_counts": {
+    "SILENT": 7,
+    "REACT": 4,
+    "REPLY": 0,
+    "AMBIGUOUS": 4
+  },
+  "combined_raw_choice_counts": {
+    "SILENT": 19,
+    "REACT": 0,
+    "REPLY": 26,
+    "AMBIGUOUS": 0
+  },
+  "original_unthresholded_metrics": {
+    "total_count": 30,
+    "non_ambiguous_count": 20,
+    "ambiguous_count": 10,
+    "accuracy": {
+      "numerator": 15,
+      "denominator": 20,
+      "rate": 0.75
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 5,
+      "denominator": 10,
+      "rate": 0.5
+    },
+    "missed_help_rate": {
+      "numerator": 0,
+      "denominator": 10,
+      "rate": 0.0
+    },
+    "low_confidence": {
+      "downgraded_count": 0,
+      "before_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "after_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    },
+    "calibration": [
+      {
+        "bin": "0.0-0.5",
+        "numerator": 6,
+        "denominator": 9,
+        "rate": 0.6666666666666666
+      },
+      {
+        "bin": "0.5-0.7",
+        "numerator": 4,
+        "denominator": 6,
+        "rate": 0.6666666666666666
+      },
+      {
+        "bin": "0.7-0.9",
+        "numerator": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      {
+        "bin": "0.9-1.0",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    ],
+    "latency_ms": {
+      "count": 30,
+      "p50": 710.1440415008256,
+      "p95": 1469.6273062489108
+    },
+    "ambiguous_predictions": [
+      {
+        "id": "c007",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.2888
+      },
+      {
+        "id": "c009",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.161
+      },
+      {
+        "id": "c020",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.2136
+      },
+      {
+        "id": "c026",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.7161
+      },
+      {
+        "id": "c031",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.598
+      },
+      {
+        "id": "c033",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.3638
+      },
+      {
+        "id": "c034",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.7084
+      },
+      {
+        "id": "c037",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.0834
+      },
+      {
+        "id": "c039",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.1431
+      },
+      {
+        "id": "c043",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.2492
+      }
+    ]
+  },
+  "calibration_unthresholded_metrics": {
+    "total_count": 15,
+    "non_ambiguous_count": 11,
+    "ambiguous_count": 4,
+    "accuracy": {
+      "numerator": 4,
+      "denominator": 11,
+      "rate": 0.36363636363636365
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 3,
+      "denominator": 7,
+      "rate": 0.42857142857142855
+    },
+    "missed_help_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "low_confidence": {
+      "downgraded_count": 0,
+      "before_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "after_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    },
+    "calibration": [
+      {
+        "bin": "0.0-0.5",
+        "numerator": 4,
+        "denominator": 11,
+        "rate": 0.36363636363636365
+      },
+      {
+        "bin": "0.5-0.7",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      {
+        "bin": "0.7-0.9",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      {
+        "bin": "0.9-1.0",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    ],
+    "latency_ms": {
+      "count": 15,
+      "p50": 746.0019160025695,
+      "p95": 996.3433080007231
+    },
+    "ambiguous_predictions": [
+      {
+        "id": "r003",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.1763
+      },
+      {
+        "id": "r012",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.2949
+      },
+      {
+        "id": "r013",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.1411
+      },
+      {
+        "id": "r014",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.2498
+      }
+    ]
+  },
+  "combined_unthresholded_metrics": {
+    "total_count": 45,
+    "non_ambiguous_count": 31,
+    "ambiguous_count": 14,
+    "accuracy": {
+      "numerator": 19,
+      "denominator": 31,
+      "rate": 0.6129032258064516
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 8,
+      "denominator": 17,
+      "rate": 0.47058823529411764
+    },
+    "missed_help_rate": {
+      "numerator": 0,
+      "denominator": 10,
+      "rate": 0.0
+    },
+    "low_confidence": {
+      "downgraded_count": 0,
+      "before_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "after_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    },
+    "calibration": [
+      {
+        "bin": "0.0-0.5",
+        "numerator": 10,
+        "denominator": 20,
+        "rate": 0.5
+      },
+      {
+        "bin": "0.5-0.7",
+        "numerator": 4,
+        "denominator": 6,
+        "rate": 0.6666666666666666
+      },
+      {
+        "bin": "0.7-0.9",
+        "numerator": 5,
+        "denominator": 5,
+        "rate": 1.0
+      },
+      {
+        "bin": "0.9-1.0",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    ],
+    "latency_ms": {
+      "count": 45,
+      "p50": 715.4879580011766,
+      "p95": 1194.747491401358
+    },
+    "ambiguous_predictions": [
+      {
+        "id": "c007",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.2888
+      },
+      {
+        "id": "c009",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.161
+      },
+      {
+        "id": "c020",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.2136
+      },
+      {
+        "id": "c026",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.7161
+      },
+      {
+        "id": "c031",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.598
+      },
+      {
+        "id": "c033",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.3638
+      },
+      {
+        "id": "c034",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.7084
+      },
+      {
+        "id": "c037",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.0834
+      },
+      {
+        "id": "c039",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.1431
+      },
+      {
+        "id": "c043",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.2492
+      },
+      {
+        "id": "r003",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.1763
+      },
+      {
+        "id": "r012",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.2949
+      },
+      {
+        "id": "r013",
+        "raw_choice": "REPLY",
+        "final_action": "REPLY",
+        "confidence": 0.1411
+      },
+      {
+        "id": "r014",
+        "raw_choice": "SILENT",
+        "final_action": "SILENT",
+        "confidence": 0.2498
+      }
+    ]
+  },
+  "threshold_evidence": {
+    "scored_consensus_counts": {
+      "SILENT": 17,
+      "REACT": 4,
+      "REPLY": 10
+    },
+    "scored_raw_choice_counts": {
+      "SILENT": 11,
+      "REACT": 0,
+      "REPLY": 20
+    },
+    "unidentifiable_thresholds": [
+      "react_threshold"
+    ]
+  },
+  "recommendation": {
+    "reply_threshold": 0.55,
+    "react_threshold": 1.0,
+    "accuracy": 0.8064516129032258,
+    "accuracy_n": 25,
+    "accuracy_d": 31,
+    "unnecessary_interruption_rate": 0.058823529411764705,
+    "unnecessary_interruption_n": 1,
+    "unnecessary_interruption_d": 17,
+    "missed_help_rate": 0.1,
+    "missed_help_n": 1,
+    "missed_help_d": 10,
+    "downgraded_count": 10,
+    "meets_all_criteria": true
+  },
+  "candidate_action_metrics": {
+    "SILENT": {
+      "actual": 17,
+      "predicted": 21,
+      "true_positive": 16,
+      "precision": 0.7619047619047619,
+      "recall": 0.9411764705882353
+    },
+    "REACT": {
+      "actual": 4,
+      "predicted": 0,
+      "true_positive": 0,
+      "precision": null,
+      "recall": 0.0
+    },
+    "REPLY": {
+      "actual": 10,
+      "predicted": 10,
+      "true_positive": 9,
+      "precision": 0.9,
+      "recall": 0.9
+    }
+  },
+  "calibration_candidate_action_metrics": {
+    "SILENT": {
+      "actual": 7,
+      "predicted": 11,
+      "true_positive": 7,
+      "precision": 0.6363636363636364,
+      "recall": 1.0
+    },
+    "REACT": {
+      "actual": 4,
+      "predicted": 0,
+      "true_positive": 0,
+      "precision": null,
+      "recall": 0.0
+    },
+    "REPLY": {
+      "actual": 0,
+      "predicted": 0,
+      "true_positive": 0,
+      "precision": null,
+      "recall": null
+    }
+  },
+  "human_approval_required": true,
+  "production_config_modified": false,
+  "heldout_used": false
+}

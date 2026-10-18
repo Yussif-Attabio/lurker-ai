@@ -1,0 +1,397 @@
+{
+  "generated_at": "2026-10-16T06:37:35.537614+00:00",
+  "split": "tuning",
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "device": "cpu",
+  "hardware": "Darwin arm64 / arm",
+  "policy_mode": "unthresholded_tuning",
+  "thresholds": {
+    "reply_threshold": null,
+    "react_threshold": null
+  },
+  "criteria": {
+    "accuracy_min": 0.7,
+    "unnecessary_interruption_rate_max": 0.2,
+    "missed_help_rate_max": 0.25
+  },
+  "context_metrics": {
+    "0": {
+      "total_count": 30,
+      "non_ambiguous_count": 20,
+      "ambiguous_count": 10,
+      "accuracy": {
+        "numerator": 16,
+        "denominator": 20,
+        "rate": 0.8
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 3,
+        "denominator": 10,
+        "rate": 0.3
+      },
+      "missed_help_rate": {
+        "numerator": 1,
+        "denominator": 10,
+        "rate": 0.1
+      },
+      "low_confidence": {
+        "downgraded_count": 0,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 6,
+          "denominator": 7,
+          "rate": 0.8571428571428571
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 4,
+          "denominator": 7,
+          "rate": 0.5714285714285714
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 6,
+          "denominator": 6,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 30,
+        "p50": 651.221041498502,
+        "p95": 1105.8871998491659
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "c007",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2888
+        },
+        {
+          "id": "c009",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.161
+        },
+        {
+          "id": "c020",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.15
+        },
+        {
+          "id": "c026",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.6421
+        },
+        {
+          "id": "c031",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.7152
+        },
+        {
+          "id": "c033",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.3638
+        },
+        {
+          "id": "c034",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.5681
+        },
+        {
+          "id": "c037",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.0834
+        },
+        {
+          "id": "c039",
+          "raw_choice": "REACT",
+          "final_action": "REACT",
+          "confidence": 0.088
+        },
+        {
+          "id": "c043",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.4821
+        }
+      ]
+    },
+    "3": {
+      "total_count": 30,
+      "non_ambiguous_count": 20,
+      "ambiguous_count": 10,
+      "accuracy": {
+        "numerator": 15,
+        "denominator": 20,
+        "rate": 0.75
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 5,
+        "denominator": 10,
+        "rate": 0.5
+      },
+      "missed_help_rate": {
+        "numerator": 0,
+        "denominator": 10,
+        "rate": 0.0
+      },
+      "low_confidence": {
+        "downgraded_count": 0,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 6,
+          "denominator": 9,
+          "rate": 0.6666666666666666
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 4,
+          "denominator": 6,
+          "rate": 0.6666666666666666
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 5,
+          "denominator": 5,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 30,
+        "p50": 710.1440415008256,
+        "p95": 1469.6273062489108
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "c007",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2888
+        },
+        {
+          "id": "c009",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.161
+        },
+        {
+          "id": "c020",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.2136
+        },
+        {
+          "id": "c026",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.7161
+        },
+        {
+          "id": "c031",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.598
+        },
+        {
+          "id": "c033",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.3638
+        },
+        {
+          "id": "c034",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.7084
+        },
+        {
+          "id": "c037",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.0834
+        },
+        {
+          "id": "c039",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.1431
+        },
+        {
+          "id": "c043",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2492
+        }
+      ]
+    },
+    "5": {
+      "total_count": 30,
+      "non_ambiguous_count": 20,
+      "ambiguous_count": 10,
+      "accuracy": {
+        "numerator": 15,
+        "denominator": 20,
+        "rate": 0.75
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 5,
+        "denominator": 10,
+        "rate": 0.5
+      },
+      "missed_help_rate": {
+        "numerator": 0,
+        "denominator": 10,
+        "rate": 0.0
+      },
+      "low_confidence": {
+        "downgraded_count": 0,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 6,
+          "denominator": 9,
+          "rate": 0.6666666666666666
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 4,
+          "denominator": 6,
+          "rate": 0.6666666666666666
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 5,
+          "denominator": 5,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 30,
+        "p50": 673.7562710004568,
+        "p95": 738.9371060990014
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "c007",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2888
+        },
+        {
+          "id": "c009",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.161
+        },
+        {
+          "id": "c020",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.2136
+        },
+        {
+          "id": "c026",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.7161
+        },
+        {
+          "id": "c031",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.598
+        },
+        {
+          "id": "c033",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.3638
+        },
+        {
+          "id": "c034",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.7084
+        },
+        {
+          "id": "c037",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.0834
+        },
+        {
+          "id": "c039",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.1431
+        },
+        {
+          "id": "c043",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.2492
+        }
+      ]
+    }
+  }
+}

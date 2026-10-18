@@ -1,0 +1,62 @@
+{
+  "status": "PASS_LOCAL_ONLY",
+  "timestamp_utc": "2026-10-16T19:07:27Z",
+  "image": {
+    "tag": "lurker-ai:m3-amd64",
+    "id": "sha256:7eecb45d2e3878d28f17c68395f078a9a9521ba5c0744e5de8ba631efe1dddb0",
+    "architecture": "amd64",
+    "os": "linux",
+    "size_bytes": 1908564122,
+    "torch": "2.7.1+cpu",
+    "cuda_available": false,
+    "runtime_uid": 999
+  },
+  "mock_container": {
+    "memory_limit_bytes": 1073741824,
+    "cpu_limit": 2,
+    "observed_memory": "66.67 MiB",
+    "health": "healthy",
+    "api_health": {
+      "status": "ok",
+      "decider_mode": "mock",
+      "model_ready": true
+    },
+    "websocket_actions": ["SILENT", "REACT", "REPLY"],
+    "messages_read": 3,
+    "errors": 0,
+    "bedrock_calls_made": 0
+  },
+  "amd64_image_tests": {
+    "pytest_passed": 56,
+    "pytest_failed": 0,
+    "pip_check": "PASS"
+  },
+  "aws_read_only_preflight": {
+    "authentication": "PASS_IDENTIFIERS_SUPPRESSED",
+    "region": "us-east-2",
+    "standard_on_demand_vcpu_quota": 16,
+    "required_vcpus": 8,
+    "instance_type": "m7i.2xlarge",
+    "instance_offered_in_region": true,
+    "instance_architecture": "x86_64",
+    "instance_memory_gib": 32,
+    "linux_ondemand_usd_per_hour": 0.4032,
+    "bedrock_inference_profile_status": "ACTIVE"
+  },
+  "memory_assessment": {
+    "docker_desktop_memory_bytes": 8319504384,
+    "docker_desktop_memory_gib": 7.75,
+    "native_real_cpu_decider_peak_rss_bytes": 9083797504,
+    "native_real_cpu_decider_peak_rss_gib": 8.46,
+    "planned_instance_memory_gib": 32,
+    "estimated_headroom_gib": 23.54,
+    "planned_to_measured_ratio": 3.78,
+    "compatible": true,
+    "limitation": "Peak RSS was measured with the same pinned CPU loader on the Apple Silicon host; native Linux amd64 peak memory remains to be recorded during deployed acceptance."
+  },
+  "safety": {
+    "aws_resources_created": 0,
+    "bedrock_invocations": 0,
+    "heldout_dataset_accessed": false
+  }
+}

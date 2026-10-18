@@ -1,0 +1,8 @@
+metric,baseline,candidate,change
+overall_accuracy,0.8064516129032258,0.8387096774193549,0.032258064516129115
+react_precision,1.0,1.0,0.0
+react_recall,0.25,0.75,0.5
+unnecessary_interruption_rate,0.11764705882352941,0.17647058823529413,0.05882352941176472
+missed_help_rate,0.1,0.1,0.0
+ordinary_false_reaction_rate,0.0,0.0,0.0
+ordinary_false_reply_rate,0.11764705882352941,0.17647058823529413,0.05882352941176472

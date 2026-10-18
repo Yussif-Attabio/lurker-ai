@@ -1,0 +1,45 @@
+{
+  "artifact_version": "lurker-m5-recovery-combined-reference-wording-run-v1",
+  "status": "EXPLORATORY_ONLY",
+  "variant": "m5-recovery-concise-boundaries-v2",
+  "development_only": true,
+  "label_basis": "combined_three_contributor_reference",
+  "contributor_count": 3,
+  "independent_decisions_available": false,
+  "group_consensus_verified": false,
+  "inter_rater_agreement_calculable": false,
+  "scenario_path": "eval/recovery/combined_reference/development/development.jsonl",
+  "scenario_sha256": "98dc749da4817cb51ae14bbae7c116ba4cc806384919a0298c0f5af6b6d9ab14",
+  "provenance_manifest_sha256": "9c49d9b5f1d2f8f1bd3ec1beba55b316da5ce9750c06187fede0142610ea1017",
+  "candidate_path": "config/wording_candidates/m5_recovery_concise_boundaries_v2.yaml",
+  "candidate_sha256": "e8a794227df975e86c8da591ae582e3641483d712b201a9b274ab310b1495fce",
+  "baseline_question_sha256": "9105c49e09721aa04094151739add6f3be7ea63b015f45a9f91b80f7a9794589",
+  "candidate_question_sha256": "3f81f8a6f056ff1947b50aa217c683a6eb74c31de3f50065ae1537dd5377f8f6",
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "model_revision": "216d1ccb46a9e9b036eb9187b248db98480f77d4",
+  "model_architecture_changed": false,
+  "policy_changed": false,
+  "thresholds": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "scenario_count": 90,
+  "expected_predictions": 90,
+  "actual_predictions": 90,
+  "context_values": [
+    3
+  ],
+  "mock": false,
+  "aws_or_bedrock_calls": 0,
+  "original_m5_heldout_opened_by_runner": false,
+  "reserve_opened_by_runner": false,
+  "production_configuration_changed": false,
+  "error_count": 0,
+  "observability": {
+    "adapter_initialization_ms": 11260.168291999435,
+    "peak_rss_bytes": 5919358976,
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.12.14"
+  }
+}

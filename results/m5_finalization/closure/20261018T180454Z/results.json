@@ -1,0 +1,727 @@
+{
+  "artifact_version": "lurker-m5-closure-v1",
+  "publication_status": "published",
+  "generated_at": "2026-10-18T18:04:54.819038+00:00",
+  "published_at": "2026-10-18T18:04:54.819038+00:00",
+  "split": "heldout",
+  "primary_context_k": 3,
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "model_revision": "216d1ccb46a9e9b036eb9187b248db98480f77d4",
+  "device": "cpu",
+  "hardware": "Darwin arm64 / arm",
+  "thresholds": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "criteria": {
+    "accuracy_min": 0.7,
+    "unnecessary_interruption_rate_max": 0.2,
+    "missed_help_rate_max": 0.25
+  },
+  "context_metrics": {
+    "0": {
+      "total_count": 15,
+      "non_ambiguous_count": 9,
+      "ambiguous_count": 6,
+      "error_count": 0,
+      "consensus_counts": {
+        "SILENT": 3,
+        "REACT": 0,
+        "REPLY": 6
+      },
+      "prediction_counts": {
+        "SILENT": 9,
+        "REACT": 1,
+        "REPLY": 5
+      },
+      "accuracy": {
+        "numerator": 6,
+        "denominator": 9,
+        "rate": 0.6666666666666666
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 1,
+        "denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "missed_help_rate": {
+        "numerator": 2,
+        "denominator": 6,
+        "rate": 0.3333333333333333
+      },
+      "react_precision": {
+        "numerator": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "react_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "low_confidence": {
+        "downgraded_count": 2,
+        "before_accuracy": {
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5
+        },
+        "after_accuracy": {
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 2,
+          "denominator": 2,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 2,
+          "denominator": 2,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 15,
+        "p50": 583.6277920025168,
+        "p95": 1239.5309206010993
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "c008",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.3981
+        },
+        {
+          "id": "c011",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.351
+        },
+        {
+          "id": "c025",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.6098
+        },
+        {
+          "id": "c027",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.236
+        },
+        {
+          "id": "c035",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.4672
+        },
+        {
+          "id": "c038",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.0249
+        }
+      ]
+    },
+    "3": {
+      "total_count": 15,
+      "non_ambiguous_count": 9,
+      "ambiguous_count": 6,
+      "error_count": 0,
+      "consensus_counts": {
+        "SILENT": 3,
+        "REACT": 0,
+        "REPLY": 6
+      },
+      "prediction_counts": {
+        "SILENT": 7,
+        "REACT": 1,
+        "REPLY": 7
+      },
+      "accuracy": {
+        "numerator": 6,
+        "denominator": 9,
+        "rate": 0.6666666666666666
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 2,
+        "denominator": 3,
+        "rate": 0.6666666666666666
+      },
+      "missed_help_rate": {
+        "numerator": 1,
+        "denominator": 6,
+        "rate": 0.16666666666666666
+      },
+      "react_precision": {
+        "numerator": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "react_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "low_confidence": {
+        "downgraded_count": 0,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 3,
+          "denominator": 5,
+          "rate": 0.6
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 15,
+        "p50": 598.8068330043461,
+        "p95": 682.338024999626
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "c008",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.1326
+        },
+        {
+          "id": "c011",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.351
+        },
+        {
+          "id": "c025",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.5564
+        },
+        {
+          "id": "c027",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.5324
+        },
+        {
+          "id": "c035",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.4672
+        },
+        {
+          "id": "c038",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.0249
+        }
+      ]
+    },
+    "5": {
+      "total_count": 15,
+      "non_ambiguous_count": 9,
+      "ambiguous_count": 6,
+      "error_count": 0,
+      "consensus_counts": {
+        "SILENT": 3,
+        "REACT": 0,
+        "REPLY": 6
+      },
+      "prediction_counts": {
+        "SILENT": 7,
+        "REACT": 1,
+        "REPLY": 7
+      },
+      "accuracy": {
+        "numerator": 6,
+        "denominator": 9,
+        "rate": 0.6666666666666666
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 2,
+        "denominator": 3,
+        "rate": 0.6666666666666666
+      },
+      "missed_help_rate": {
+        "numerator": 1,
+        "denominator": 6,
+        "rate": 0.16666666666666666
+      },
+      "react_precision": {
+        "numerator": 0,
+        "denominator": 1,
+        "rate": 0.0
+      },
+      "react_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "low_confidence": {
+        "downgraded_count": 0,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 3,
+          "denominator": 5,
+          "rate": 0.6
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 15,
+        "p50": 612.0797920011682,
+        "p95": 1733.6039462978076
+      },
+      "ambiguous_predictions": [
+        {
+          "id": "c008",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.1326
+        },
+        {
+          "id": "c011",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.351
+        },
+        {
+          "id": "c025",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.5564
+        },
+        {
+          "id": "c027",
+          "raw_choice": "REPLY",
+          "final_action": "REPLY",
+          "confidence": 0.5324
+        },
+        {
+          "id": "c035",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.4672
+        },
+        {
+          "id": "c038",
+          "raw_choice": "SILENT",
+          "final_action": "SILENT",
+          "confidence": 0.0249
+        }
+      ]
+    }
+  },
+  "acceptance": {
+    "implementation_completion": "PENDING_OWNER_APPROVAL",
+    "model_performance": "NO_GO",
+    "strict_spec_completion": "INCOMPLETE_BEDROCK_BASELINE",
+    "production_readiness": false
+  },
+  "baselines": {
+    "always_reply_to_questions": {
+      "status": "COMPLETE_HELDOUT",
+      "scope": "heldout",
+      "model_calls": 0,
+      "aws_or_bedrock_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "metrics": {
+        "total_count": 15,
+        "non_ambiguous_count": 9,
+        "ambiguous_count": 6,
+        "error_count": 0,
+        "consensus_counts": {
+          "SILENT": 3,
+          "REACT": 0,
+          "REPLY": 6
+        },
+        "prediction_counts": {
+          "SILENT": 9,
+          "REACT": 0,
+          "REPLY": 6
+        },
+        "accuracy": {
+          "numerator": 6,
+          "denominator": 9,
+          "rate": 0.6666666666666666
+        },
+        "unnecessary_interruption_rate": {
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333
+        },
+        "missed_help_rate": {
+          "numerator": 2,
+          "denominator": 6,
+          "rate": 0.3333333333333333
+        },
+        "react_precision": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "react_recall": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "low_confidence": {
+          "downgraded_count": 0,
+          "before_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          "after_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          }
+        },
+        "calibration": [
+          {
+            "bin": "0.0-0.5",
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          {
+            "bin": "0.5-0.7",
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          {
+            "bin": "0.7-0.9",
+            "numerator": 0,
+            "denominator": 0,
+            "rate": null
+          },
+          {
+            "bin": "0.9-1.0",
+            "numerator": 6,
+            "denominator": 9,
+            "rate": 0.6666666666666666
+          }
+        ],
+        "latency_ms": {
+          "count": 15,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "ambiguous_predictions": [
+          {
+            "id": "c008",
+            "raw_choice": "SILENT",
+            "final_action": "SILENT",
+            "confidence": 1.0
+          },
+          {
+            "id": "c011",
+            "raw_choice": "SILENT",
+            "final_action": "SILENT",
+            "confidence": 1.0
+          },
+          {
+            "id": "c025",
+            "raw_choice": "SILENT",
+            "final_action": "SILENT",
+            "confidence": 1.0
+          },
+          {
+            "id": "c027",
+            "raw_choice": "REPLY",
+            "final_action": "REPLY",
+            "confidence": 1.0
+          },
+          {
+            "id": "c035",
+            "raw_choice": "SILENT",
+            "final_action": "SILENT",
+            "confidence": 1.0
+          },
+          {
+            "id": "c038",
+            "raw_choice": "SILENT",
+            "final_action": "SILENT",
+            "confidence": 1.0
+          }
+        ]
+      },
+      "source_evidence": "results/m5_finalization/heldout_question_baseline/20261018T003000Z/always_questions_summary.json"
+    },
+    "bedrock_judge": {
+      "status": "NOT_RUN_REQUIRES_APPROVAL",
+      "scope": "heldout",
+      "model_id": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "region": "us-east-2",
+      "model_calls": 0,
+      "max_calls": 15,
+      "metrics": null,
+      "pricing_usd_per_million_tokens": {
+        "input": 1.1,
+        "output": 5.5
+      },
+      "pricing_source": "https://aws.amazon.com/jp/blogs/news/amazon-bedrock-now-supports-japan-cross-region-inference/",
+      "planned_output_token_cap_per_call": 8,
+      "planned_prompt_utf8_byte_cap_per_call": 1000,
+      "maximum_estimated_charge_usd": 0.01716,
+      "cost_formula": "input_tokens*1.10/1000000 + output_tokens*5.50/1000000",
+      "separate_owner_approval_required": true
+    }
+  },
+  "supplementary_combined_reference": {
+    "label_basis": "combined_three_contributor_reference",
+    "contributor_count": 3,
+    "independent_decisions_available": false,
+    "group_consensus_verified": false,
+    "inter_rater_agreement_calculable": false,
+    "development_metrics_k3": {
+      "total_count": 90,
+      "non_ambiguous_count": 90,
+      "ambiguous_count": 0,
+      "error_count": 0,
+      "consensus_counts": {
+        "SILENT": 30,
+        "REACT": 30,
+        "REPLY": 30
+      },
+      "prediction_counts": {
+        "SILENT": 37,
+        "REACT": 20,
+        "REPLY": 33
+      },
+      "accuracy": {
+        "numerator": 64,
+        "denominator": 90,
+        "rate": 0.7111111111111111
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 9,
+        "denominator": 30,
+        "rate": 0.3
+      },
+      "missed_help_rate": {
+        "numerator": 1,
+        "denominator": 30,
+        "rate": 0.03333333333333333
+      },
+      "react_precision": {
+        "numerator": 14,
+        "denominator": 20,
+        "rate": 0.7
+      },
+      "react_recall": {
+        "numerator": 14,
+        "denominator": 30,
+        "rate": 0.4666666666666667
+      },
+      "low_confidence": {
+        "downgraded_count": 5,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "after_accuracy": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 55,
+          "denominator": 79,
+          "rate": 0.6962025316455697
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 8,
+          "denominator": 10,
+          "rate": 0.8
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 90,
+        "p50": 581.5370205018553,
+        "p95": 1100.7977793520695
+      },
+      "ambiguous_predictions": []
+    },
+    "reserve_count": 105,
+    "reserve_opened": false
+  },
+  "pipeline_evidence": {
+    "status": "PASS",
+    "actions": [
+      "SILENT",
+      "REACT",
+      "REPLY"
+    ],
+    "bedrock_calls_made": 1,
+    "silent_and_react_bedrock_calls": 0,
+    "reply_bedrock_calls": 1,
+    "source": "data/m2_acceptance/20261016T071233Z/summary.json"
+  },
+  "limitations": [
+    "Heldout accuracy is 6/9 (66.7%).",
+    "Heldout unnecessary-interruption rate is 2/3 (66.7%).",
+    "Heldout REACT recall is unavailable because there are no unanimous REACT cases.",
+    "Only three unanimous SILENT and six unanimous REPLY cases were scored.",
+    "The combined 195-label reference does not retain independent decisions or verifiable consensus.",
+    "The question-mark baseline ran locally on the same 15 heldout cases with zero model calls.",
+    "The Bedrock heldout judge baseline was not run and has no fabricated metrics.",
+    "This milestone does not establish production readiness, high availability, or generalization."
+  ],
+  "minimum_remaining_strict_spec_actions": [
+    "Run at most 15 Claude Haiku 4.5 Bedrock judge calls on those same heldout cases."
+  ],
+  "run_manifest": {
+    "artifact_version": "lurker-eval-manifest-v1",
+    "split": "heldout",
+    "scenario_count": 15,
+    "expected_predictions": 45,
+    "actual_predictions": 45,
+    "context_values": [
+      0,
+      3,
+      5
+    ],
+    "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+    "device": "cpu",
+    "mock": false,
+    "scenario_sha256": "76753bd8e2820d8c82888f78d2784cc02913ab73e4ef9c128a28cd44059ee876",
+    "config_sha256": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+    "error_count": 0,
+    "observability": {
+      "adapter_initialization_ms": 11536.314000004495,
+      "peak_rss_bytes": 5939511296,
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "machine": "arm64",
+      "python": "3.12.14"
+    },
+    "command": [
+      "scripts/run_eval.py",
+      "--split",
+      "heldout",
+      "--allow-heldout",
+      "--scenarios",
+      "results/m5_heldout/20261017T053719Z/heldout_locked.jsonl",
+      "--config",
+      "config/default.yaml",
+      "--k",
+      "0",
+      "3",
+      "5",
+      "--output-root",
+      "results/m5_heldout/20261017T053719Z/decider"
+    ]
+  },
+  "source_evidence": {
+    "heldout_results": "results/m5_heldout/20261017T053719Z/decider/20261017T053818Z/results.json",
+    "heldout_results_sha256": "cf5536909c5343da200f724c731c8ce66a451cc6747becc9cefb514a925601f1",
+    "heldout_manifest": "results/m5_heldout/20261017T053719Z/decider/20261017T053818Z/run_manifest.json",
+    "heldout_manifest_sha256": "d9ef4b6a393fb36a46e939fb164f52c23d1683f852cfa6318033dc41e1150d59",
+    "frozen_config": "config/m5_frozen_evaluation.yaml",
+    "frozen_config_sha256": "52a54a7058f53886bc789d930670e6f74407603105b13c13d01238ca24658401",
+    "question_baseline": "results/m5_finalization/heldout_question_baseline/20261018T003000Z/always_questions_summary.json",
+    "combined_provenance": "eval/recovery/combined_reference/provenance_manifest.json"
+  },
+  "reserve_opened": false,
+  "heldout_rerun": false,
+  "aws_resources_launched": false,
+  "bedrock_calls_this_finalization": 0,
+  "m6_started": false
+}

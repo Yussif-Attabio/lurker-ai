@@ -1,0 +1,110 @@
+{
+  "artifact_version": "lurker-m5-combined-reference-question-baseline-v1",
+  "status": "SUPPLEMENTARY_DEVELOPMENT_ONLY",
+  "generated_at": "2026-10-18T00:15:30.212497+00:00",
+  "baseline": "always_questions",
+  "split": "combined_reference_development",
+  "context_k": 3,
+  "scenario_count": 90,
+  "label_basis": "combined_three_contributor_reference",
+  "contributor_count": 3,
+  "independent_decisions_available": false,
+  "group_consensus_verified": false,
+  "model_calls": 0,
+  "aws_or_bedrock_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "metrics": {
+    "total_count": 90,
+    "non_ambiguous_count": 90,
+    "ambiguous_count": 0,
+    "error_count": 0,
+    "consensus_counts": {
+      "SILENT": 30,
+      "REACT": 30,
+      "REPLY": 30
+    },
+    "prediction_counts": {
+      "SILENT": 81,
+      "REACT": 0,
+      "REPLY": 9
+    },
+    "accuracy": {
+      "numerator": 39,
+      "denominator": 90,
+      "rate": 0.43333333333333335
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "rate": 0.0
+    },
+    "missed_help_rate": {
+      "numerator": 21,
+      "denominator": 30,
+      "rate": 0.7
+    },
+    "react_precision": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "react_recall": {
+      "numerator": 0,
+      "denominator": 30,
+      "rate": 0.0
+    },
+    "low_confidence": {
+      "downgraded_count": 0,
+      "before_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "after_accuracy": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    },
+    "calibration": [
+      {
+        "bin": "0.0-0.5",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      {
+        "bin": "0.5-0.7",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      {
+        "bin": "0.7-0.9",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      {
+        "bin": "0.9-1.0",
+        "numerator": 39,
+        "denominator": 90,
+        "rate": 0.43333333333333335
+      }
+    ],
+    "latency_ms": {
+      "count": 90,
+      "p50": 0.0,
+      "p95": 0.0
+    },
+    "ambiguous_predictions": []
+  },
+  "source_path": "eval/recovery/combined_reference/development/development.jsonl",
+  "source_sha256": "98dc749da4817cb51ae14bbae7c116ba4cc806384919a0298c0f5af6b6d9ab14",
+  "provenance_manifest_sha256": "9c49d9b5f1d2f8f1bd3ec1beba55b316da5ce9750c06187fede0142610ea1017",
+  "reserve_opened": false,
+  "original_heldout_opened": false,
+  "strict_m5_heldout_baseline": false,
+  "limitation": "This free baseline uses the accessible development reference. It is not a held-out comparison and does not satisfy the strict held-out-baseline gap."
+}

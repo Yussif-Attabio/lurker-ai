@@ -1,0 +1,94 @@
+{
+  "artifact_version": "lurker-m6-deployment-measurements-v1",
+  "status": "NO_GO",
+  "region": "us-east-2",
+  "instance_type": "m7i.2xlarge",
+  "architecture": "x86_64",
+  "launch_time_utc": "2026-10-18T19:26:23Z",
+  "termination_initiated_utc": "2026-10-18T19:41:01Z",
+  "paid_window_seconds": 878,
+  "container_image_id": "sha256:9c10067fdc5244c433f237ec21f8772f87ac29800e5378417d949da17fe778da",
+  "container_started_at": "2026-10-18T19:38:50.385611773Z",
+  "health": {"status": "ok", "decider_mode": "real", "model_ready": true},
+  "frozen_configuration": {
+    "context_k": 3,
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04,
+    "mock_decider": false,
+    "bedrock_max_calls": 3,
+    "bedrock_latest_text_allowlist": true
+  },
+  "external_reconnect": {
+    "status": "PASS",
+    "connections": 2,
+    "messages": 2,
+    "actions": ["SILENT", "REACT"],
+    "bedrock_calls": 0,
+    "duplicate_events": 0,
+    "runtime_errors": 0
+  },
+  "authorized_replay_sequence": {
+    "status": "NO_GO",
+    "expected_replays": 3,
+    "completed_replays": 1,
+    "failed_replay": 1,
+    "silent": {"confidence": 0.4553, "decider_latency_ms": 1364.2602710000347, "bedrock_called": false, "error": null},
+    "react": {"confidence": 0.2398, "decider_latency_ms": 1543.1642309999916, "bedrock_called": false, "error": null},
+    "reply": {
+      "confidence": 0.3842,
+      "decider_latency_ms": 1672.1056590000671,
+      "bedrock_attempt_latency_ms": 69.74483399994824,
+      "bedrock_called": true,
+      "bedrock_success": false,
+      "bedrock_input_tokens": null,
+      "bedrock_output_tokens": null,
+      "error_type": "AccessDeniedException"
+    },
+    "decider_latency_ms": {"count": 3, "p50": 1543.1642309999916, "p95": 1659.2115162000596},
+    "bedrock_attempts": 1,
+    "bedrock_successes": 0,
+    "agent_replies": 0,
+    "runtime_errors": 1,
+    "replays_2_and_3_started": false,
+    "silent_retry_performed": false
+  },
+  "memory": {
+    "container_cgroup_current_bytes": 13284077568,
+    "container_cgroup_peak_bytes": 13295747072,
+    "container_limit_bytes": 25769803776,
+    "docker_reported_working_set": "7.936 GiB",
+    "pids": 39,
+    "oom_killed": false
+  },
+  "safeguards": {
+    "automatic_termination_timer_minutes": 50,
+    "automatic_termination_timer_confirmed_active": true,
+    "instance_initiated_shutdown_behavior": "terminate",
+    "network_source": "controller_ipv4_32_redacted",
+    "least_privilege_policy_validated_before_launch": true,
+    "least_privilege_policy_runtime_result": "FAIL_ACCESS_DENIED",
+    "encrypted_root_volume": true,
+    "root_volume_delete_on_termination": true,
+    "imds_v2_required": true,
+    "container_memory_limit_gib": 24,
+    "container_runs_as_non_root": true,
+    "static_aws_credentials_copied": false
+  },
+  "setup_events": [
+    {
+      "status": "RECORDED_FAILURE",
+      "stage": "initial_image_build",
+      "error": "Outbound TCP 80 was initially absent; Debian package metadata fetch timed out.",
+      "resolution": "Added only required outbound TCP 80 and reran the image build."
+    },
+    {
+      "status": "RECORDED_FAILURE",
+      "stage": "initial_drill_container",
+      "error": "Minimal runtime bundle omitted eval/publication.py, so the API import failed before any drill ran.",
+      "resolution": "Added only eval/__init__.py and eval/publication.py; no evaluation data or results were transferred."
+    }
+  ],
+  "protected_evaluation_data_accessed": false,
+  "m5_configuration_changed": false,
+  "production_readiness": false
+}

@@ -1,0 +1,54 @@
+{
+  "artifact_version": "lurker-m5-tuning-comparison-v1",
+  "scope": "tuning-only; no held-out predictions or scores",
+  "storage_boundary": {
+    "mixed_source_opened_by_loader": true,
+    "heldout_predictions": 0,
+    "heldout_rows_in_metrics_or_artifacts": 0,
+    "remediation_completed_after_run": "Ordinary tuning runs now default to an exact, physically separate 30-row tuning input with regression coverage."
+  },
+  "fresh_run": {
+    "scenario_count": 30,
+    "prediction_count": 90,
+    "thresholds": {"reply": 0.2, "react": 0.04},
+    "metrics": {
+      "k0": {"accuracy": 0.8, "unnecessary_interruption": 0.3, "missed_help": 0.1, "react_precision": null, "react_recall": null, "latency_p50_ms": 619.2121460044291, "latency_p95_ms": 2007.271235601728},
+      "k3": {"accuracy": 0.8, "unnecessary_interruption": 0.3, "missed_help": 0.1, "react_precision": null, "react_recall": null, "latency_p50_ms": 612.0105205009168, "latency_p95_ms": 790.9548168510807},
+      "k5": {"accuracy": 0.8, "unnecessary_interruption": 0.3, "missed_help": 0.1, "react_precision": null, "react_recall": null, "latency_p50_ms": 615.7822920031322, "latency_p95_ms": 1068.5992975541012}
+    }
+  },
+  "m1_provisional_combined_tuning_baseline": {
+    "scenario_count": 45,
+    "scored_count": 31,
+    "context_k": 3,
+    "thresholds": {"reply": 0.2, "react": 0.04},
+    "accuracy": 0.8387096774193549,
+    "unnecessary_interruption": 0.17647058823529413,
+    "missed_help": 0.1,
+    "react_precision": 1.0,
+    "react_recall": 0.75
+  },
+  "same_30_scenario_m1_unthresholded_k3": {
+    "accuracy": 0.75,
+    "unnecessary_interruption": 0.5,
+    "missed_help": 0.0
+  },
+  "raw_prediction_drift": {
+    "compared_pairs": 90,
+    "raw_choice_changes": 0,
+    "maximum_confidence_delta": 0.0,
+    "final_action_changes_from_threshold_policy": 6
+  },
+  "combined_tuning_candidates": {
+    "k0_reply_0.40_react_0.13": {"accuracy": 0.8709677419354839, "unnecessary_interruption": 0.058823529411764705, "missed_help": 0.1, "react_precision": 1.0, "react_recall": 0.5},
+    "k3_reply_0.20_react_0.04": {"accuracy": 0.8387096774193549, "unnecessary_interruption": 0.17647058823529413, "missed_help": 0.1, "react_precision": 1.0, "react_recall": 0.75},
+    "k5_reply_0.20_react_0.04": {"accuracy": 0.8387096774193549, "unnecessary_interruption": 0.17647058823529413, "missed_help": 0.1, "react_precision": 1.0, "react_recall": 0.75}
+  },
+  "recommendation": {
+    "context_k": 3,
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04,
+    "production_configuration_changed": false,
+    "owner_review_required": true
+  }
+}

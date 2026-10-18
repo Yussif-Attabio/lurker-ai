@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Lurker AI decides when an assistant should stay silent, react, or reply.">
+    <title>Lurker AI - Quiet by design</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <div id="mock-banner" class="mock-banner" role="status" hidden>
+      MOCK DECIDER - synthetic demo decisions only
+    </div>
+
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="Lurker AI home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>Lurker AI</span>
+      </a>
+      <p class="tagline">The assistant that knows when not to answer.</p>
+      <div id="connection-status" class="connection-status" data-state="loading">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Checking service</span>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="chat-panel" aria-labelledby="chat-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Synthetic team room</p>
+            <h1 id="chat-title">Conversation</h1>
+          </div>
+          <span class="room-label">3 participants + Lurker</span>
+        </div>
+
+        <div id="message-list" class="message-list" aria-live="polite" aria-label="Chat messages">
+          <div class="empty-chat" data-empty-chat="true">
+            <span class="empty-glyph" aria-hidden="true">•••</span>
+            <h2>Start a conversation</h2>
+            <p>Switch between teammates and watch Lurker decide whether to stay quiet, react, or reply.</p>
+          </div>
+        </div>
+
+        <div id="inline-alert" class="inline-alert" role="alert" hidden></div>
+
+        <form id="composer" class="composer">
+          <div class="sender-control">
+            <label for="sender">Sending as</label>
+            <select id="sender" name="sender">
+              <option value="Alex">Alex</option>
+              <option value="Lea">Lea</option>
+              <option id="third-sender-option" value="__third__">Sam</option>
+            </select>
+            <label class="sr-only" for="third-name">Third participant name</label>
+            <input id="third-name" class="third-name" name="third-name" value="Sam" maxlength="80" autocomplete="off" hidden>
+          </div>
+          <label class="sr-only" for="message-input">Message</label>
+          <textarea id="message-input" name="message" rows="1" maxlength="4000" placeholder="Write a message..." disabled></textarea>
+          <button id="send-button" type="submit" disabled>
+            Send
+            <span aria-hidden="true">↗</span>
+          </button>
+        </form>
+      </section>
+
+      <aside class="dashboard" aria-labelledby="dashboard-title">
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow">Decision console</p>
+            <h2 id="dashboard-title">Lurker's view</h2>
+          </div>
+          <span id="mode-chip" class="mode-chip">Loading</span>
+        </div>
+
+        <nav class="tabs" role="tablist" aria-label="Dashboard views">
+          <button id="live-tab" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="live-panel">Live</button>
+          <button id="about-tab" class="tab" type="button" role="tab" aria-selected="false" aria-controls="about-panel">About</button>
+          <button id="evaluation-tab" class="tab" type="button" role="tab" aria-selected="false" aria-controls="evaluation-panel">Evaluation</button>
+        </nav>
+
+        <section id="live-panel" class="tab-panel live-panel" role="tabpanel" aria-labelledby="live-tab">
+          <article class="decision-hero">
+            <div class="decision-kicker">
+              <span>Latest decision</span>
+              <span id="decision-time">No decisions yet</span>
+            </div>
+            <div class="decision-main">
+              <strong id="decision-action">—</strong>
+              <div class="confidence-block">
+                <span>Confidence</span>
+                <span id="confidence-value">—</span>
+              </div>
+            </div>
+            <div class="confidence-track" aria-hidden="true">
+              <span id="confidence-fill"></span>
+            </div>
+            <dl class="decision-meta">
+              <div><dt>Raw choice</dt><dd id="raw-choice">—</dd></div>
+              <div><dt>Latency</dt><dd id="decision-latency">—</dd></div>
+              <div><dt>Policy</dt><dd id="decision-policy">—</dd></div>
+            </dl>
+          </article>
+
+          <section class="counter-section" aria-labelledby="counter-title">
+            <div class="section-title-row">
+              <h3 id="counter-title">Session counters</h3>
+              <button id="reset-button" class="text-button" type="button" disabled>Reset session</button>
+            </div>
+            <div class="counter-grid">
+              <div><span id="count-messages">—</span><small>Messages</small></div>
+              <div><span id="count-silent">—</span><small>Silent</small></div>
+              <div><span id="count-react">—</span><small>React</small></div>
+              <div><span id="count-reply">—</span><small>Reply</small></div>
+              <div><span id="count-bedrock">—</span><small>Bedrock calls</small></div>
+              <div><span id="count-avoided">—</span><small>Avoided vs. every message</small></div>
+            </div>
+          </section>
+
+          <section class="decision-log" aria-labelledby="log-title">
+            <div class="log-header">
+              <h3 id="log-title">Decision log</h3>
+              <span>Newest first</span>
+            </div>
+            <div class="log-table-wrap">
+              <table>
+                <thead><tr><th>Message</th><th>Raw</th><th>Confidence</th><th>Final</th></tr></thead>
+                <tbody id="decision-log-body">
+                  <tr class="empty-row"><td colspan="4">Decisions will appear here.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section id="evaluation-panel" class="tab-panel evaluation-panel" role="tabpanel" aria-labelledby="evaluation-tab" hidden>
+          <div class="evaluation-heading">
+            <div>
+              <p class="eyebrow">Published M5 evidence</p>
+              <h3>Final evaluation</h3>
+            </div>
+            <span id="evaluation-status" class="evaluation-status" data-state="empty">Not published</span>
+          </div>
+
+          <div id="evaluation-state" class="evaluation-empty" role="status">
+            <strong>No final M5 result is published.</strong>
+            <p>The held-out evaluation remains hidden until a complete real-result bundle passes validation and is explicitly published.</p>
+          </div>
+
+          <div id="evaluation-content" hidden>
+            <div class="evaluation-provenance">
+              <span id="evaluation-generated">—</span>
+              <span id="evaluation-environment">—</span>
+              <span id="evaluation-policy">—</span>
+            </div>
+
+            <section class="evaluation-primary" aria-labelledby="evaluation-primary-title">
+              <div class="section-title-row">
+                <h3 id="evaluation-primary-title">Pre-registered result</h3>
+                <strong id="evaluation-primary-status">—</strong>
+              </div>
+              <div class="evaluation-metrics">
+                <article><span>Accuracy</span><strong id="evaluation-accuracy">—</strong><small id="evaluation-accuracy-count">—</small></article>
+                <article><span>Unnecessary interruption</span><strong id="evaluation-interruption">—</strong><small id="evaluation-interruption-count">—</small></article>
+                <article><span>Missed help</span><strong id="evaluation-missed-help">—</strong><small id="evaluation-missed-help-count">—</small></article>
+              </div>
+              <p id="evaluation-sample-note" class="evaluation-sample-note"></p>
+            </section>
+
+            <section class="evaluation-table-section" aria-labelledby="context-comparison-title">
+              <h3 id="context-comparison-title">Context comparison</h3>
+              <div class="evaluation-table-wrap">
+                <table>
+                  <thead><tr><th>k</th><th>Accuracy</th><th>Interrupt</th><th>Missed help</th><th>p50 / p95</th></tr></thead>
+                  <tbody id="evaluation-context-body"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="evaluation-table-section" aria-labelledby="baseline-comparison-title">
+              <h3 id="baseline-comparison-title">Baseline comparison</h3>
+              <p id="evaluation-baseline-note" class="evaluation-sample-note"></p>
+              <div class="evaluation-table-wrap">
+                <table>
+                  <thead><tr><th>System</th><th>Calls</th><th>Accuracy</th><th>Interrupt</th><th>Missed help</th></tr></thead>
+                  <tbody id="evaluation-baseline-body"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="evaluation-table-section" aria-labelledby="calibration-title">
+              <h3 id="calibration-title">Primary-context calibration</h3>
+              <div class="evaluation-table-wrap">
+                <table>
+                  <thead><tr><th>Confidence</th><th>Correct / count</th><th>Accuracy</th></tr></thead>
+                  <tbody id="evaluation-calibration-body"></tbody>
+                </table>
+              </div>
+            </section>
+
+            <div class="evaluation-boundary">
+              <strong>Synthetic evidence boundary</strong>
+              <p id="evaluation-boundary-text">Ambiguous cases are listed in the saved report and excluded from scored rates. A passing result does not establish production readiness or statistical generalization.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="about-panel" class="tab-panel about-panel" role="tabpanel" aria-labelledby="about-tab" hidden>
+          <div class="about-intro">
+            <p class="eyebrow">Shared backend contract</p>
+            <h3>One decision before every action.</h3>
+            <p id="about-question">Loading the exact question used by the Decider…</p>
+          </div>
+
+          <div id="about-options" class="about-options" aria-label="Decision options"></div>
+
+          <section class="policy-card" aria-labelledby="policy-title">
+            <h3 id="policy-title">Confidence policy</h3>
+            <dl>
+              <div><dt>Context</dt><dd id="about-context">—</dd></div>
+              <div><dt>Reply threshold</dt><dd id="about-reply-threshold">—</dd></div>
+              <div><dt>React threshold</dt><dd id="about-react-threshold">—</dd></div>
+              <div><dt>Direct mention override</dt><dd id="about-mention">—</dd></div>
+            </dl>
+            <p id="about-low-confidence"></p>
+            <p id="about-error-policy"></p>
+          </section>
+
+          <div class="boundary-note">
+            <strong>Experimental boundary</strong>
+            <p>Lurker uses a provisional policy tested on synthetic group-chat scenarios. REACT stays local; only REPLY may invoke Bedrock. This is not production-readiness evidence.</p>
+          </div>
+
+          <div class="evaluation-note">
+            <span>Evaluation</span>
+            <p>The Evaluation tab shows only an explicitly published, validated M5 result. Until then it remains an empty state with no sample metrics.</p>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <div id="announcer" class="sr-only" aria-live="polite"></div>
+  </body>
+</html>

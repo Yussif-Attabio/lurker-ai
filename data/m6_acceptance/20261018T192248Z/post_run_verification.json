@@ -1,0 +1,16 @@
+{
+  "artifact_version": "lurker-m6-post-run-verification-v1",
+  "status": "PASS",
+  "safe_regression_tests": 76,
+  "safe_regression_failures": 0,
+  "m6_specific_tests": 9,
+  "m6_specific_failures": 0,
+  "javascript_syntax_check": "PASS",
+  "localhost_guard_check": "PASS_REFUSED",
+  "frozen_config_checksum_preserved": true,
+  "decision_pattern_checksum_preserved": true,
+  "evaluation_runner_checksum_preserved": true,
+  "m5_published_artifact_checksum_preserved": true,
+  "protected_evaluation_data_accessed": false,
+  "aws_or_bedrock_calls_during_post_run_tests": 0
+}

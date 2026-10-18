@@ -1,0 +1,32 @@
+{
+  "artifact_version": "lurker-m6-demo-conversation-v1",
+  "source": "M2 non-held-out real-service acceptance conversation",
+  "description": "A short synthetic project-chat replay covering SILENT, REACT, and REPLY.",
+  "delay_bounds_seconds": {
+    "minimum": 1.0,
+    "maximum": 3.0
+  },
+  "messages": [
+    {
+      "step_id": "routine-plan",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "expected_action": "SILENT",
+      "delay_before_seconds": 1.0
+    },
+    {
+      "step_id": "celebration",
+      "sender": "Lea",
+      "text": "Congratulations everyone—we made the hackathon finals! 🎉",
+      "expected_action": "REACT",
+      "delay_before_seconds": 2.0
+    },
+    {
+      "step_id": "direct-api-question",
+      "sender": "Maya",
+      "text": "Lurker, please answer: why does the API return 401?",
+      "expected_action": "REPLY",
+      "delay_before_seconds": 2.5
+    }
+  ]
+}

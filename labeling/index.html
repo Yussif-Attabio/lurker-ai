@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Private human labeling interface for Lurker AI evaluation scenarios." />
+    <title>Lurker AI - Human Labeling</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">Lurker AI / Human evaluation</p>
+          <h1>Should Lurker speak?</h1>
+          <p class="intro">Review each synthetic conversation independently. Your answers stay in this browser until you export them.</p>
+        </div>
+        <div class="privacy-badge">Local only · No model predictions</div>
+      </header>
+
+      <section id="setup" class="panel setup" aria-labelledby="setup-title">
+        <div>
+          <p class="step-label">Step 1 of 2</p>
+          <h2 id="setup-title">Choose your evaluator slot</h2>
+          <p>Use only the slot assigned to you. You will not see anyone else’s answers.</p>
+        </div>
+        <div class="slot-grid" role="group" aria-label="Evaluator slot">
+          <button class="slot" data-slot="a1"><span>Evaluator 1</span><small>Private CSV export</small></button>
+          <button class="slot" data-slot="a2"><span>Evaluator 2</span><small>Private CSV export</small></button>
+          <button class="slot" data-slot="a3"><span>Evaluator 3</span><small>Private CSV export</small></button>
+        </div>
+        <div class="ground-rules">
+          <h3>Before you begin</h3>
+          <ul>
+            <li>Judge only the conversation shown. Do not consult another evaluator.</li>
+            <li>Choose what a quiet, useful group-chat assistant should do next.</li>
+            <li>Do not try to balance the labels. There are no model answers or scores shown here.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="workspace" class="workspace hidden" aria-live="polite">
+        <aside class="rubric panel" aria-labelledby="rubric-title">
+          <p class="step-label">Decision guide</p>
+          <h2 id="rubric-title">Use the same rule every time</h2>
+          <dl>
+            <div class="rubric-item silent"><dt>SILENT</dt><dd>No response would improve the conversation. Choose this for routine updates, settled decisions, ordinary back-and-forth, an adequately answered question, or conversational closure where an emoji would add noise.</dd></div>
+            <div class="rubric-item react"><dt>REACT</dt><dd>One lightweight emoji would add genuine social value—celebration, support, meaningful gratitude, recovery, or clearly shared humor—but no written help is needed.</dd></div>
+            <div class="rubric-item reply"><dt>REPLY</dt><dd>A person still needs information, help, judgment, a requested transformation, or a clarifying question. Requests can be direct or indirect and do not need a question mark.</dd></div>
+          </dl>
+          <div class="tie-breaker">
+            <h3>REPLY or not?</h3>
+            <p>Read the recent context first. A question that another person already answered adequately is SILENT. A still-unanswered request is REPLY, even without question punctuation. Mentioning Lurker by name is not enough unless the message asks it to do something.</p>
+          </div>
+          <div class="tie-breaker">
+            <h3>REACT or SILENT?</h3>
+            <p>Imagine Lurker does nothing. If one small acknowledgment would make the exchange noticeably warmer, more supportive, or more complete, choose REACT. If the chat already feels complete and an emoji would only announce Lurker's presence, choose SILENT.</p>
+            <p>Do not choose REACT just because a message is positive or could technically receive an emoji.</p>
+          </div>
+          <p class="hint">Keyboard: <kbd>1</kbd> Silent · <kbd>2</kbd> React · <kbd>3</kbd> Reply</p>
+        </aside>
+
+        <section class="panel case-panel" aria-labelledby="case-heading">
+          <div class="case-topline">
+            <div>
+              <p id="evaluator-name" class="step-label"></p>
+              <h2 id="case-heading">Scenario</h2>
+            </div>
+          </div>
+
+          <div class="progress-row">
+            <span id="progress-text">Loading scenarios</span>
+            <div class="progress-track" role="progressbar" aria-label="Labeling progress" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><span id="progress-fill"></span></div>
+          </div>
+
+          <div id="conversation" class="conversation"></div>
+
+          <fieldset class="choices">
+            <legend>What should Lurker do?</legend>
+            <button class="choice silent" data-choice="SILENT"><strong>1 · SILENT</strong><span>Say nothing</span></button>
+            <button class="choice react" data-choice="REACT"><strong>2 · REACT</strong><span>Emoji acknowledgment</span></button>
+            <button class="choice reply" data-choice="REPLY"><strong>3 · REPLY</strong><span>Write a helpful response</span></button>
+          </fieldset>
+
+          <div class="navigation">
+            <button id="previous" class="secondary">← Previous</button>
+            <span id="position">Scenario</span>
+            <button id="next" class="secondary">Next →</button>
+          </div>
+        </section>
+
+        <aside class="panel export-panel">
+          <p class="step-label">Step 2 of 2</p>
+          <h2>Export your answers</h2>
+          <p>Your progress saves automatically on this device. Export after every scenario is labeled.</p>
+          <button id="export" class="primary" disabled>Export my CSV</button>
+          <label class="import-label" for="import-file">Resume from your CSV</label>
+          <input id="import-file" type="file" accept=".csv,text/csv" />
+          <button id="change-slot" class="text-button">Change evaluator slot</button>
+          <button id="reset" class="text-button danger">Clear this slot’s answers</button>
+          <p id="status" class="status" role="status"></p>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

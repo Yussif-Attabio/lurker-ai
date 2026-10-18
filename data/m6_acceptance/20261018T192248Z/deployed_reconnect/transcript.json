@@ -1,0 +1,167 @@
+[
+  {
+    "direction": "connection",
+    "at": "2026-10-18T19:39:22.813191+00:00",
+    "connection": 1,
+    "event": {
+      "type": "connected",
+      "target": "deployed_instance"
+    }
+  },
+  {
+    "direction": "outbound",
+    "at": "2026-10-18T19:39:22.813406+00:00",
+    "connection": 1,
+    "step_id": "routine-plan",
+    "event": {
+      "type": "message",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow."
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:22.836721+00:00",
+    "connection": 1,
+    "event": {
+      "type": "chat",
+      "id": "da16cc80-9fcd-4ff3-9e30-f17a4eb45d4e",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "is_agent": false,
+      "ts": "2026-10-18T19:39:22.867311+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:24.220318+00:00",
+    "connection": 1,
+    "event": {
+      "type": "decision",
+      "message_id": "da16cc80-9fcd-4ff3-9e30-f17a4eb45d4e",
+      "raw_choice": "SILENT",
+      "confidence": 0.4553,
+      "final_action": "SILENT",
+      "downgraded": false,
+      "reason": "chosen",
+      "decider_latency_ms": 1382.753915999956,
+      "mock": false,
+      "ts": "2026-10-18T19:39:24.250809+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:24.220419+00:00",
+    "connection": 1,
+    "event": {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 1,
+        "silent": 1,
+        "react": 0,
+        "reply": 0,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 1
+      },
+      "ts": "2026-10-18T19:39:24.250809+00:00"
+    }
+  },
+  {
+    "direction": "connection",
+    "at": "2026-10-18T19:39:24.220440+00:00",
+    "connection": 1,
+    "event": {
+      "type": "closed_by_client"
+    }
+  },
+  {
+    "direction": "connection",
+    "at": "2026-10-18T19:39:24.298257+00:00",
+    "connection": 2,
+    "event": {
+      "type": "connected",
+      "target": "deployed_instance"
+    }
+  },
+  {
+    "direction": "outbound",
+    "at": "2026-10-18T19:39:24.298640+00:00",
+    "connection": 2,
+    "step_id": "celebration",
+    "event": {
+      "type": "message",
+      "sender": "Lea",
+      "text": "Congratulations everyone\u2014we made the hackathon finals! \ud83c\udf89"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:24.323295+00:00",
+    "connection": 2,
+    "event": {
+      "type": "chat",
+      "id": "ccde6833-84ca-47a7-b247-b1b55a32e1a2",
+      "sender": "Lea",
+      "text": "Congratulations everyone\u2014we made the hackathon finals! \ud83c\udf89",
+      "is_agent": false,
+      "ts": "2026-10-18T19:39:24.354635+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:25.979209+00:00",
+    "connection": 2,
+    "event": {
+      "type": "reaction",
+      "message_id": "ccde6833-84ca-47a7-b247-b1b55a32e1a2",
+      "emoji": "\ud83c\udf89",
+      "ts": "2026-10-18T19:39:25.916265+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:25.979348+00:00",
+    "connection": 2,
+    "event": {
+      "type": "decision",
+      "message_id": "ccde6833-84ca-47a7-b247-b1b55a32e1a2",
+      "raw_choice": "REACT",
+      "confidence": 0.2398,
+      "final_action": "REACT",
+      "downgraded": false,
+      "reason": "confident",
+      "decider_latency_ms": 1560.8700129999988,
+      "mock": false,
+      "ts": "2026-10-18T19:39:25.916538+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:25.979392+00:00",
+    "connection": 2,
+    "event": {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 2,
+        "silent": 1,
+        "react": 1,
+        "reply": 0,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 2
+      },
+      "ts": "2026-10-18T19:39:25.916538+00:00"
+    }
+  },
+  {
+    "direction": "connection",
+    "at": "2026-10-18T19:39:25.979417+00:00",
+    "connection": 2,
+    "event": {
+      "type": "closed_by_client"
+    }
+  }
+]

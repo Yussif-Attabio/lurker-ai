@@ -1,0 +1,23 @@
+{
+  "artifact_version": "lurker-m6-local-drills-v1",
+  "status": "PASS",
+  "generated_at": "2026-10-18T19:32:35.981140+00:00",
+  "scope": "local_offline_injected_failures",
+  "drills": [
+    "decider_timeout",
+    "bedrock_error",
+    "websocket_reconnect"
+  ],
+  "drill_statuses": {
+    "decider_timeout": "PASS",
+    "bedrock_error": "PASS",
+    "websocket_reconnect": "PASS"
+  },
+  "real_decider_calls": 0,
+  "real_bedrock_calls": 0,
+  "aws_resources_launched": false,
+  "protected_evaluation_data_accessed": false,
+  "m5_configuration_changed": false,
+  "m6_deployed_acceptance": "NOT_RUN_REQUIRES_SEPARATE_APPROVAL",
+  "production_readiness": false
+}

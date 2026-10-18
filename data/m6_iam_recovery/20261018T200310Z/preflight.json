@@ -1,0 +1,123 @@
+{
+  "artifact_version": "lurker-m6-recovery-preflight-v1",
+  "checked_at": "2026-10-18T20:03:10Z",
+  "recommendation": "NO_GO",
+  "blocking_reason": "Effective AWS Organizations SCP clearance is unavailable from this member account and has not been established by an authorized management-account administrator.",
+  "scope": {
+    "region": "us-east-2",
+    "instance_type": "m7i.2xlarge",
+    "runtime_limit_minutes": 50,
+    "operational_cost_ceiling_usd": 0.55,
+    "maximum_bedrock_calls_if_later_authorized": 3
+  },
+  "scp_clearance": {
+    "account_type": "ORGANIZATION_MEMBER_ACCOUNT",
+    "direct_inspection": "DENIED_TO_CURRENT_IDENTITY",
+    "denied_read_actions": [
+      "organizations:ListRoots",
+      "organizations:ListParents",
+      "organizations:ListPolicies",
+      "organizations:ListPoliciesForTarget"
+    ],
+    "permission_assumed": false,
+    "status": "UNVERIFIED_BLOCKER",
+    "authorized_alternative": "Organizations management-account administrator review and dated redacted export or attestation",
+    "runtime_canary_alternative": "Requires separate authorization because it would invoke Bedrock"
+  },
+  "pricing": {
+    "ec2_m7i_2xlarge_us_east_2_usd_per_hour": 0.4032,
+    "gp3_us_east_2_usd_per_gb_month": 0.08,
+    "public_ipv4_usd_per_hour": 0.005,
+    "bedrock_haiku_4_5_us_input_usd_per_million_tokens": 1.1,
+    "bedrock_haiku_4_5_us_output_usd_per_million_tokens": 5.5,
+    "ec2_ebs_ipv4_source": "AWS Price List API read-only query",
+    "bedrock_source": "Official AWS Bedrock pricing page and AWS-published Haiku 4.5 regional pricing table",
+    "checked_without_credit_assumption": true
+  },
+  "cost_guard": {
+    "runtime_minutes": 50,
+    "ec2_usd": 0.336,
+    "encrypted_40_gb_gp3_usd": 0.003653,
+    "one_public_ipv4_usd": 0.004167,
+    "three_bedrock_calls_conservative_usd": 0.00594,
+    "subtotal_usd": 0.34976,
+    "operational_contingency_usd": 0.1,
+    "guarded_total_usd": 0.44976,
+    "authorized_ceiling_usd": 0.55,
+    "headroom_usd": 0.10024,
+    "within_ceiling": true,
+    "likely_15_minute_total_usd": 0.1042
+  },
+  "capacity_and_profile": {
+    "instance_type_offered_in_us_east_2": true,
+    "instance_vcpus": 8,
+    "standard_on_demand_vcpu_quota": 16,
+    "quota_sufficient": true,
+    "inference_profile_id": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "inference_profile_type": "SYSTEM_DEFINED",
+    "inference_profile_status": "ACTIVE",
+    "destination_regions": [
+      "us-east-1",
+      "us-east-2",
+      "us-west-2"
+    ],
+    "requests_per_minute_quota": 10,
+    "tokens_per_minute_quota": 5000000
+  },
+  "iam_policy": {
+    "template": "deploy/m6_bedrock_invoke_policy.template.json",
+    "template_sha256": "bdb470ee82a2d4093ec3819167380aba2f89e6afedea1ec58aaa9b7e95c63242",
+    "actions": [
+      "bedrock:InvokeModel"
+    ],
+    "profile_resource_simulation": "allowed",
+    "foundation_model_resource_simulations": {
+      "us-east-1": "allowed",
+      "us-east-2": "allowed",
+      "us-west-2": "allowed"
+    },
+    "aws_access_analyzer_findings": [],
+    "required_context_keys": [
+      "bedrock:InferenceProfileArn"
+    ],
+    "broad_admin_access": false,
+    "effective_permission_status": "IDENTITY_POLICY_PASS_SCP_UNVERIFIED"
+  },
+  "safeguards": {
+    "bootstrap_script": "deploy/m6_ec2_bootstrap.sh",
+    "bootstrap_script_sha256": "760404d5d2bcda66a42b68ecc1f2642e849cc9d153f5229a3bab26bdc983cfad",
+    "shell_syntax": "PASS",
+    "systemd_termination_timer_minutes": 50,
+    "shutdown_command_present_once": true,
+    "instance_initiated_shutdown_behavior_required": "terminate",
+    "runtime_activation_check": "MUST_PASS_AFTER_LAUNCH_BEFORE_TESTS",
+    "launch_if_guard_missing": false,
+    "bedrock_server_call_cap_required": 3,
+    "retry_policy": "none"
+  },
+  "offline_tests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "preservation_hashes": {
+    "M6_ACCEPTANCE.md": "270e2412fec79ed97a79d62017ab2b00e123fecb8b9aa05007914457159de9d4",
+    "data/m6_acceptance/20261018T192248Z/summary.json": "c34f2cfacdb4102e9d4ca8b290e141da3640784254e29db310bf8020501b384b",
+    "data/m6_acceptance/20261018T192248Z/deployment_measurements.json": "9927c3d810ae1330d8ffa25c63eb99fd4d38b1b7a8dfdf00e84efe90308ea4be",
+    "data/m6_acceptance/20261018T192248Z/replays/20261018T193946930548Z/replay_01/post_failure_decisions_redacted.json": "e0cff83d816483089965d1a5fc30116076afeb0d7ce917181452c8ee71f339c2",
+    "config/default.yaml": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+    "decision_pattern/lurker_gate.py": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b",
+    "scripts/run_eval.py": "efa7a8107f322e045ab03ee686ebfe78d7289b89158134e5a2819095aa87724a",
+    "results/published.json": "35d97340eebba2a2a34ecdfd816246f8a81fdd00712531b2dba1d92ed239805c"
+  },
+  "actions_performed": {
+    "ec2_launched": false,
+    "iam_modified": false,
+    "bedrock_invoked": false,
+    "deployed_replays_run": false,
+    "protected_evaluation_data_accessed": false,
+    "incremental_cost_usd": 0
+  },
+  "m6_status": "NO_GO",
+  "m5_performance_no_go_preserved": true,
+  "production_readiness": false
+}

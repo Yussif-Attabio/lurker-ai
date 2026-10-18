@@ -1,0 +1,180 @@
+{
+  "artifact_version": "lurker-m5-recovery-combined-reference-comparison-v1",
+  "status": "EXPLORATORY_ONLY",
+  "context_k": 3,
+  "label_basis": "combined_three_contributor_reference",
+  "contributor_count": 3,
+  "independent_decisions_available": false,
+  "group_consensus_verified": false,
+  "inter_rater_agreement_calculable": false,
+  "thresholds": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "model_revision": "216d1ccb46a9e9b036eb9187b248db98480f77d4",
+  "baseline": {
+    "accuracy": {
+      "numerator": 64,
+      "denominator": 90,
+      "rate": 0.7111111111111111
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 9,
+      "denominator": 30,
+      "rate": 0.3
+    },
+    "missed_help_rate": {
+      "numerator": 1,
+      "denominator": 30,
+      "rate": 0.03333333333333333
+    },
+    "react_precision": {
+      "numerator": 14,
+      "denominator": 20,
+      "rate": 0.7
+    },
+    "react_recall": {
+      "numerator": 14,
+      "denominator": 30,
+      "rate": 0.4666666666666667
+    },
+    "latency_ms": {
+      "count": 90,
+      "p50": 581.5370205018553,
+      "p95": 1100.7977793520695
+    },
+    "prediction_counts": {
+      "SILENT": 37,
+      "REACT": 20,
+      "REPLY": 33
+    },
+    "error_count": 0
+  },
+  "candidate": {
+    "accuracy": {
+      "numerator": 49,
+      "denominator": 90,
+      "rate": 0.5444444444444444
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "rate": 0.0
+    },
+    "missed_help_rate": {
+      "numerator": 11,
+      "denominator": 30,
+      "rate": 0.36666666666666664
+    },
+    "react_precision": {
+      "numerator": 0,
+      "denominator": 0,
+      "rate": null
+    },
+    "react_recall": {
+      "numerator": 0,
+      "denominator": 30,
+      "rate": 0.0
+    },
+    "latency_ms": {
+      "count": 90,
+      "p50": 578.2248334980977,
+      "p95": 1519.6852649467473
+    },
+    "prediction_counts": {
+      "SILENT": 71,
+      "REACT": 0,
+      "REPLY": 19
+    },
+    "error_count": 0
+  },
+  "rate_deltas_candidate_minus_baseline": {
+    "accuracy": -0.16666666666666674,
+    "unnecessary_interruption_rate": -0.3,
+    "missed_help_rate": 0.3333333333333333,
+    "react_precision": null,
+    "react_recall": -0.4666666666666667
+  },
+  "decision_transitions": {
+    "REACT:REACT->SILENT": 14,
+    "REACT:REPLY->SILENT": 1,
+    "REACT:SILENT->SILENT": 15,
+    "REPLY:REPLY->REPLY": 19,
+    "REPLY:REPLY->SILENT": 10,
+    "REPLY:SILENT->SILENT": 1,
+    "SILENT:REACT->SILENT": 6,
+    "SILENT:REPLY->SILENT": 3,
+    "SILENT:SILENT->SILENT": 21
+  },
+  "regression_checks": {
+    "new_unnecessary_interruptions": [],
+    "repaired_unnecessary_interruptions": [
+      "rc072",
+      "rc076",
+      "rc077",
+      "rc087",
+      "rc097",
+      "rc100",
+      "rc108",
+      "rc121",
+      "rc123"
+    ],
+    "new_unnecessary_reacts": [],
+    "repaired_unnecessary_reacts": [
+      "rc072",
+      "rc076",
+      "rc077",
+      "rc087",
+      "rc100",
+      "rc121"
+    ],
+    "new_missed_requests": [
+      "rc136",
+      "rc137",
+      "rc144",
+      "rc148",
+      "rc150",
+      "rc154",
+      "rc155",
+      "rc156",
+      "rc157",
+      "rc159"
+    ],
+    "repaired_missed_requests": [],
+    "new_correct_reacts": [],
+    "lost_correct_reacts": [
+      "rc066",
+      "rc068",
+      "rc070",
+      "rc080",
+      "rc096",
+      "rc101",
+      "rc102",
+      "rc103",
+      "rc104",
+      "rc116",
+      "rc119",
+      "rc122",
+      "rc126",
+      "rc129"
+    ]
+  },
+  "review_gate": {
+    "accuracy_not_worse": false,
+    "interruption_improved": true,
+    "missed_help_not_worse": false,
+    "react_recall_improved": false,
+    "react_precision_at_least_70pct": false,
+    "zero_new_unnecessary_reactions": true,
+    "zero_new_missed_requests": false,
+    "zero_errors": true
+  },
+  "all_review_gates_met": false,
+  "production_candidate_applied": false,
+  "production_thresholds_changed": false,
+  "policy_changed": false,
+  "reserve_opened": false,
+  "heldout_opened": false,
+  "aws_or_bedrock_calls": 0
+}

@@ -1,0 +1,123 @@
+{
+  "artifact_version": "lurker-m5-recovery-candidate-audit-v1",
+  "status": "PASS",
+  "scope": "candidate preparation and blind labeling infrastructure only",
+  "candidate_count": 195,
+  "family_count": 39,
+  "design_action_counts": {
+    "SILENT": 65,
+    "REACT": 65,
+    "REPLY": 65
+  },
+  "category_counts": {
+    "already_answered": 15,
+    "ambiguous": 5,
+    "casual": 75,
+    "direct_request": 30,
+    "joke": 5,
+    "mention": 5,
+    "ongoing_discussion": 25,
+    "technical_question": 35
+  },
+  "history_length_counts": {
+    "0": 93,
+    "1": 71,
+    "2": 30,
+    "3": 1
+  },
+  "semantic_questions_without_question_mark": 5,
+  "cross_family_near_duplicate_flags": [],
+  "label_templates": {
+    "a1": {
+      "path": "eval/recovery/label_templates/recovery_labels_a1.csv",
+      "row_count": 195,
+      "all_labels_blank": true,
+      "unique_ids": 195,
+      "sha256": "9830729618ff42183517cc8a029bfa64925f39d23c1b23eafce263aea31d1977"
+    },
+    "a2": {
+      "path": "eval/recovery/label_templates/recovery_labels_a2.csv",
+      "row_count": 195,
+      "all_labels_blank": true,
+      "unique_ids": 195,
+      "sha256": "051999a9a3dd9609173fc00c03b6a1952d8e3fbcf5056df86f6ed563c5ea8f7f"
+    },
+    "a3": {
+      "path": "eval/recovery/label_templates/recovery_labels_a3.csv",
+      "row_count": 195,
+      "all_labels_blank": true,
+      "unique_ids": 195,
+      "sha256": "5554e22ae1eff216a48008c2d07de7e79997d1f66177e7958749ae2ac02990ec"
+    }
+  },
+  "candidate_sha256": "bae691b2ef2121986f41bc40c8976f2dd1ba28e989d33736876e7a97790bb685",
+  "design_manifest_sha256": "b3fd1825137915a9d48394e3cc972d9a4b70fb13d307de2b7c04f1308c16afd2",
+  "original_evidence": {
+    "manifest": "results/m5_heldout/20261017T053719Z/evidence.sha256",
+    "checks": [
+      {
+        "path": "heldout_locked.jsonl",
+        "expected": "76753bd8e2820d8c82888f78d2784cc02913ab73e4ef9c128a28cd44059ee876",
+        "observed": "76753bd8e2820d8c82888f78d2784cc02913ab73e4ef9c128a28cd44059ee876",
+        "pass": true
+      },
+      {
+        "path": "heldout_locked.jsonl.manifest.json",
+        "expected": "151de30c649f084ab48d683c7214ba1d3652ecd49300b4ab13755e88cf3afb67",
+        "observed": "151de30c649f084ab48d683c7214ba1d3652ecd49300b4ab13755e88cf3afb67",
+        "pass": true
+      },
+      {
+        "path": "decider/20261017T053818Z/per_case.csv",
+        "expected": "9ad98baa894526266d0a405beeb08daa5621a65db3def039d2d3df46776fd677",
+        "observed": "9ad98baa894526266d0a405beeb08daa5621a65db3def039d2d3df46776fd677",
+        "pass": true
+      },
+      {
+        "path": "decider/20261017T053818Z/results.json",
+        "expected": "cf5536909c5343da200f724c731c8ce66a451cc6747becc9cefb514a925601f1",
+        "observed": "cf5536909c5343da200f724c731c8ce66a451cc6747becc9cefb514a925601f1",
+        "pass": true
+      },
+      {
+        "path": "decider/20261017T053818Z/report.md",
+        "expected": "0386120bdac8762d0eb0f559ea6cebf7472f188810ee3ce70745327c9f0a8677",
+        "observed": "0386120bdac8762d0eb0f559ea6cebf7472f188810ee3ce70745327c9f0a8677",
+        "pass": true
+      },
+      {
+        "path": "decider/20261017T053818Z/config_snapshot.yaml",
+        "expected": "cd1c8697f3a06b021ae4ed46aaa69155656753af23b67836b02b0537d5113a14",
+        "observed": "cd1c8697f3a06b021ae4ed46aaa69155656753af23b67836b02b0537d5113a14",
+        "pass": true
+      },
+      {
+        "path": "decider/20261017T053818Z/run_manifest.json",
+        "expected": "d9ef4b6a393fb36a46e939fb164f52c23d1683f852cfa6318033dc41e1150d59",
+        "observed": "d9ef4b6a393fb36a46e939fb164f52c23d1683f852cfa6318033dc41e1150d59",
+        "pass": true
+      }
+    ],
+    "pass": true
+  },
+  "checks": {
+    "candidate_count_195": true,
+    "family_count_39": true,
+    "five_per_family": true,
+    "design_balance_65_each": true,
+    "unique_ids": true,
+    "exact_duplicates_zero": true,
+    "cross_family_near_duplicate_flags_zero": true,
+    "public_payload_blind": true,
+    "three_distinct_orders": true,
+    "templates_complete_and_blank": true,
+    "punctuation_boundary_present": true,
+    "generation_reproducible": true,
+    "original_nogo_evidence_unchanged": true,
+    "no_human_labels_created": true,
+    "no_new_split_created": true
+  },
+  "model_calls": 0,
+  "aws_or_bedrock_calls": 0,
+  "original_or_new_heldout_evaluated": false
+}

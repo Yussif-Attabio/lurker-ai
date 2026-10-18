@@ -1,0 +1,7 @@
+context_k: 3
+decider_device: cpu
+decider_model_id: StrandsAgents/strands-decider-2B-qwen3.5-v1-2610
+decider_timeout_ms: 120000
+force_reply_on_mention: false
+react_threshold: 0.04
+reply_threshold: 0.2

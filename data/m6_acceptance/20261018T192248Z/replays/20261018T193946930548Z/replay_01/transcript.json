@@ -1,0 +1,188 @@
+[
+  {
+    "direction": "connection",
+    "at": "2026-10-18T19:39:47.073921+00:00",
+    "event": {
+      "type": "connected",
+      "target": "configured_websocket"
+    }
+  },
+  {
+    "direction": "outbound",
+    "at": "2026-10-18T19:39:48.075712+00:00",
+    "event": {
+      "type": "message",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "step_id": "routine-plan"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:48.102752+00:00",
+    "event": {
+      "type": "chat",
+      "id": "2d1a4ed9-9a3b-4331-a2f4-edcef8877483",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "is_agent": false,
+      "ts": "2026-10-18T19:39:48.133302+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:49.514209+00:00",
+    "event": {
+      "type": "decision",
+      "message_id": "2d1a4ed9-9a3b-4331-a2f4-edcef8877483",
+      "raw_choice": "SILENT",
+      "confidence": 0.4553,
+      "final_action": "SILENT",
+      "downgraded": false,
+      "reason": "chosen",
+      "decider_latency_ms": 1364.2602710000347,
+      "mock": false,
+      "ts": "2026-10-18T19:39:49.498322+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:49.514323+00:00",
+    "event": {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 1,
+        "silent": 1,
+        "react": 0,
+        "reply": 0,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 1
+      },
+      "ts": "2026-10-18T19:39:49.498322+00:00"
+    }
+  },
+  {
+    "direction": "outbound",
+    "at": "2026-10-18T19:39:51.516031+00:00",
+    "event": {
+      "type": "message",
+      "sender": "Lea",
+      "text": "Congratulations everyone\u2014we made the hackathon finals! \ud83c\udf89",
+      "step_id": "celebration"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:51.542453+00:00",
+    "event": {
+      "type": "chat",
+      "id": "185103e3-3152-4ba9-9bc9-d63fc59c038b",
+      "sender": "Lea",
+      "text": "Congratulations everyone\u2014we made the hackathon finals! \ud83c\udf89",
+      "is_agent": false,
+      "ts": "2026-10-18T19:39:51.573597+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:53.115220+00:00",
+    "event": {
+      "type": "reaction",
+      "message_id": "185103e3-3152-4ba9-9bc9-d63fc59c038b",
+      "emoji": "\ud83c\udf89",
+      "ts": "2026-10-18T19:39:53.117503+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:53.115313+00:00",
+    "event": {
+      "type": "decision",
+      "message_id": "185103e3-3152-4ba9-9bc9-d63fc59c038b",
+      "raw_choice": "REACT",
+      "confidence": 0.2398,
+      "final_action": "REACT",
+      "downgraded": false,
+      "reason": "confident",
+      "decider_latency_ms": 1543.1642309999916,
+      "mock": false,
+      "ts": "2026-10-18T19:39:53.117769+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:53.115353+00:00",
+    "event": {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 2,
+        "silent": 1,
+        "react": 1,
+        "reply": 0,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 2
+      },
+      "ts": "2026-10-18T19:39:53.117769+00:00"
+    }
+  },
+  {
+    "direction": "outbound",
+    "at": "2026-10-18T19:39:55.617167+00:00",
+    "event": {
+      "type": "message",
+      "sender": "Maya",
+      "text": "Lurker, please answer: why does the API return 401?",
+      "step_id": "direct-api-question"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:55.643997+00:00",
+    "event": {
+      "type": "chat",
+      "id": "4e1ced5f-ccf2-4b14-b7c6-8a033ea5d5c8",
+      "sender": "Maya",
+      "text": "Lurker, please answer: why does the API return 401?",
+      "is_agent": false,
+      "ts": "2026-10-18T19:39:55.674985+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:57.386758+00:00",
+    "event": {
+      "type": "decision",
+      "message_id": "4e1ced5f-ccf2-4b14-b7c6-8a033ea5d5c8",
+      "raw_choice": "REPLY",
+      "confidence": 0.3842,
+      "final_action": "REPLY",
+      "downgraded": false,
+      "reason": "bedrock_error",
+      "decider_latency_ms": 1672.1056590000671,
+      "mock": false,
+      "ts": "2026-10-18T19:39:57.418090+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:39:57.386827+00:00",
+    "event": {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 3,
+        "silent": 1,
+        "react": 1,
+        "reply": 1,
+        "downgraded": 0,
+        "errors": 1,
+        "bedrock_calls_made": 1,
+        "bedrock_calls_avoided_vs_every_message": 2
+      },
+      "ts": "2026-10-18T19:39:57.418090+00:00"
+    }
+  }
+]

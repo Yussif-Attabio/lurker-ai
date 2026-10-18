@@ -1,0 +1,29 @@
+{
+  "artifact_version": "lurker-m6-browser-reconnect-v1",
+  "status": "PASS",
+  "recorded_on": "2026-10-18",
+  "scope": "local_mock_browser_reconnect",
+  "server": "isolated_loopback_mock",
+  "observations": {
+    "initial_connection": "Live",
+    "offline_connection": "Connection lost",
+    "recovered_connection": "Live",
+    "controls_disabled_while_offline": true,
+    "controls_restored_after_reconnect": true,
+    "decision_rows_before_disconnect": 3,
+    "decision_rows_after_reconnect": 3,
+    "post_reconnect_action": "REACT",
+    "post_reconnect_decision_rows": 4,
+    "post_reconnect_user_messages": 1,
+    "post_reconnect_reactions": 1,
+    "duplicate_decisions": 0,
+    "duplicate_messages": 0,
+    "duplicate_reactions": 0,
+    "console_errors": 0
+  },
+  "real_decider_calls": 0,
+  "real_bedrock_calls": 0,
+  "aws_resources_launched": false,
+  "protected_evaluation_data_accessed": false,
+  "production_readiness": false
+}

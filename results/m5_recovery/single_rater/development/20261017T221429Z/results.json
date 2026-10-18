@@ -1,0 +1,288 @@
+{
+  "artifact_version": "lurker-m5-recovery-single-rater-eval-v1",
+  "publication_status": "unpublished",
+  "generated_at": "2026-10-17T22:14:29.053739+00:00",
+  "split": "tuning",
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "device": "cpu",
+  "hardware": "Darwin arm64 / arm",
+  "policy_mode": "configured_thresholds",
+  "thresholds": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "criteria": {
+    "accuracy_min": 0.7,
+    "unnecessary_interruption_rate_max": 0.2,
+    "missed_help_rate_max": 0.25
+  },
+  "context_metrics": {
+    "0": {
+      "total_count": 90,
+      "non_ambiguous_count": 90,
+      "ambiguous_count": 0,
+      "error_count": 0,
+      "consensus_counts": {
+        "SILENT": 30,
+        "REACT": 30,
+        "REPLY": 30
+      },
+      "prediction_counts": {
+        "SILENT": 39,
+        "REACT": 23,
+        "REPLY": 28
+      },
+      "accuracy": {
+        "numerator": 65,
+        "denominator": 90,
+        "rate": 0.7222222222222222
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 8,
+        "denominator": 30,
+        "rate": 0.26666666666666666
+      },
+      "missed_help_rate": {
+        "numerator": 3,
+        "denominator": 30,
+        "rate": 0.1
+      },
+      "react_precision": {
+        "numerator": 16,
+        "denominator": 23,
+        "rate": 0.6956521739130435
+      },
+      "react_recall": {
+        "numerator": 16,
+        "denominator": 30,
+        "rate": 0.5333333333333333
+      },
+      "low_confidence": {
+        "downgraded_count": 5,
+        "before_accuracy": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "after_accuracy": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 58,
+          "denominator": 80,
+          "rate": 0.725
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 6,
+          "denominator": 9,
+          "rate": 0.6666666666666666
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 90,
+        "p50": 542.7098334985203,
+        "p95": 937.7385484011024
+      },
+      "ambiguous_predictions": []
+    },
+    "3": {
+      "total_count": 90,
+      "non_ambiguous_count": 90,
+      "ambiguous_count": 0,
+      "error_count": 0,
+      "consensus_counts": {
+        "SILENT": 30,
+        "REACT": 30,
+        "REPLY": 30
+      },
+      "prediction_counts": {
+        "SILENT": 37,
+        "REACT": 20,
+        "REPLY": 33
+      },
+      "accuracy": {
+        "numerator": 64,
+        "denominator": 90,
+        "rate": 0.7111111111111111
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 9,
+        "denominator": 30,
+        "rate": 0.3
+      },
+      "missed_help_rate": {
+        "numerator": 1,
+        "denominator": 30,
+        "rate": 0.03333333333333333
+      },
+      "react_precision": {
+        "numerator": 14,
+        "denominator": 20,
+        "rate": 0.7
+      },
+      "react_recall": {
+        "numerator": 14,
+        "denominator": 30,
+        "rate": 0.4666666666666667
+      },
+      "low_confidence": {
+        "downgraded_count": 5,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "after_accuracy": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 55,
+          "denominator": 79,
+          "rate": 0.6962025316455697
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 8,
+          "denominator": 10,
+          "rate": 0.8
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 90,
+        "p50": 581.5370205018553,
+        "p95": 1100.7977793520695
+      },
+      "ambiguous_predictions": []
+    },
+    "5": {
+      "total_count": 90,
+      "non_ambiguous_count": 90,
+      "ambiguous_count": 0,
+      "error_count": 0,
+      "consensus_counts": {
+        "SILENT": 30,
+        "REACT": 30,
+        "REPLY": 30
+      },
+      "prediction_counts": {
+        "SILENT": 37,
+        "REACT": 20,
+        "REPLY": 33
+      },
+      "accuracy": {
+        "numerator": 64,
+        "denominator": 90,
+        "rate": 0.7111111111111111
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 9,
+        "denominator": 30,
+        "rate": 0.3
+      },
+      "missed_help_rate": {
+        "numerator": 1,
+        "denominator": 30,
+        "rate": 0.03333333333333333
+      },
+      "react_precision": {
+        "numerator": 14,
+        "denominator": 20,
+        "rate": 0.7
+      },
+      "react_recall": {
+        "numerator": 14,
+        "denominator": 30,
+        "rate": 0.4666666666666667
+      },
+      "low_confidence": {
+        "downgraded_count": 5,
+        "before_accuracy": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        },
+        "after_accuracy": {
+          "numerator": 2,
+          "denominator": 5,
+          "rate": 0.4
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 55,
+          "denominator": 79,
+          "rate": 0.6962025316455697
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 8,
+          "denominator": 10,
+          "rate": 0.8
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 90,
+        "p50": 586.2236665016098,
+        "p95": 1292.1660204974607
+      },
+      "ambiguous_predictions": []
+    }
+  },
+  "status": "EXPLORATORY_ONLY",
+  "label_basis": "single_evaluator",
+  "evaluator_id": "a1",
+  "human_consensus": false,
+  "final_m5_evidence": false,
+  "react_criteria": {
+    "precision_min": 0.7,
+    "recall_min": 0.7
+  }
+}

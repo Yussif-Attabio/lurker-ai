@@ -1,0 +1,38 @@
+{
+  "context_k": 3,
+  "criteria": {
+    "accuracy_min": 0.7,
+    "unnecessary_interruption_rate_max": 0.2,
+    "missed_help_rate_max": 0.25
+  },
+  "threshold_evidence": {
+    "scored_consensus_counts": {
+      "SILENT": 17,
+      "REACT": 4,
+      "REPLY": 10
+    },
+    "scored_raw_choice_counts": {
+      "SILENT": 11,
+      "REACT": 4,
+      "REPLY": 16
+    },
+    "unidentifiable_thresholds": []
+  },
+  "recommendation": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04,
+    "accuracy": 0.8387096774193549,
+    "accuracy_n": 26,
+    "accuracy_d": 31,
+    "unnecessary_interruption_rate": 0.17647058823529413,
+    "unnecessary_interruption_n": 3,
+    "unnecessary_interruption_d": 17,
+    "missed_help_rate": 0.1,
+    "missed_help_n": 1,
+    "missed_help_d": 10,
+    "downgraded_count": 5,
+    "meets_all_criteria": true
+  },
+  "human_approval_required": true,
+  "instructions": "Review the sweep and evidence limitations, then copy approved thresholds into config/default.yaml. A 1.0 value for an unidentifiable threshold is a conservative fallback, not an empirically tuned result."
+}

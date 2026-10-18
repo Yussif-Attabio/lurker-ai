@@ -1,0 +1,45 @@
+{
+  "artifact_version": "lurker-m5-recovery-single-rater-wording-run-v1",
+  "status": "EXPLORATORY_ONLY",
+  "variant": "m5-recovery-social-value-v1",
+  "development_only": true,
+  "label_basis": "single_evaluator",
+  "human_consensus": false,
+  "scenario_path": "eval/recovery/single_rater/development/development.jsonl",
+  "scenario_sha256": "7da2779e4b6cf39e14c264293dc80cb6b5a92c024364712657473d82d5ba2d85",
+  "split_manifest_sha256": "dc44afae58ea3af3898d3284247f6a3daabfbf68679af2006b53452da2da2efb",
+  "candidate_path": "config/wording_candidates/m5_recovery_social_value_v1.yaml",
+  "candidate_sha256": "b9919da3c8215b89f57f1f281be827264fc43d4202e291cebe9aaa9860407309",
+  "baseline_question_sha256": "9105c49e09721aa04094151739add6f3be7ea63b015f45a9f91b80f7a9794589",
+  "candidate_question_sha256": "93f2b16ce4f200d6ebc8a88c3e8c38fa7400632de7de0433228c76b87fee4a78",
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "model_revision": "216d1ccb46a9e9b036eb9187b248db98480f77d4",
+  "model_architecture_changed": false,
+  "policy_changed": false,
+  "thresholds": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "scenario_count": 90,
+  "expected_predictions": 270,
+  "actual_predictions": 270,
+  "context_values": [
+    0,
+    3,
+    5
+  ],
+  "mock": false,
+  "aws_or_bedrock_calls": 0,
+  "original_heldout_opened_by_runner": false,
+  "single_rater_reserve_opened_by_runner": false,
+  "new_heldout_created": false,
+  "production_configuration_changed": false,
+  "error_count": 0,
+  "observability": {
+    "adapter_initialization_ms": 9815.910334000364,
+    "peak_rss_bytes": 6091685888,
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.12.14"
+  }
+}

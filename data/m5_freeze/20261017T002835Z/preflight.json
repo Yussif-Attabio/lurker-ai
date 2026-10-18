@@ -1,0 +1,112 @@
+{
+  "artifact_version": "lurker-m5-freeze-preflight-v1",
+  "generated_at": "2026-10-17T00:31:56.484528+00:00",
+  "status": "PASS",
+  "freeze_file": "config/m5_frozen_evaluation.yaml",
+  "freeze_sha256": "52a54a7058f53886bc789d930670e6f74407603105b13c13d01238ca24658401",
+  "heldout_dataset_opened": false,
+  "model_loaded": false,
+  "aws_or_bedrock_calls": 0,
+  "checks": {
+    "sha256:config/default.yaml": {
+      "pass": true,
+      "expected": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+      "observed": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832"
+    },
+    "sha256:decision_pattern/lurker_gate.py": {
+      "pass": true,
+      "expected": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b",
+      "observed": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b"
+    },
+    "sha256:eval/metrics_def.py": {
+      "pass": true,
+      "expected": "25a9be06f73575bf149abfcc8f8c92448e1e8c964a9eab6d90c177421a6cf008",
+      "observed": "25a9be06f73575bf149abfcc8f8c92448e1e8c964a9eab6d90c177421a6cf008"
+    },
+    "sha256:eval/criteria.yaml": {
+      "pass": true,
+      "expected": "ef698be480b6e1ccde5da2e02137d043af96f48f875b1f8de1c1d7baa300b751",
+      "observed": "ef698be480b6e1ccde5da2e02137d043af96f48f875b1f8de1c1d7baa300b751"
+    },
+    "sha256:eval/tuning_scenarios.jsonl": {
+      "pass": true,
+      "expected": "380164308ad0fd97164fe25f5e336fa0b8902f7df1b769f6c33d981b3aa4bbed",
+      "observed": "380164308ad0fd97164fe25f5e336fa0b8902f7df1b769f6c33d981b3aa4bbed"
+    },
+    "sha256:src/lurker/context.py": {
+      "pass": true,
+      "expected": "de3e899137869d8d91652cafa6cdf4e407e7baa8246aa16beff6428bfb91c556",
+      "observed": "de3e899137869d8d91652cafa6cdf4e407e7baa8246aa16beff6428bfb91c556"
+    },
+    "sha256:src/lurker/decider_adapter.py": {
+      "pass": true,
+      "expected": "21742cce672af0716b0b7e7f6dc16eead1156510366c69d06927daf57c30f2fd",
+      "observed": "21742cce672af0716b0b7e7f6dc16eead1156510366c69d06927daf57c30f2fd"
+    },
+    "sha256:scripts/run_eval.py": {
+      "pass": true,
+      "expected": "efa7a8107f322e045ab03ee686ebfe78d7289b89158134e5a2819095aa87724a",
+      "observed": "efa7a8107f322e045ab03ee686ebfe78d7289b89158134e5a2819095aa87724a"
+    },
+    "sha256:scripts/prepare_heldout_unlock.py": {
+      "pass": true,
+      "expected": "f3241e0ba93ce2cac16fac03a3f6b43572a6b3c0c6d7070d5a62765d4de967a0",
+      "observed": "f3241e0ba93ce2cac16fac03a3f6b43572a6b3c0c6d7070d5a62765d4de967a0"
+    },
+    "sha256:scripts/verify_m5_freeze.py": {
+      "pass": true,
+      "expected": "3d7af69d42427d34b1e784fad2d3140f4310c0c5b4b799dd0462b4c57d2fdff6",
+      "observed": "3d7af69d42427d34b1e784fad2d3140f4310c0c5b4b799dd0462b4c57d2fdff6"
+    },
+    "sha256:M5_HELDOUT_PROCEDURE.md": {
+      "pass": true,
+      "expected": "b45beacb19891dd296e87bb3d4991369da696331260225fb547d581535ba8d7d",
+      "observed": "b45beacb19891dd296e87bb3d4991369da696331260225fb547d581535ba8d7d"
+    },
+    "frozen_configuration": {
+      "pass": true,
+      "expected_digest": "90adbd547d71d1766bcf3e0a254317104c0f7549ab02ca99cb09e650054981ed",
+      "observed_digest": "90adbd547d71d1766bcf3e0a254317104c0f7549ab02ca99cb09e650054981ed"
+    },
+    "tuning_dataset_isolation": {
+      "pass": true,
+      "path": "eval/tuning_scenarios.jsonl",
+      "row_count": 30,
+      "observed_splits": [
+        "tuning"
+      ],
+      "shared_or_heldout_source_opened": false
+    },
+    "model_revision": {
+      "pass": true,
+      "expected": {
+        "cache_ref": "216d1ccb46a9e9b036eb9187b248db98480f77d4",
+        "manifest_sha256": "874dfc3d47c22b5c50b387fabd1e549be483f6e29c127ec6f852125779fa3371",
+        "provenance_sha256": "8713fedb4e67fb6c60f41dc73c937635377506671e09978f92a2d447ac5264bd",
+        "strands_decider_config_sha256": "1d9625055e88c254d50089116992d08b0567286c9d6fcefb3c025922058ee65a",
+        "tokenizer_config_sha256": "8671bed7c852ce9e661be94f179a7b4ffd091c2a65aea0363e5501c20318ee45"
+      },
+      "observed": {
+        "cache_ref": "216d1ccb46a9e9b036eb9187b248db98480f77d4",
+        "manifest_sha256": "874dfc3d47c22b5c50b387fabd1e549be483f6e29c127ec6f852125779fa3371",
+        "provenance_sha256": "8713fedb4e67fb6c60f41dc73c937635377506671e09978f92a2d447ac5264bd",
+        "strands_decider_config_sha256": "1d9625055e88c254d50089116992d08b0567286c9d6fcefb3c025922058ee65a",
+        "tokenizer_config_sha256": "8671bed7c852ce9e661be94f179a7b4ffd091c2a65aea0363e5501c20318ee45"
+      }
+    },
+    "preserved_evidence:tuning": {
+      "pass": true,
+      "expected_file_count": 20,
+      "observed_file_count": 20,
+      "expected_tree_sha256": "4975f3062c0b637369ed6e3b3e5687dfb0d1c34f09e51dead1d9bbd1f67a2819",
+      "observed_tree_sha256": "4975f3062c0b637369ed6e3b3e5687dfb0d1c34f09e51dead1d9bbd1f67a2819"
+    },
+    "preserved_evidence:calibration": {
+      "pass": true,
+      "expected_file_count": 14,
+      "observed_file_count": 14,
+      "expected_tree_sha256": "e5479f8deeb3506c48288e4afc063ad4ccda7f0e404c2bf0478f8be4262e9030",
+      "observed_tree_sha256": "e5479f8deeb3506c48288e4afc063ad4ccda7f0e404c2bf0478f8be4262e9030"
+    }
+  }
+}

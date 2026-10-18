@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "actions": [
+    "SILENT",
+    "REACT",
+    "REPLY"
+  ],
+  "real_bedrock_reply_observed": true,
+  "bedrock_calls_made": 1,
+  "bedrock_input_tokens": 159,
+  "bedrock_output_tokens": 32,
+  "bedrock_latency_ms": 1072.449625000445,
+  "decider_latency_ms": [
+    1068.2800409995252,
+    599.7785840008873,
+    688.5639579995768
+  ],
+  "errors": [
+    null,
+    null,
+    null
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "artifact_version": "lurker-m5-recovery-single-rater-threshold-review-v1",
+  "status": "EXPLORATORY_ONLY",
+  "development_only": true,
+  "label_basis": "single_evaluator",
+  "human_consensus": false,
+  "context_k": 3,
+  "source_predictions_sha256": "6c0073dea53858405aef0d6230419441c515efb0897a4400ab42f5bb518372de",
+  "starting_baseline": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "proposed_recovery_criteria_not_frozen": {
+    "accuracy_min": 0.75,
+    "unnecessary_interruption_rate_max": 0.2,
+    "missed_help_rate_max": 0.25,
+    "react_precision_min": 0.7,
+    "react_recall_min": 0.7
+  },
+  "baseline_metrics": {
+    "total_count": 90,
+    "non_ambiguous_count": 90,
+    "ambiguous_count": 0,
+    "error_count": 0,
+    "consensus_counts": {
+      "SILENT": 30,
+      "REACT": 30,
+      "REPLY": 30
+    },
+    "prediction_counts": {
+      "SILENT": 37,
+      "REACT": 20,
+      "REPLY": 33
+    },
+    "accuracy": {
+      "numerator": 64,
+      "denominator": 90,
+      "rate": 0.7111111111111111
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 9,
+      "denominator": 30,
+      "rate": 0.3
+    },
+    "missed_help_rate": {
+      "numerator": 1,
+      "denominator": 30,
+      "rate": 0.03333333333333333
+    },
+    "react_precision": {
+      "numerator": 14,
+      "denominator": 20,
+      "rate": 0.7
+    },
+    "react_recall": {
+      "numerator": 14,
+      "denominator": 30,
+      "rate": 0.4666666666666667
+    },
+    "low_confidence": {
+      "downgraded_count": 5,
+      "before_accuracy": {
+        "numerator": 0,
+        "denominator": 5,
+        "rate": 0.0
+      },
+      "after_accuracy": {
+        "numerator": 2,
+        "denominator": 5,
+        "rate": 0.4
+      }
+    },
+    "calibration": [
+      {
+        "bin": "0.0-0.5",
+        "numerator": 55,
+        "denominator": 79,
+        "rate": 0.6962025316455697
+      },
+      {
+        "bin": "0.5-0.7",
+        "numerator": 8,
+        "denominator": 10,
+        "rate": 0.8
+      },
+      {
+        "bin": "0.7-0.9",
+        "numerator": 1,
+        "denominator": 1,
+        "rate": 1.0
+      },
+      {
+        "bin": "0.9-1.0",
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      }
+    ],
+    "latency_ms": {
+      "count": 90,
+      "p50": 581.5370205018553,
+      "p95": 1100.7977793520695
+    },
+    "ambiguous_predictions": []
+  },
+  "threshold_pair_count": 2601,
+  "pairs_meeting_all_recovery_criteria": 0,
+  "best_observed_tradeoff": {
+    "reply_threshold": 0.24,
+    "react_threshold": 0.06,
+    "accuracy": 0.7444444444444445,
+    "accuracy_n": 67,
+    "accuracy_d": 90,
+    "unnecessary_interruption_rate": 0.16666666666666666,
+    "unnecessary_interruption_n": 5,
+    "unnecessary_interruption_d": 30,
+    "missed_help_rate": 0.06666666666666667,
+    "missed_help_n": 2,
+    "missed_help_d": 30,
+    "downgraded_count": 10,
+    "meets_all_criteria": false,
+    "react_precision": 0.7368421052631579,
+    "react_precision_n": 14,
+    "react_precision_d": 19,
+    "react_recall": 0.4666666666666667,
+    "react_recall_n": 14,
+    "react_recall_d": 30,
+    "meets_recovery_criteria": false
+  },
+  "recommendation": "Keep production thresholds unchanged; no tested pair meets all recovery criteria.",
+  "production_configuration_changed": false,
+  "heldout_opened": false,
+  "reserve_opened": false,
+  "model_calls": 0,
+  "aws_or_bedrock_calls": 0
+}

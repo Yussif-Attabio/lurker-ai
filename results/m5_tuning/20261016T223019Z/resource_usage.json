@@ -1,0 +1,20 @@
+{
+  "platform": "macOS arm64",
+  "physical_memory_gb": 16,
+  "adapter_initialization_ms": 11667.929249997542,
+  "wall_time_seconds": 81.07,
+  "maximum_resident_set_bytes": 5992611840,
+  "maximum_resident_set_gib": 5.58,
+  "peak_memory_footprint_bytes": 8425331624,
+  "peak_memory_footprint_gib": 7.85,
+  "model_initialization_failures": 0,
+  "inference_failures": 0,
+  "aws_api_calls": 0,
+  "bedrock_calls": 0,
+  "execution_controls": {
+    "huggingface_offline": true,
+    "transformers_offline": true,
+    "aws_ec2_metadata_disabled": true
+  },
+  "note": "Maximum resident set and peak footprint were reported by macOS /usr/bin/time -l. The manifest independently records the process high-water RSS."
+}

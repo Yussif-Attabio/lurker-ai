@@ -1,0 +1,36 @@
+{
+  "artifact_version": "lurker-eval-manifest-v1",
+  "split": "tuning",
+  "scenario_count": 30,
+  "expected_predictions": 90,
+  "actual_predictions": 90,
+  "context_values": [
+    0,
+    3,
+    5
+  ],
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "device": "cpu",
+  "mock": false,
+  "scenario_sha256": "9afbc82c770406d0952f4de86400c42022fc2ab23baa784610d6128a4dcf2cbf",
+  "config_sha256": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+  "error_count": 0,
+  "observability": {
+    "adapter_initialization_ms": 11667.929249997542,
+    "peak_rss_bytes": 5992611840,
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.12.14"
+  },
+  "command": [
+    "scripts/run_eval.py",
+    "--split",
+    "tuning",
+    "--k",
+    "0",
+    "3",
+    "5",
+    "--output-root",
+    "results/m5_tuning"
+  ]
+}

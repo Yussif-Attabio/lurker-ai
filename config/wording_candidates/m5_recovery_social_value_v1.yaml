@@ -1,0 +1,44 @@
+artifact_version: lurker-wording-candidate-v1
+candidate_id: m5-recovery-social-value-v1
+status: development_only_not_production
+created_at: 2026-10-17
+baseline:
+  question_sha256: 9105c49e09721aa04094151739add6f3be7ea63b015f45a9f91b80f7a9794589
+  reply_threshold: 0.20
+  react_threshold: 0.04
+model:
+  id: StrandsAgents/strands-decider-2B-qwen3.5-v1-2610
+  revision: 216d1ccb46a9e9b036eb9187b248db98480f77d4
+  architecture_changed: false
+decision_contract:
+  question: >-
+    Decide what Lurker should do for the latest message in its recent context.
+    Apply this priority order. Choose REPLY when the latest message directly or
+    indirectly asks for information, help, judgment, clarification, or action
+    that remains unresolved. Do not choose REPLY merely because an earlier
+    message was a question when the latest message answers it or gives a
+    self-contained update. If no reply is needed, choose REACT when one brief
+    emoji would add meaningful social value by acknowledging a concrete
+    achievement or beneficial impact, sincere gratitude or support, important
+    personal news, a significant setback or recovery moment, belonging or
+    welcome, or clearly shared humor. Meaningful moments can merit REACT without
+    an exclamation mark, emoji, or celebratory wording. Do not choose REACT for
+    ordinary positivity, routine results, reciprocal politeness, conversational
+    closure, or an acknowledgment whose only effect would be noise. Choose
+    SILENT for those routine or already-handled cases and whenever neither an
+    unresolved need nor meaningful acknowledgment is present. Tie-breakers:
+    unresolved need means REPLY; no reply needed but clear social value means
+    REACT; otherwise SILENT. Judge meaning and context, not punctuation alone.
+  options: [SILENT, REACT, REPLY]
+  policy_changed: false
+  context_changed: false
+evaluation:
+  dataset: eval/recovery/single_rater/development/development.jsonl
+  expected_cases: 90
+  context_values: [0, 3, 5]
+  primary_context_k: 3
+  human_consensus: false
+  reserve_allowed: false
+  heldout_allowed: false
+  aws_or_bedrock_allowed: false
+approval_required_before_production: true

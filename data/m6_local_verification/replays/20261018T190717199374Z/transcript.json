@@ -1,0 +1,207 @@
+[
+  {
+    "direction": "connection",
+    "at": "2026-10-18T19:07:17.230437+00:00",
+    "event": {
+      "type": "connected",
+      "url": "ws://127.0.0.1:8768/ws"
+    }
+  },
+  {
+    "direction": "outbound",
+    "at": "2026-10-18T19:07:18.231885+00:00",
+    "event": {
+      "type": "message",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "step_id": "routine-plan"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:18.241768+00:00",
+    "event": {
+      "type": "chat",
+      "id": "0cd20bcb-91c1-4f69-a463-79055c9d5178",
+      "sender": "Alex",
+      "text": "Let's meet at four tomorrow.",
+      "is_agent": false,
+      "ts": "2026-10-18T19:07:18.234990+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:18.248009+00:00",
+    "event": {
+      "type": "decision",
+      "message_id": "0cd20bcb-91c1-4f69-a463-79055c9d5178",
+      "raw_choice": "SILENT",
+      "confidence": 0.9,
+      "final_action": "SILENT",
+      "downgraded": false,
+      "reason": "chosen",
+      "decider_latency_ms": 0.1,
+      "mock": true,
+      "ts": "2026-10-18T19:07:18.241624+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:18.248242+00:00",
+    "event": {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 1,
+        "silent": 1,
+        "react": 0,
+        "reply": 0,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 1
+      },
+      "ts": "2026-10-18T19:07:18.241624+00:00"
+    }
+  },
+  {
+    "direction": "outbound",
+    "at": "2026-10-18T19:07:20.249874+00:00",
+    "event": {
+      "type": "message",
+      "sender": "Lea",
+      "text": "Congratulations everyone\u2014we made the hackathon finals! \ud83c\udf89",
+      "step_id": "celebration"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:20.254512+00:00",
+    "event": {
+      "type": "chat",
+      "id": "27d6fb75-7376-4549-912c-b8da61271b24",
+      "sender": "Lea",
+      "text": "Congratulations everyone\u2014we made the hackathon finals! \ud83c\udf89",
+      "is_agent": false,
+      "ts": "2026-10-18T19:07:20.251519+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:20.257627+00:00",
+    "event": {
+      "type": "reaction",
+      "message_id": "27d6fb75-7376-4549-912c-b8da61271b24",
+      "emoji": "\ud83c\udf89",
+      "ts": "2026-10-18T19:07:20.254925+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:20.258214+00:00",
+    "event": {
+      "type": "decision",
+      "message_id": "27d6fb75-7376-4549-912c-b8da61271b24",
+      "raw_choice": "REACT",
+      "confidence": 0.9,
+      "final_action": "REACT",
+      "downgraded": false,
+      "reason": "confident",
+      "decider_latency_ms": 0.1,
+      "mock": true,
+      "ts": "2026-10-18T19:07:20.255469+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:20.258289+00:00",
+    "event": {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 2,
+        "silent": 1,
+        "react": 1,
+        "reply": 0,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 2
+      },
+      "ts": "2026-10-18T19:07:20.255469+00:00"
+    }
+  },
+  {
+    "direction": "outbound",
+    "at": "2026-10-18T19:07:22.760004+00:00",
+    "event": {
+      "type": "message",
+      "sender": "Maya",
+      "text": "Lurker, please answer: why does the API return 401?",
+      "step_id": "direct-api-question"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:22.764185+00:00",
+    "event": {
+      "type": "chat",
+      "id": "fd456ff0-de7e-41bb-adc6-fc7c59be9873",
+      "sender": "Maya",
+      "text": "Lurker, please answer: why does the API return 401?",
+      "is_agent": false,
+      "ts": "2026-10-18T19:07:22.761161+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:22.765417+00:00",
+    "event": {
+      "type": "chat",
+      "id": "85b8e0e9-96b8-40fc-8e17-61fea16f774b",
+      "sender": "Lurker",
+      "text": "[MOCK] Here is a short test reply.",
+      "is_agent": true,
+      "ts": "2026-10-18T19:07:22.763213+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:22.765959+00:00",
+    "event": {
+      "type": "decision",
+      "message_id": "fd456ff0-de7e-41bb-adc6-fc7c59be9873",
+      "raw_choice": "REPLY",
+      "confidence": 0.9,
+      "final_action": "REPLY",
+      "downgraded": false,
+      "reason": "confident",
+      "decider_latency_ms": 0.1,
+      "mock": true,
+      "ts": "2026-10-18T19:07:22.763526+00:00"
+    }
+  },
+  {
+    "direction": "inbound",
+    "at": "2026-10-18T19:07:22.766038+00:00",
+    "event": {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 3,
+        "silent": 1,
+        "react": 1,
+        "reply": 1,
+        "downgraded": 0,
+        "errors": 0,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 3
+      },
+      "ts": "2026-10-18T19:07:22.763526+00:00"
+    }
+  },
+  {
+    "direction": "connection",
+    "at": "2026-10-18T19:07:22.766058+00:00",
+    "event": {
+      "type": "completed"
+    }
+  }
+]

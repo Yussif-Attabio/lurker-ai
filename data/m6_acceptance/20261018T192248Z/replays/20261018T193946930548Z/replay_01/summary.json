@@ -1,0 +1,13 @@
+{
+  "artifact_version": "lurker-m6-replay-summary-v1",
+  "status": "FAIL",
+  "acceptance_eligible": false,
+  "mode": "real",
+  "started_at": "2026-10-18T19:39:46.931137+00:00",
+  "completed_at": "2026-10-18T19:39:57.411276+00:00",
+  "error": "ReplayError: REPLY did not produce exactly one agent chat and no reaction",
+  "real_bedrock_calls": null,
+  "protected_evaluation_data_accessed": false,
+  "m5_configuration_changed": false,
+  "production_readiness": false
+}

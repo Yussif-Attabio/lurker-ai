@@ -1,0 +1,73 @@
+{
+  "artifact_version": "lurker-m6-deployment-preflight-v1",
+  "status": "PASS",
+  "checked_at": "2026-10-18T19:22:48Z",
+  "region": "us-east-2",
+  "identity_check": "PASS_REDACTED",
+  "aws_cli_configured_region": "us-east-2",
+  "instance_type": "m7i.2xlarge",
+  "instance_type_offered": true,
+  "instance_vcpus_required": 8,
+  "standard_on_demand_vcpu_quota": 16,
+  "inference_profile": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "inference_profile_status": "ACTIVE",
+  "haiku_4_5_cross_region_requests_per_minute_quota": 10,
+  "latest_al2023_amd64_ami_parameter_version": 194,
+  "network_preflight": {
+    "default_vpc_available": true,
+    "selected_availability_zone": "us-east-2a",
+    "public_route_state": "active",
+    "public_route_target": "internet_gateway",
+    "inbound_plan": "TCP 22 and 8000 from controlling IPv4 /32 only",
+    "outbound_plan": "HTTPS plus VPC DNS and Amazon Time Sync only"
+  },
+  "price_check": {
+    "currency": "USD",
+    "ec2_m7i_2xlarge_per_hour": 0.4032,
+    "ec2_price_list_effective_date": "2026-10-01T00:00:00Z",
+    "gp3_per_gib_month": 0.08,
+    "public_ipv4_per_hour": 0.005,
+    "bedrock_haiku_4_5_us_input_per_million_tokens": 1.1,
+    "bedrock_haiku_4_5_us_output_per_million_tokens": 5.5,
+    "official_sources": [
+      "AWS Price List API",
+      "https://aws.amazon.com/ec2/pricing/on-demand/",
+      "https://aws.amazon.com/ebs/pricing/",
+      "https://aws.amazon.com/vpc/pricing/",
+      "https://aws.amazon.com/bedrock/pricing/"
+    ]
+  },
+  "gross_cost_ceiling_estimate": {
+    "runtime_minutes": 50,
+    "ec2": 0.336,
+    "encrypted_40_gib_gp3": 0.003653,
+    "one_public_ipv4": 0.004167,
+    "three_bedrock_calls_conservative": 0.00594,
+    "subtotal": 0.34976,
+    "operational_contingency": 0.1,
+    "guarded_total": 0.44976,
+    "authorized_limit": 0.55,
+    "within_limit": true
+  },
+  "credits": {
+    "current_month_usage_usd": 0.0509981148,
+    "current_month_applied_credit_usd": 0.050998115,
+    "remaining_credit_balance_verified": false,
+    "cost_guard_assumes_credits": false,
+    "note": "The API confirms credits applied to prior usage but does not establish a dependable remaining balance; the deployment budget therefore uses gross prices."
+  },
+  "baseline": {
+    "preexisting_lurker_m6_instances": 0
+  },
+  "frozen_configuration": {
+    "context_k": 3,
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04,
+    "config_sha256": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+    "decision_pattern_sha256": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b",
+    "evaluation_runner_sha256": "efa7a8107f322e045ab03ee686ebfe78d7289b89158134e5a2819095aa87724a"
+  },
+  "m5_published_artifact_sha256": "35d97340eebba2a2a34ecdfd816246f8a81fdd00712531b2dba1d92ed239805c",
+  "protected_evaluation_data_accessed": false,
+  "production_readiness": false
+}

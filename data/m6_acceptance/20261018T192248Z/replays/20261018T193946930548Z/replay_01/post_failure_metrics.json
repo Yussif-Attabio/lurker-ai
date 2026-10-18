@@ -1,0 +1,1 @@
+{"counters":{"messages_read":3,"silent":1,"react":1,"reply":1,"downgraded":0,"errors":1,"bedrock_calls_made":1,"bedrock_calls_avoided_vs_every_message":2},"decider_latency_ms":{"count":3,"p50":1543.1642309999916,"p95":1659.2115162000596}}

@@ -1,0 +1,155 @@
+{
+  "artifact_version": "lurker-m5-recovery-single-rater-wording-comparison-v1",
+  "status": "EXPLORATORY_ONLY",
+  "context_k": 3,
+  "scenario_sha256": "7da2779e4b6cf39e14c264293dc80cb6b5a92c024364712657473d82d5ba2d85",
+  "thresholds": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "model_revision": "216d1ccb46a9e9b036eb9187b248db98480f77d4",
+  "label_basis": "single_evaluator",
+  "human_consensus": false,
+  "baseline": {
+    "accuracy": {
+      "numerator": 64,
+      "denominator": 90,
+      "rate": 0.7111111111111111
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 9,
+      "denominator": 30,
+      "rate": 0.3
+    },
+    "missed_help_rate": {
+      "numerator": 1,
+      "denominator": 30,
+      "rate": 0.03333333333333333
+    },
+    "react_precision": {
+      "numerator": 14,
+      "denominator": 20,
+      "rate": 0.7
+    },
+    "react_recall": {
+      "numerator": 14,
+      "denominator": 30,
+      "rate": 0.4666666666666667
+    },
+    "latency_ms": {
+      "count": 90,
+      "p50": 581.5370205018553,
+      "p95": 1100.7977793520695
+    },
+    "prediction_counts": {
+      "SILENT": 37,
+      "REACT": 20,
+      "REPLY": 33
+    },
+    "error_count": 0
+  },
+  "candidate": {
+    "accuracy": {
+      "numerator": 64,
+      "denominator": 90,
+      "rate": 0.7111111111111111
+    },
+    "unnecessary_interruption_rate": {
+      "numerator": 5,
+      "denominator": 30,
+      "rate": 0.16666666666666666
+    },
+    "missed_help_rate": {
+      "numerator": 1,
+      "denominator": 30,
+      "rate": 0.03333333333333333
+    },
+    "react_precision": {
+      "numerator": 10,
+      "denominator": 15,
+      "rate": 0.6666666666666666
+    },
+    "react_recall": {
+      "numerator": 10,
+      "denominator": 30,
+      "rate": 0.3333333333333333
+    },
+    "latency_ms": {
+      "count": 90,
+      "p50": 848.247583500779,
+      "p95": 1605.1053271967244
+    },
+    "prediction_counts": {
+      "SILENT": 46,
+      "REACT": 15,
+      "REPLY": 29
+    },
+    "error_count": 0
+  },
+  "rate_deltas_candidate_minus_baseline": {
+    "accuracy": 0.0,
+    "unnecessary_interruption_rate": -0.13333333333333333,
+    "missed_help_rate": 0.0,
+    "react_precision": -0.033333333333333326,
+    "react_recall": -0.13333333333333336
+  },
+  "decision_transitions": {
+    "REACT:REACT->REACT": 8,
+    "REACT:REACT->SILENT": 6,
+    "REACT:REPLY->SILENT": 1,
+    "REACT:SILENT->REACT": 2,
+    "REACT:SILENT->SILENT": 13,
+    "REPLY:REPLY->REPLY": 29,
+    "REPLY:SILENT->SILENT": 1,
+    "SILENT:REACT->REACT": 1,
+    "SILENT:REACT->SILENT": 5,
+    "SILENT:REPLY->REACT": 3,
+    "SILENT:SILENT->REACT": 1,
+    "SILENT:SILENT->SILENT": 20
+  },
+  "regression_checks": {
+    "new_unnecessary_reacts": [
+      "rc078",
+      "rc097",
+      "rc108",
+      "rc123"
+    ],
+    "repaired_unnecessary_reacts": [
+      "rc072",
+      "rc076",
+      "rc077",
+      "rc087",
+      "rc121"
+    ],
+    "new_missed_requests": [],
+    "repaired_missed_requests": [],
+    "new_correct_reacts": [
+      "rc081",
+      "rc099"
+    ],
+    "lost_correct_reacts": [
+      "rc066",
+      "rc068",
+      "rc070",
+      "rc096",
+      "rc104",
+      "rc122"
+    ]
+  },
+  "owner_review_gate": {
+    "accuracy_not_worse": true,
+    "interruption_not_worse": true,
+    "missed_help_not_worse": true,
+    "react_precision_at_least_70pct": false,
+    "react_recall_at_least_70pct": false,
+    "zero_errors": true
+  },
+  "all_review_gates_met": false,
+  "production_candidate_applied": false,
+  "production_thresholds_changed": false,
+  "policy_changed": false,
+  "reserve_opened": false,
+  "heldout_opened": false,
+  "aws_or_bedrock_calls": 0
+}

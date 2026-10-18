@@ -1,0 +1,14 @@
+{
+  "artifact_version": "lurker-m6-local-test-summary-v1",
+  "status": "PASS",
+  "recorded_on": "2026-10-18",
+  "native_safe_regression_tests": 76,
+  "native_safe_regression_failures": 0,
+  "javascript_syntax_check": "PASS",
+  "m6_specific_tests": 9,
+  "protected_data_tests_excluded": true,
+  "excluded_scope_reason": "The M6 authorization forbids accessing protected evaluation datasets.",
+  "real_decider_calls": 0,
+  "real_bedrock_calls": 0,
+  "aws_resources_launched": false
+}

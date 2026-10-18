@@ -1,0 +1,483 @@
+{
+  "artifact_version": "lurker-m5-recovery-design-v1",
+  "warning": "Owner-only authoring metadata. design_action is a coverage hypothesis, not a human label or evaluation target. Do not share with evaluators.",
+  "candidate_count": 195,
+  "family_count": 39,
+  "family_size": 5,
+  "design_action_counts": {
+    "SILENT": 65,
+    "REACT": 65,
+    "REPLY": 65
+  },
+  "families": [
+    {
+      "family_id": "sf01",
+      "name": "answered_technical_question",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc001",
+        "rc002",
+        "rc003",
+        "rc004",
+        "rc005"
+      ]
+    },
+    {
+      "family_id": "sf02",
+      "name": "answered_logistics_question",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc006",
+        "rc007",
+        "rc008",
+        "rc009",
+        "rc010"
+      ]
+    },
+    {
+      "family_id": "sf03",
+      "name": "routine_progress_update",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc011",
+        "rc012",
+        "rc013",
+        "rc014",
+        "rc015"
+      ]
+    },
+    {
+      "family_id": "sf04",
+      "name": "work_assignment_acknowledgment",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc016",
+        "rc017",
+        "rc018",
+        "rc019",
+        "rc020"
+      ]
+    },
+    {
+      "family_id": "sf05",
+      "name": "settled_scheduling",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc021",
+        "rc022",
+        "rc023",
+        "rc024",
+        "rc025"
+      ]
+    },
+    {
+      "family_id": "sf06",
+      "name": "reciprocal_thanks_closure",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc026",
+        "rc027",
+        "rc028",
+        "rc029",
+        "rc030"
+      ]
+    },
+    {
+      "family_id": "sf07",
+      "name": "ordinary_opinion_exchange",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc031",
+        "rc032",
+        "rc033",
+        "rc034",
+        "rc035"
+      ]
+    },
+    {
+      "family_id": "sf08",
+      "name": "decision_restatement",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc036",
+        "rc037",
+        "rc038",
+        "rc039",
+        "rc040"
+      ]
+    },
+    {
+      "family_id": "sf09",
+      "name": "availability_notice",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc041",
+        "rc042",
+        "rc043",
+        "rc044",
+        "rc045"
+      ]
+    },
+    {
+      "family_id": "sf10",
+      "name": "fyi_reference",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc046",
+        "rc047",
+        "rc048",
+        "rc049",
+        "rc050"
+      ]
+    },
+    {
+      "family_id": "sf11",
+      "name": "rhetorical_comment",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc051",
+        "rc052",
+        "rc053",
+        "rc054",
+        "rc055"
+      ]
+    },
+    {
+      "family_id": "sf12",
+      "name": "repeated_confirmation",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc056",
+        "rc057",
+        "rc058",
+        "rc059",
+        "rc060"
+      ]
+    },
+    {
+      "family_id": "sf13",
+      "name": "mention_without_request",
+      "design_action": "SILENT",
+      "candidate_ids": [
+        "rc061",
+        "rc062",
+        "rc063",
+        "rc064",
+        "rc065"
+      ]
+    },
+    {
+      "family_id": "rf01",
+      "name": "release_milestone",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc066",
+        "rc067",
+        "rc068",
+        "rc069",
+        "rc070"
+      ]
+    },
+    {
+      "family_id": "rf02",
+      "name": "tests_green",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc071",
+        "rc072",
+        "rc073",
+        "rc074",
+        "rc075"
+      ]
+    },
+    {
+      "family_id": "rf03",
+      "name": "meaningful_gratitude",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc076",
+        "rc077",
+        "rc078",
+        "rc079",
+        "rc080"
+      ]
+    },
+    {
+      "family_id": "rf04",
+      "name": "support_after_setback",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc081",
+        "rc082",
+        "rc083",
+        "rc084",
+        "rc085"
+      ]
+    },
+    {
+      "family_id": "rf05",
+      "name": "shared_humor",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc086",
+        "rc087",
+        "rc088",
+        "rc089",
+        "rc090"
+      ]
+    },
+    {
+      "family_id": "rf06",
+      "name": "incident_recovery",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc091",
+        "rc092",
+        "rc093",
+        "rc094",
+        "rc095"
+      ]
+    },
+    {
+      "family_id": "rf07",
+      "name": "welcome_and_belonging",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc096",
+        "rc097",
+        "rc098",
+        "rc099",
+        "rc100"
+      ]
+    },
+    {
+      "family_id": "rf08",
+      "name": "recognition_and_award",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc101",
+        "rc102",
+        "rc103",
+        "rc104",
+        "rc105"
+      ]
+    },
+    {
+      "family_id": "rf09",
+      "name": "customer_praise",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc106",
+        "rc107",
+        "rc108",
+        "rc109",
+        "rc110"
+      ]
+    },
+    {
+      "family_id": "rf10",
+      "name": "demo_success",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc111",
+        "rc112",
+        "rc113",
+        "rc114",
+        "rc115"
+      ]
+    },
+    {
+      "family_id": "rf11",
+      "name": "learning_breakthrough",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc116",
+        "rc117",
+        "rc118",
+        "rc119",
+        "rc120"
+      ]
+    },
+    {
+      "family_id": "rf12",
+      "name": "community_help_impact",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc121",
+        "rc122",
+        "rc123",
+        "rc124",
+        "rc125"
+      ]
+    },
+    {
+      "family_id": "rf13",
+      "name": "personal_good_news",
+      "design_action": "REACT",
+      "candidate_ids": [
+        "rc126",
+        "rc127",
+        "rc128",
+        "rc129",
+        "rc130"
+      ]
+    },
+    {
+      "family_id": "pf01",
+      "name": "direct_named_request",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc131",
+        "rc132",
+        "rc133",
+        "rc134",
+        "rc135"
+      ]
+    },
+    {
+      "family_id": "pf02",
+      "name": "unanswered_technical_question",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc136",
+        "rc137",
+        "rc138",
+        "rc139",
+        "rc140"
+      ]
+    },
+    {
+      "family_id": "pf03",
+      "name": "indirect_help_request",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc141",
+        "rc142",
+        "rc143",
+        "rc144",
+        "rc145"
+      ]
+    },
+    {
+      "family_id": "pf04",
+      "name": "request_for_judgment",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc146",
+        "rc147",
+        "rc148",
+        "rc149",
+        "rc150"
+      ]
+    },
+    {
+      "family_id": "pf05",
+      "name": "troubleshooting_needs_details",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc151",
+        "rc152",
+        "rc153",
+        "rc154",
+        "rc155"
+      ]
+    },
+    {
+      "family_id": "pf06",
+      "name": "safety_and_security_question",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc156",
+        "rc157",
+        "rc158",
+        "rc159",
+        "rc160"
+      ]
+    },
+    {
+      "family_id": "pf07",
+      "name": "summary_or_transformation_request",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc161",
+        "rc162",
+        "rc163",
+        "rc164",
+        "rc165"
+      ]
+    },
+    {
+      "family_id": "pf08",
+      "name": "planning_advice",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc166",
+        "rc167",
+        "rc168",
+        "rc169",
+        "rc170"
+      ]
+    },
+    {
+      "family_id": "pf09",
+      "name": "ambiguous_request_needs_clarification",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc171",
+        "rc172",
+        "rc173",
+        "rc174",
+        "rc175"
+      ]
+    },
+    {
+      "family_id": "pf10",
+      "name": "unanswered_followup",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc176",
+        "rc177",
+        "rc178",
+        "rc179",
+        "rc180"
+      ]
+    },
+    {
+      "family_id": "pf11",
+      "name": "explain_a_concept",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc181",
+        "rc182",
+        "rc183",
+        "rc184",
+        "rc185"
+      ]
+    },
+    {
+      "family_id": "pf12",
+      "name": "review_request",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc186",
+        "rc187",
+        "rc188",
+        "rc189",
+        "rc190"
+      ]
+    },
+    {
+      "family_id": "pf13",
+      "name": "semantic_question_without_punctuation",
+      "design_action": "REPLY",
+      "candidate_ids": [
+        "rc191",
+        "rc192",
+        "rc193",
+        "rc194",
+        "rc195"
+      ]
+    }
+  ],
+  "candidate_sha256": "bae691b2ef2121986f41bc40c8976f2dd1ba28e989d33736876e7a97790bb685"
+}

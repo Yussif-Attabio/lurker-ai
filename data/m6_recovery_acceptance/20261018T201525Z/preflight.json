@@ -1,0 +1,47 @@
+{
+  "artifact_version": "lurker-m6-recovery-preflight-v1",
+  "status": "PASS_WITH_AUTHORIZED_SCP_UNCERTAINTY",
+  "checked_on": "2026-10-18",
+  "region": "us-east-2",
+  "instance_type": "m7i.2xlarge",
+  "instance_vcpus_required": 8,
+  "standard_on_demand_vcpu_quota": 16,
+  "inference_profile": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "inference_profile_status": "ACTIVE",
+  "destination_regions": ["us-east-1", "us-east-2", "us-west-2"],
+  "iam_policy": {
+    "template_sha256": "bdb470ee82a2d4093ec3819167380aba2f89e6afedea1ec58aaa9b7e95c63242",
+    "access_analyzer_findings": 0,
+    "simulation_profile_result": "allowed",
+    "simulation_destination_model_results": ["allowed", "allowed", "allowed"],
+    "wildcard_resources": false,
+    "actions": ["bedrock:InvokeModel"]
+  },
+  "scp_clearance": {
+    "direct_inspection_available": false,
+    "uncertainty_disclosed_before_launch": true,
+    "owner_authorized_controlled_runtime_verification": true,
+    "runtime_result": "PASS"
+  },
+  "safeguards": {
+    "automatic_termination_minutes": 50,
+    "instance_shutdown_behavior": "terminate",
+    "network_ingress": "TCP 22 and 8000 from controller IPv4 /32 only",
+    "encrypted_root_volume": true,
+    "root_volume_delete_on_termination": true,
+    "imds_v2_required": true,
+    "bedrock_max_calls": 3,
+    "bedrock_latest_text_allowlist": true,
+    "authorized_cost_ceiling_usd": 0.55
+  },
+  "frozen_configuration": {
+    "context_k": 3,
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04,
+    "config_sha256": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+    "decision_pattern_sha256": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b",
+    "m5_published_artifact_sha256": "35d97340eebba2a2a34ecdfd816246f8a81fdd00712531b2dba1d92ed239805c"
+  },
+  "protected_evaluation_data_accessed": false,
+  "production_readiness": false
+}

@@ -1,0 +1,121 @@
+artifact_version: lurker-m5-freeze-v1
+status: frozen_for_final_evaluation
+owner_approved_at: 2026-10-17T00:28:35Z
+production_readiness_approval: false
+
+configuration:
+  context_k: 3
+  decider_timeout_ms: 120000
+  decider_model_id: StrandsAgents/strands-decider-2B-qwen3.5-v1-2610
+  decider_model_revision: 216d1ccb46a9e9b036eb9187b248db98480f77d4
+  decider_device: cpu
+  reply_threshold: 0.20
+  react_threshold: 0.04
+  force_reply_on_mention: false
+  canonical_sha256: 90adbd547d71d1766bcf3e0a254317104c0f7549ab02ca99cb09e650054981ed
+
+decision_contract:
+  question: >-
+    Given the recent conversation and latest message, what should Lurker do?
+    Choose REPLY only if someone needs an answer or help that nobody has given
+    yet. Otherwise, choose REACT if a brief emoji would meaningfully acknowledge
+    a noteworthy achievement, gratitude, support, or shared humor. Otherwise
+    choose SILENT, including for routine updates, ordinary back-and-forth,
+    already-handled points, or when a reaction would add noise.
+  options: [SILENT, REACT, REPLY]
+  context_state:
+    agent_name: Lurker
+    recent_messages: last_3_messages_before_latest
+    latest_message: current_message
+  action_policy:
+    SILENT: Always remains SILENT.
+    REACT: Remains REACT when confidence is at least 0.04; otherwise SILENT.
+    REPLY: Remains REPLY when confidence is at least 0.20; otherwise SILENT.
+    ERROR_OR_UNKNOWN: Fail closed to SILENT.
+
+final_evaluation:
+  dataset_split: heldout
+  expected_scenarios: 15
+  context_values: [0, 3, 5]
+  expected_decider_predictions: 45
+  primary_context_k: 3
+  comparison_only_contexts: [0, 5]
+  one_time_run: true
+  rerun_policy: No rerun or retuning after viewing results; preserve failures and record NO-GO.
+  thresholds_apply_unchanged_to_all_contexts: true
+
+metrics:
+  label_dependent_denominator: unanimous_non_ambiguous_cases_only
+  accuracy: final_action_equals_consensus / non_ambiguous_cases
+  unnecessary_interruption_rate: consensus_SILENT_predicted_REACT_or_REPLY / consensus_SILENT_cases
+  missed_help_rate: consensus_REPLY_predicted_SILENT_or_REACT / consensus_REPLY_cases
+  react_precision: correct_REACT_predictions / all_REACT_predictions_among_non_ambiguous_cases
+  react_recall: correct_REACT_predictions / unanimous_REACT_cases
+  latency: report_p50_and_p95_over_all_cases
+  error_count: report_over_all_cases
+  calibration_bins: [0.0-0.5, 0.5-0.7, 0.7-0.9, 0.9-1.0]
+  ambiguous_labels:
+    value: AMBIGUOUS
+    excluded_from: [accuracy, unnecessary_interruption_rate, missed_help_rate, react_precision, react_recall, calibration_accuracy]
+    included_in: [prediction_completeness, prediction_counts, latency, error_count, separate_ambiguous_listing]
+
+success_gates:
+  evaluated_only_at_primary_context_k: 3
+  accuracy_min: 0.70
+  unnecessary_interruption_rate_max: 0.20
+  missed_help_rate_max: 0.25
+  decider_error_count_max: 0
+  expected_predictions_required: 45
+  mock_rows_allowed: 0
+  react_precision_threshold: null
+  react_recall_threshold: null
+  latency_threshold_ms: null
+  note: REACT precision, REACT recall, and latency are mandatory reports but are not post-hoc pass/fail gates.
+
+pre_freeze_tuning_evidence:
+  original_30_at_k3:
+    scored_cases: 20
+    ambiguous_cases: 10
+    accuracy: {numerator: 16, denominator: 20, rate: 0.80}
+    unnecessary_interruption_rate: {numerator: 3, denominator: 10, rate: 0.30}
+    missed_help_rate: {numerator: 1, denominator: 10, rate: 0.10}
+    react_precision: null
+    react_recall: null
+  combined_tuning_and_react_calibration_at_k3:
+    scored_cases: 31
+    ambiguous_cases: 14
+    accuracy: {numerator: 26, denominator: 31, rate: 0.8387096774193549}
+    unnecessary_interruption_rate: {numerator: 3, denominator: 17, rate: 0.17647058823529413}
+    missed_help_rate: {numerator: 1, denominator: 10, rate: 0.10}
+    react_precision: {numerator: 3, denominator: 3, rate: 1.0}
+    react_recall: {numerator: 3, denominator: 4, rate: 0.75}
+
+checksums:
+  config/default.yaml: 7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832
+  decision_pattern/lurker_gate.py: f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b
+  eval/metrics_def.py: 25a9be06f73575bf149abfcc8f8c92448e1e8c964a9eab6d90c177421a6cf008
+  eval/criteria.yaml: ef698be480b6e1ccde5da2e02137d043af96f48f875b1f8de1c1d7baa300b751
+  eval/tuning_scenarios.jsonl: 380164308ad0fd97164fe25f5e336fa0b8902f7df1b769f6c33d981b3aa4bbed
+  src/lurker/context.py: de3e899137869d8d91652cafa6cdf4e407e7baa8246aa16beff6428bfb91c556
+  src/lurker/decider_adapter.py: 21742cce672af0716b0b7e7f6dc16eead1156510366c69d06927daf57c30f2fd
+  scripts/run_eval.py: efa7a8107f322e045ab03ee686ebfe78d7289b89158134e5a2819095aa87724a
+  scripts/prepare_heldout_unlock.py: f3241e0ba93ce2cac16fac03a3f6b43572a6b3c0c6d7070d5a62765d4de967a0
+  scripts/verify_m5_freeze.py: 3d7af69d42427d34b1e784fad2d3140f4310c0c5b4b799dd0462b4c57d2fdff6
+  M5_HELDOUT_PROCEDURE.md: b45beacb19891dd296e87bb3d4991369da696331260225fb547d581535ba8d7d
+
+model_artifacts:
+  cache_ref: 216d1ccb46a9e9b036eb9187b248db98480f77d4
+  manifest_sha256: 874dfc3d47c22b5c50b387fabd1e549be483f6e29c127ec6f852125779fa3371
+  provenance_sha256: 8713fedb4e67fb6c60f41dc73c937635377506671e09978f92a2d447ac5264bd
+  strands_decider_config_sha256: 1d9625055e88c254d50089116992d08b0567286c9d6fcefb3c025922058ee65a
+  tokenizer_config_sha256: 8671bed7c852ce9e661be94f179a7b4ffd091c2a65aea0363e5501c20318ee45
+
+preserved_evidence:
+  tuning:
+    path: results/m5_tuning/20261016T223019Z
+    file_count: 20
+    tree_sha256: 4975f3062c0b637369ed6e3b3e5687dfb0d1c34f09e51dead1d9bbd1f67a2819
+  calibration:
+    path: results/react_wording/anchored_final
+    file_count: 14
+    tree_sha256: e5479f8deeb3506c48288e4afc063ad4ccda7f0e404c2bf0478f8be4262e9030

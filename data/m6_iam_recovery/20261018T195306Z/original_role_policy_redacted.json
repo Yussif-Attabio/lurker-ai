@@ -1,0 +1,32 @@
+{
+  "artifact_version": "lurker-m6-original-role-policy-redacted-v1",
+  "source": "CloudTrail PutRolePolicy event for the failed M6 deployment",
+  "role_name": "temporary M6 EC2 role (deleted after acceptance)",
+  "policy_name": "lurker-m6-bedrock-exact-profile",
+  "permissions_boundary_on_create_role": false,
+  "attached_managed_policies_observed": [],
+  "inline_policy": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "InvokeOnlyApprovedHaikuProfile",
+        "Effect": "Allow",
+        "Action": [
+          "bedrock:InvokeModel"
+        ],
+        "Resource": [
+          "arn:aws:bedrock:us-east-2:*:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0",
+          "arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
+          "arn:aws:bedrock:us-east-2::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0",
+          "arn:aws:bedrock:us-west-2::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
+        ],
+        "Condition": {
+          "ArnLike": {
+            "bedrock:InferenceProfileArn": "arn:aws:bedrock:us-east-2:*:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0"
+          }
+        }
+      }
+    ]
+  },
+  "redaction": "AWS account, principal, session, instance, request, event, network, and credential identifiers omitted"
+}

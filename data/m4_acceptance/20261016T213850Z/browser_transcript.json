@@ -1,0 +1,50 @@
+[
+  {
+    "ts": "2026-10-16T21:38:14.348382Z",
+    "sender": "Alex",
+    "text": "Let's meet at four tomorrow.",
+    "raw_choice": "SILENT",
+    "confidence": 0.9,
+    "final_action": "SILENT",
+    "decider_latency_ms": 0.1,
+    "bedrock_called": false,
+    "mock": true,
+    "browser_observation": "Message rendered; decision card and log updated; no reaction or reply."
+  },
+  {
+    "ts": "2026-10-16T21:38:18.732334Z",
+    "sender": "Lea",
+    "text": "Great news, we passed!",
+    "raw_choice": "REACT",
+    "confidence": 0.9,
+    "final_action": "REACT",
+    "decider_latency_ms": 0.1,
+    "bedrock_called": false,
+    "mock": true,
+    "browser_observation": "Celebration reaction rendered beneath Lea's target message."
+  },
+  {
+    "ts": "2026-10-16T21:38:23.858447Z",
+    "sender": "Sam",
+    "text": "Can someone explain this API error?",
+    "raw_choice": "REPLY",
+    "confidence": 0.9,
+    "final_action": "REPLY",
+    "decider_latency_ms": 0.1,
+    "bedrock_called": false,
+    "mock": true,
+    "browser_observation": "Editable third participant worked; distinct Lurker mock reply rendered."
+  },
+  {
+    "ts": "2026-10-16T21:39:27.925617Z",
+    "sender": "Alex",
+    "text": "Keyboard-only test update.",
+    "raw_choice": "SILENT",
+    "confidence": 0.9,
+    "final_action": "SILENT",
+    "decider_latency_ms": 0.1,
+    "bedrock_called": false,
+    "mock": true,
+    "browser_observation": "Sent with Enter at the 640-pixel zoom-equivalent viewport; no horizontal overflow."
+  }
+]

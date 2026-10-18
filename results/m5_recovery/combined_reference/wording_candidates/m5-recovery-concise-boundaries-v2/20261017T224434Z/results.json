@@ -1,0 +1,121 @@
+{
+  "artifact_version": "lurker-m5-recovery-combined-reference-wording-eval-v1",
+  "publication_status": "unpublished",
+  "generated_at": "2026-10-17T22:44:34.137666+00:00",
+  "split": "tuning",
+  "model_id": "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610",
+  "device": "cpu",
+  "hardware": "Darwin arm64 / arm",
+  "policy_mode": "configured_thresholds",
+  "thresholds": {
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04
+  },
+  "criteria": {
+    "accuracy_min": 0.7,
+    "unnecessary_interruption_rate_max": 0.2,
+    "missed_help_rate_max": 0.25
+  },
+  "context_metrics": {
+    "3": {
+      "total_count": 90,
+      "non_ambiguous_count": 90,
+      "ambiguous_count": 0,
+      "error_count": 0,
+      "consensus_counts": {
+        "SILENT": 30,
+        "REACT": 30,
+        "REPLY": 30
+      },
+      "prediction_counts": {
+        "SILENT": 71,
+        "REACT": 0,
+        "REPLY": 19
+      },
+      "accuracy": {
+        "numerator": 49,
+        "denominator": 90,
+        "rate": 0.5444444444444444
+      },
+      "unnecessary_interruption_rate": {
+        "numerator": 0,
+        "denominator": 30,
+        "rate": 0.0
+      },
+      "missed_help_rate": {
+        "numerator": 11,
+        "denominator": 30,
+        "rate": 0.36666666666666664
+      },
+      "react_precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null
+      },
+      "react_recall": {
+        "numerator": 0,
+        "denominator": 30,
+        "rate": 0.0
+      },
+      "low_confidence": {
+        "downgraded_count": 8,
+        "before_accuracy": {
+          "numerator": 8,
+          "denominator": 8,
+          "rate": 1.0
+        },
+        "after_accuracy": {
+          "numerator": 0,
+          "denominator": 8,
+          "rate": 0.0
+        }
+      },
+      "calibration": [
+        {
+          "bin": "0.0-0.5",
+          "numerator": 28,
+          "denominator": 50,
+          "rate": 0.56
+        },
+        {
+          "bin": "0.5-0.7",
+          "numerator": 18,
+          "denominator": 36,
+          "rate": 0.5
+        },
+        {
+          "bin": "0.7-0.9",
+          "numerator": 3,
+          "denominator": 4,
+          "rate": 0.75
+        },
+        {
+          "bin": "0.9-1.0",
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        }
+      ],
+      "latency_ms": {
+        "count": 90,
+        "p50": 578.2248334980977,
+        "p95": 1519.6852649467473
+      },
+      "ambiguous_predictions": []
+    }
+  },
+  "status": "EXPLORATORY_ONLY",
+  "variant": "m5-recovery-concise-boundaries-v2",
+  "wording_sha256": "3f81f8a6f056ff1947b50aa217c683a6eb74c31de3f50065ae1537dd5377f8f6",
+  "label_basis": "combined_three_contributor_reference",
+  "contributor_count": 3,
+  "independent_decisions_available": false,
+  "group_consensus_verified": false,
+  "human_consensus": false,
+  "final_m5_evidence": false,
+  "production_candidate_applied": false,
+  "react_criteria": {
+    "precision_min": 0.7,
+    "recall_min": 0.7
+  }
+}

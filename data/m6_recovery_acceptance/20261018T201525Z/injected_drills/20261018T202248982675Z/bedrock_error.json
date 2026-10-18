@@ -1,0 +1,116 @@
+{
+  "drill": "bedrock_error",
+  "status": "PASS",
+  "fault_injected": true,
+  "injected_reply_attempts": 1,
+  "real_decider_calls": 0,
+  "real_bedrock_calls": 0,
+  "events": [
+    {
+      "type": "chat",
+      "id": "1720fc85-b5d3-4dac-96bf-5ad7d004ba6f",
+      "sender": "Maya",
+      "text": "Lurker, please answer the API question.",
+      "is_agent": false,
+      "ts": "2026-10-18T20:22:49.015848+00:00"
+    },
+    {
+      "type": "decision",
+      "message_id": "1720fc85-b5d3-4dac-96bf-5ad7d004ba6f",
+      "raw_choice": "REPLY",
+      "confidence": 0.95,
+      "final_action": "REPLY",
+      "downgraded": false,
+      "reason": "bedrock_error",
+      "decider_latency_ms": 8.0,
+      "mock": true,
+      "ts": "2026-10-18T20:22:49.016426+00:00"
+    },
+    {
+      "type": "metrics",
+      "counters": {
+        "messages_read": 1,
+        "silent": 0,
+        "react": 0,
+        "reply": 1,
+        "downgraded": 0,
+        "errors": 1,
+        "bedrock_calls_made": 0,
+        "bedrock_calls_avoided_vs_every_message": 1
+      },
+      "ts": "2026-10-18T20:22:49.016426+00:00"
+    }
+  ],
+  "decision": {
+    "id": "f0e64207-0445-46c1-bd23-d6d5365d8055",
+    "ts": "2026-10-18T20:22:49.016426Z",
+    "message_id": "1720fc85-b5d3-4dac-96bf-5ad7d004ba6f",
+    "sender": "Maya",
+    "text": "Lurker, please answer the API question.",
+    "context_k": 3,
+    "raw_choice": "REPLY",
+    "confidence": 0.95,
+    "final_action": "REPLY",
+    "downgraded": false,
+    "reason": "bedrock_error",
+    "decider_latency_ms": 8.0,
+    "bedrock_latency_ms": 7.5,
+    "bedrock_input_tokens": null,
+    "bedrock_output_tokens": null,
+    "bedrock_called": false,
+    "direct_mention": true,
+    "mock": true,
+    "error": "bedrock_error: injected_m6_bedrock_error"
+  },
+  "metrics": {
+    "counters": {
+      "messages_read": 1,
+      "silent": 0,
+      "react": 0,
+      "reply": 1,
+      "downgraded": 0,
+      "errors": 1,
+      "bedrock_calls_made": 0,
+      "bedrock_calls_avoided_vs_every_message": 1
+    },
+    "decider_latency_ms": {
+      "count": 1,
+      "p50": 8.0,
+      "p95": 8.0
+    }
+  },
+  "durable_log_rows": [
+    {
+      "id": "f0e64207-0445-46c1-bd23-d6d5365d8055",
+      "ts": "2026-10-18T20:22:49.016426Z",
+      "message_id": "1720fc85-b5d3-4dac-96bf-5ad7d004ba6f",
+      "sender": "Maya",
+      "text": "Lurker, please answer the API question.",
+      "context_k": 3,
+      "raw_choice": "REPLY",
+      "confidence": 0.95,
+      "final_action": "REPLY",
+      "downgraded": false,
+      "reason": "bedrock_error",
+      "decider_latency_ms": 8.0,
+      "bedrock_latency_ms": 7.5,
+      "bedrock_input_tokens": null,
+      "bedrock_output_tokens": null,
+      "bedrock_called": false,
+      "direct_mention": true,
+      "mock": true,
+      "error": "bedrock_error: injected_m6_bedrock_error"
+    }
+  ],
+  "assertions": {
+    "one_decider_call": true,
+    "one_injected_reply_attempt": true,
+    "no_fabricated_agent_reply": true,
+    "bedrock_error_recorded": true,
+    "reason_is_bedrock_error": true,
+    "zero_real_bedrock_calls": true,
+    "one_message_one_decision": true,
+    "api_still_healthy": true,
+    "no_duplicate_events": true
+  }
+}

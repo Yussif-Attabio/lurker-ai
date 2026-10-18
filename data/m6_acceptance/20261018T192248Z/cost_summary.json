@@ -1,0 +1,19 @@
+{
+  "artifact_version": "lurker-m6-cost-summary-v1",
+  "currency": "USD",
+  "paid_window_seconds": 878,
+  "rates": {"ec2_m7i_2xlarge_per_hour": 0.4032, "gp3_per_gib_month": 0.08, "public_ipv4_per_hour": 0.005},
+  "estimated_charges": {
+    "ec2": 0.098336,
+    "encrypted_40_gib_gp3": 0.001083951,
+    "public_ipv4": 0.001219444,
+    "bedrock": 0.0,
+    "data_transfer": 0.0,
+    "estimated_total": 0.100639395
+  },
+  "bedrock_cost_basis": "One invocation attempt was denied before inference and returned no token usage; estimated model charge is zero.",
+  "authorized_operational_ceiling": 0.55,
+  "within_ceiling": true,
+  "credits_assumed": false,
+  "note": "This is an engineering estimate. The AWS bill is authoritative after usage settles."
+}

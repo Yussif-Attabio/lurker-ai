@@ -1,0 +1,5 @@
+accuracy_min: 0.70
+unnecessary_interruption_rate_max: 0.20
+missed_help_rate_max: 0.25
+approved_by_human: true
+approved_at: 2026-10-15

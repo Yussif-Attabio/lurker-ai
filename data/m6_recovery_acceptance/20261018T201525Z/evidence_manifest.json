@@ -1,0 +1,29 @@
+{
+  "artifact_version": "lurker-m6-recovery-evidence-manifest-v1",
+  "hash_algorithm": "sha256",
+  "created_on": "2026-10-18",
+  "artifacts": {
+    "preflight.json": "958bd48f88ee8a2bc9469f3466898efefd6f29bcae7048f9fcc71b57d1a09648",
+    "deployment_measurements.json": "eea3d1c30a8e035b586c232cbd9f176be631fd0135a2ef5b6f620e65734ef2ff",
+    "cost_summary.json": "2e39762d8f07037c04a18434e4c2b0b216f2f79bec2d6bd504e0e0708234277d",
+    "cleanup_inventory.json": "bfb7bf6f5d25812df4ed30ba286a600aca6619da8a2b59b448a9bbc842f3d915",
+    "post_run_verification.json": "d733991807c54e14d244dd5ed323e05f14aa5f1e4c73be02e6f2175801a43f95",
+    "summary.json": "301d6e3987599907bcf1d88e5d8c4761776c08b3989870468bfa77f4163fcfaa",
+    "injected_drills/20261018T202248982675Z/summary.json": "04814cadf2554a219d07087dc10e221f0bc9157172767b00179af98a4b76d5ac",
+    "deployed_reconnect/summary.json": "384c127db44cd88c709f6e8a8e3e2ca084d81cd30dc85f3a9e7261af05df4246",
+    "real_replays/20261018T202359164678Z/run_manifest.json": "a4555f2fdca164148d23b93f9b35872d14d0ad6c7b038a1adfa3b11d5f86f0f1",
+    "real_replays/20261018T202359164678Z/summary.json": "2e30cc52658d26fdc7f3464e368600c27f8a41d20b2b1941e2a78541330722aa",
+    "real_replays/20261018T202359164678Z/replay_01/decisions.json": "164a5018cb0c55c2153725e764fa2cca19f8c7320ee4c7f571ff667935269af7",
+    "real_replays/20261018T202359164678Z/replay_02/decisions.json": "abab6b72a3e0f5069fcc2e0dc067b5ca592a90ae57ea4b14a3d1bb509a35e2ce",
+    "real_replays/20261018T202359164678Z/replay_03/decisions.json": "5de17e73748b01ac2d5cbf22404e3537a25d6d4c06fabfd13ee519a4b04291f0"
+  },
+  "preservation_checks": {
+    "original_failed_m6_summary": "c34f2cfacdb4102e9d4ca8b290e141da3640784254e29db310bf8020501b384b",
+    "corrected_iam_policy": "bdb470ee82a2d4093ec3819167380aba2f89e6afedea1ec58aaa9b7e95c63242",
+    "frozen_config": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
+    "decision_wording": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b",
+    "m5_published_evidence": "35d97340eebba2a2a34ecdfd816246f8a81fdd00712531b2dba1d92ed239805c"
+  },
+  "protected_evaluation_data_accessed": false,
+  "identifiers_redacted": true
+}

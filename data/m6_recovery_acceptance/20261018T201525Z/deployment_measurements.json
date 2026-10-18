@@ -1,0 +1,95 @@
+{
+  "artifact_version": "lurker-m6-recovery-deployment-measurements-v1",
+  "status": "PASS",
+  "region": "us-east-2",
+  "instance_type": "m7i.2xlarge",
+  "architecture": "linux/amd64",
+  "launch_time_utc": "2026-10-18T20:16:39Z",
+  "termination_initiated_utc": "2026-10-18T20:25:06Z",
+  "paid_window_seconds": 507,
+  "container_image_id": "sha256:bb5f91d75ace12f1aad2ecd9dddf9be519c29e8e95005e5bc67dbeb7e6bd12c3",
+  "container_image_size_bytes": 1367163075,
+  "frozen_configuration": {
+    "context_k": 3,
+    "reply_threshold": 0.2,
+    "react_threshold": 0.04,
+    "mock_decider": false,
+    "bedrock_max_calls": 3,
+    "bedrock_latest_text_allowlist": true
+  },
+  "injected_drills": {
+    "status": "PASS",
+    "decider_timeout": "PASS",
+    "bedrock_error": "PASS",
+    "websocket_reconnect": "PASS",
+    "network": "disabled",
+    "real_bedrock_calls": 0,
+    "disposable_container_destroyed": true
+  },
+  "external_reconnect": {
+    "status": "PASS",
+    "connections": 2,
+    "messages": 2,
+    "actions": ["SILENT", "REACT"],
+    "bedrock_calls": 0,
+    "duplicate_events": 0,
+    "runtime_errors": 0
+  },
+  "authorized_replay_sequence": {
+    "status": "PASS",
+    "required_replays": 3,
+    "completed_replays": 3,
+    "passed_replays": 3,
+    "retries": 0,
+    "messages": 9,
+    "actions": {"SILENT": 3, "REACT": 3, "REPLY": 3},
+    "bedrock_calls": 3,
+    "bedrock_successes": 3,
+    "runtime_errors": 0,
+    "duplicate_events": 0,
+    "decider_latency_ms": {
+      "count": 9,
+      "minimum": 1229.311107000001,
+      "p50": 1406.0472920000393,
+      "p95": 1516.4360999999644,
+      "maximum": 1516.4360999999644
+    },
+    "bedrock_latency_ms": {
+      "count": 3,
+      "minimum": 906.4960210000095,
+      "average": 961.292607999989,
+      "maximum": 999.2648389999772
+    },
+    "bedrock_input_tokens": 477,
+    "bedrock_output_tokens": 90
+  },
+  "memory": {
+    "container_cgroup_current_bytes": 13309022208,
+    "container_cgroup_peak_bytes": 13320359936,
+    "container_limit_bytes": 25769803776,
+    "docker_reported_working_set": "7.959 GiB",
+    "host_total_bytes": 33089249280,
+    "host_available_bytes": 23544356864,
+    "pids": 39,
+    "oom_killed": false
+  },
+  "container_hardening": {
+    "cpu_limit": 8,
+    "pids_limit": 1024,
+    "capabilities_dropped": ["ALL"],
+    "no_new_privileges": true,
+    "static_aws_credentials_copied": false
+  },
+  "safeguards_at_measurement": {
+    "automatic_termination_timer_active": true,
+    "automatic_termination_time_utc": "2026-10-18T21:07:27Z",
+    "minutes_remaining": 42,
+    "instance_initiated_shutdown_behavior": "terminate",
+    "encrypted_root_volume": true,
+    "root_volume_delete_on_termination": true,
+    "imds_v2_required": true
+  },
+  "protected_evaluation_data_accessed": false,
+  "m5_configuration_changed": false,
+  "production_readiness": false
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_version": "lurker-m6-deployed-reconnect-v1",
+  "status": "PASS",
+  "completed_at": "2026-10-18T19:39:26.094268+00:00",
+  "connections": 2,
+  "messages": 2,
+  "actions": [
+    "SILENT",
+    "REACT"
+  ],
+  "bedrock_calls_made": 0,
+  "duplicate_events": 0,
+  "runtime_errors": 0,
+  "target": "deployed_instance",
+  "protected_evaluation_data_accessed": false,
+  "m5_configuration_changed": false
+}
