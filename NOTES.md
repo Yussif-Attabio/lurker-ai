@@ -1100,3 +1100,25 @@ The MIT-licensed repository was created as Public at
 part of M7 only; the Builder Center article, public demo video, required tags,
 eligibility confirmation, final submission, and owner final M7 GO remain
 pending. No AWS resource, real Decider call, or Bedrock call was used.
+
+## M7 automated demo preview - PASS - 2026-10-18
+
+A guarded Playwright recorder was added with two distinct modes. Preview mode
+starts an isolated MOCK server and is never submission eligible. Final mode
+fails closed unless it receives explicit one-call approval, exact Bedrock
+region/profile restrictions, the exact allowed REPLY prompt, the real Decider,
+and the frozen k=3 / reply 0.20 / react 0.04 policy.
+
+The corrected normal-paced preview completed in 62.04 seconds at 1440×900. It
+showed SILENT, REACT, and REPLY in order, the local celebration reaction, the
+reusable decision-pattern scene, and the published M5 NO-GO. Counters ended at
+three messages, one action of each type, zero errors, zero Bedrock calls, and
+three calls avoided. The MOCK banner and `[MOCK]` reply were intentionally
+visible. The preview is therefore workflow evidence only and must not be used
+as final hackathon footage.
+
+The local video and logs remain ignored under `artifacts/demo-recordings/`.
+Only the sanitized validation summary is public. No AWS resource, real Decider
+call, or Bedrock call was used. Final recording and video publication remain
+pending separate approval. The complete offline regression suite passed 132
+tests in 4.38 seconds, and the final-mode no-approval guard passed.

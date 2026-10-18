@@ -19,6 +19,8 @@ phase launched no AWS resource and made no Decider or Bedrock call.
 - [x] Reusable package guide, standalone gate wrapper, minimal example, and
   official Strands intervention wiring.
 - [x] Offline regression and documentation validation.
+- [x] Guarded Playwright recorder with separate MOCK preview and one-call
+  real-service modes; generated video artifacts remain local and ignored.
 - [x] Public MIT-licensed source repository:
   `https://github.com/Yussif-Attabio/lurker-ai`.
 - [ ] Human review and final M7 GO/NO-GO.
@@ -29,6 +31,10 @@ phase launched no AWS resource and made no Decider or Bedrock call.
   passed** in 2.72 seconds.
 - Final pre-publication full offline regression suite: **126 passed** in 3.92
   seconds.
+- Post-recorder full offline regression suite: **132 passed** in 4.38 seconds.
+- Automated preview: **PASS**, 62.04 seconds, 1440×900, three expected actions,
+  zero errors, zero AWS/Bedrock calls, and visibly non-submission-eligible MOCK
+  output.
 - Python compilation for the new reusable modules: PASS.
 - Frontend JavaScript syntax: PASS.
 - Required local files and MIT license: PASS.
@@ -40,6 +46,8 @@ phase launched no AWS resource and made no Decider or Bedrock call.
 
 Reproducible evidence:
 `data/m7_submission/20261018T213056Z/validation.json`.
+Recorder validation:
+`data/m7_submission/20261018T215531Z/demo_recorder_validation.json`.
 
 ## Evidence boundaries
 

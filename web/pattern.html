@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The reusable SILENT, REACT, or REPLY gate from Lurker AI.">
+    <title>Lurker AI - Reusable decision pattern</title>
+    <link rel="stylesheet" href="/assets/pattern.css">
+  </head>
+  <body>
+    <header>
+      <a class="wordmark" href="/" aria-label="Return to Lurker AI">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>Lurker AI</span>
+      </a>
+      <span class="package">decision_pattern/</span>
+    </header>
+    <main>
+      <section class="intro">
+        <p class="eyebrow">Reusable Strands pattern</p>
+        <h1 id="pattern-title">Decide before generating</h1>
+        <p class="lede">A typed three-way decision prevents unnecessary model calls while preserving lightweight acknowledgment.</p>
+        <div class="options" aria-label="Available decisions">
+          <article><strong>SILENT</strong><span>Do nothing</span></article>
+          <article><strong>REACT</strong><span>Render a local emoji</span></article>
+          <article><strong>REPLY</strong><span>Allow text generation</span></article>
+        </div>
+      </section>
+      <section class="code-card" aria-label="Reusable gate example">
+        <div class="code-heading">
+          <span>ChimeInGate + ChimeInIntervention</span>
+          <span>fail closed</span>
+        </div>
+        <pre><code><span class="muted"># One typed question, three bounded options</span>
+decision = ChimeInGate(decider, policy).decide(state)
+
+<span class="keyword">if</span> decision.action == <span class="string">"REPLY"</span>:
+    <span class="keyword">return</span> Proceed()          <span class="muted"># generation is allowed</span>
+
+<span class="keyword">return</span> Intervene()             <span class="muted"># SILENT or local REACT</span></code></pre>
+        <div class="flow" aria-label="Decision flow">
+          <span>Message + context</span><b>→</b><span>Strands Decider</span><b>→</b><span>SILENT · REACT · REPLY</span>
+        </div>
+      </section>
+    </main>
+    <footer>Frozen policy: k=3 · reply 0.20 · react 0.04</footer>
+  </body>
+</html>

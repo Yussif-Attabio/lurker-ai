@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-18T21:55:31Z",
+  "mode": "preview",
+  "status": "PASS",
+  "submission_eligible": false,
+  "reason_not_eligible": "The preview intentionally uses the visibly labeled MockDecider and MockBedrockReplier.",
+  "video": {
+    "duration_seconds": 62.04,
+    "width": 1440,
+    "height": 900,
+    "frames_per_second": 25,
+    "codec": "VP9",
+    "container": "WebM",
+    "bytes": 4382129,
+    "sha256": "99b3a67beec43d8cebd0dca5c1b080ace34d0e264662a48976505cdd99fb4bf3",
+    "audio": false,
+    "published": false
+  },
+  "actions": [
+    {
+      "expected": "SILENT",
+      "observed": "SILENT"
+    },
+    {
+      "expected": "REACT",
+      "observed": "REACT"
+    },
+    {
+      "expected": "REPLY",
+      "observed": "REPLY"
+    }
+  ],
+  "metrics": {
+    "messages_read": 3,
+    "silent": 1,
+    "react": 1,
+    "reply": 1,
+    "errors": 0,
+    "bedrock_calls_made": 0,
+    "bedrock_calls_avoided_vs_every_message": 3
+  },
+  "safeguards": {
+    "mock_banner_visible": true,
+    "preview_output_ignored_by_git": true,
+    "aws_resources_launched": 0,
+    "real_decider_calls": 0,
+    "bedrock_calls": 0,
+    "final_mode_has_duration_gate": true,
+    "final_mode_has_exact_prompt_allowlist": true,
+    "final_mode_has_one_call_cap": true,
+    "final_mode_has_no_retry": true
+  }
+}

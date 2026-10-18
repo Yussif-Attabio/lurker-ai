@@ -113,12 +113,13 @@ preserved separately; it was never overwritten by the successful recovery.
 
 The public MIT-licensed repository requirement is now satisfied at
 [Yussif-Attabio/lurker-ai](https://github.com/Yussif-Attabio/lurker-ai), and
-the latest full offline regression suite has **126 passing tests**. Qualification
+the latest full offline regression suite has **132 passing tests**. Qualification
 still requires the AWS Builder Center article and a public demo video under
 three minutes. The final entry requires `#strands-decider-2b` and `#policy`.
 
 - Article facts: [`ARTICLE_NOTES.md`](ARTICLE_NOTES.md)
 - Recording plan: [`DEMO_SCRIPT.md`](DEMO_SCRIPT.md)
+- Automated recorder: [`DEMO_RECORDING.md`](DEMO_RECORDING.md)
 - M7 gate: [`M7_ACCEPTANCE.md`](M7_ACCEPTANCE.md)
 
 ## License

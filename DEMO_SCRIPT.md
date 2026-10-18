@@ -1,6 +1,6 @@
 # Lurker AI demo script
 
-Status: **LOCAL SHOT LIST - NOT RECORDED OR PUBLISHED**
+Status: **AUTOMATED PREVIEW PASSED - FINAL REAL-SERVICE RECORDING PENDING**
 
 Target runtime: **2 minutes 45 seconds maximum**. Use no third-party logos,
 copyrighted music, private chat, mock output, or fabricated overlays.
@@ -11,6 +11,12 @@ Record only with the real Decider active and the MOCK banner absent. A fresh
 REPLY may make one paid Bedrock call and requires separate owner approval. Do
 not launch AWS infrastructure unless separately authorized. Label preserved
 evidence as recorded evidence rather than pretending it is live.
+
+The guarded workflow is documented in `DEMO_RECORDING.md`. Its 62.04-second
+MOCK preview passed locally at 1440×900 with SILENT, REACT, and REPLY in order,
+zero errors, and zero Bedrock calls. The MOCK banner and reply remain visible,
+so that preview is intentionally **not submission eligible**. Final capture
+still requires separate approval for one Bedrock call and the real Decider.
 
 ## Shot list
 
