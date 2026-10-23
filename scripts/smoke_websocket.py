@@ -14,7 +14,7 @@ import httpx
 import websockets
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT = ROOT / "data" / "m2_acceptance"
+DEFAULT_OUTPUT = ROOT / "data" / "websocket_acceptance"
 SCENARIOS = [
     ("SILENT", {"type": "message", "sender": "Alex", "text": "Let's meet at four tomorrow."}),
     (

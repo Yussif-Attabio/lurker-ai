@@ -67,7 +67,7 @@ security group, key pair, role, inline policy, and instance profile were
 deleted. Regional checks found zero active instances, volumes, network
 interfaces, Elastic IPs, NAT gateways, load balancers, RDS instances, or
 account-owned snapshots. Recovery evidence root:
-`data/m6_recovery_acceptance/20261018T201525Z/`.
+`data/deployment_recovery/20261018T201525Z/`.
 
 ## Controlled deployed acceptance - NO-GO
 
@@ -108,7 +108,7 @@ The instance was terminated immediately after evidence collection. The root
 volume, security group, key pair, role, instance profile, and local private key
 were deleted. Tagged and regional post-run inventory found zero unexpected
 billable resources. Evidence root:
-`data/m6_acceptance/20261018T192248Z/`.
+`data/deployment_failure/20261018T192248Z/`.
 
 ## Preserved boundaries
 
@@ -130,7 +130,7 @@ billable resources. Evidence root:
   reconnect drills using injected test doubles.
 - `web/app.js`: reconnect-time REST reconciliation plus duplicate-decision and
   duplicate-reaction protection.
-- `data/demo/m6_conversation_v1.json`: versioned public three-message replay
+- `data/demo/three_action_conversation_v1.json`: versioned public three-message replay
   fixture, separate from evaluation data.
 - `scripts/demo_replay.py`: guarded WebSocket replay, transcript validation,
   realistic delays, duplicate/error checks, and credential-safe evidence.
@@ -146,14 +146,14 @@ billable resources. Evidence root:
 | Deterministic local failure drills | PASS: timeout fails closed, Bedrock error creates no reply, reconnect events occur once | `scripts/run_m6_failure_drills.py`, `tests/test_m6_reliability.py` |
 | Browser reconnect behavior | PASS: REST reconciliation and duplicate suppression are covered | `web/app.js`, `tests/test_m6_reliability.py` |
 | Linux `amd64` verification | PASS: recorded during M6 local acceptance | Historical snapshot at commit `56f319f` |
-| Deployed injected drills | PASS; zero real calls | `data/m6_acceptance/20261018T192248Z/failure_drills/summary.json` |
-| External real reconnect | PASS; SILENT → REACT, zero duplicates/Bedrock | `data/m6_acceptance/20261018T192248Z/deployed_reconnect/summary.json` |
-| Three-replay sequence | NO-GO on replay 1; replays 2-3 not started | `data/m6_acceptance/20261018T192248Z/summary.json` |
-| Cleanup | PASS; zero unexpected billable resources | `data/m6_acceptance/20261018T192248Z/cleanup_inventory.json` |
-| Recovery injected drills | PASS; network disabled, zero real calls | `data/m6_recovery_acceptance/20261018T201525Z/injected_drills/20261018T202248982675Z/summary.json` |
-| Recovery external reconnect | PASS; two connections, zero duplicates/Bedrock | `data/m6_recovery_acceptance/20261018T201525Z/deployed_reconnect/summary.json` |
-| Recovery three-replay sequence | PASS; 3/3 replays, exactly 3 successful Bedrock calls | `data/m6_recovery_acceptance/20261018T201525Z/real_replays/20261018T202359164678Z/summary.json` |
-| Recovery cleanup | PASS; zero unexpected billable resources | `data/m6_recovery_acceptance/20261018T201525Z/cleanup_inventory.json` |
+| Deployed injected drills | PASS; zero real calls | `data/deployment_failure/20261018T192248Z/failure_drills/summary.json` |
+| External real reconnect | PASS; SILENT → REACT, zero duplicates/Bedrock | `data/deployment_failure/20261018T192248Z/deployed_reconnect/summary.json` |
+| Three-replay sequence | NO-GO on replay 1; replays 2-3 not started | `data/deployment_failure/20261018T192248Z/summary.json` |
+| Cleanup | PASS; zero unexpected billable resources | `data/deployment_failure/20261018T192248Z/cleanup_inventory.json` |
+| Recovery injected drills | PASS; network disabled, zero real calls | `data/deployment_recovery/20261018T201525Z/injected_drills/20261018T202248982675Z/summary.json` |
+| Recovery external reconnect | PASS; two connections, zero duplicates/Bedrock | `data/deployment_recovery/20261018T201525Z/deployed_reconnect/summary.json` |
+| Recovery three-replay sequence | PASS; 3/3 replays, exactly 3 successful Bedrock calls | `data/deployment_recovery/20261018T201525Z/real_replays/20261018T202359164678Z/summary.json` |
+| Recovery cleanup | PASS; zero unexpected billable resources | `data/deployment_recovery/20261018T201525Z/cleanup_inventory.json` |
 
 The main branch retains the complete redacted failed-deployment and successful
 recovery bundles, including all three successful replay transcripts. Superseded

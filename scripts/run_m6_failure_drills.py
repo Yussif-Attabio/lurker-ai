@@ -20,7 +20,7 @@ from src.lurker.mock_decider import MockDecider
 from src.lurker.schemas import DeciderResult
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_ROOT = ROOT / "data" / "m6_local_verification"
+DEFAULT_OUTPUT_ROOT = ROOT / "data" / "reliability_verification"
 MODEL_ID = "StrandsAgents/strands-decider-2B-qwen3.5-v1-2610"
 
 

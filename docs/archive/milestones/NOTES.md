@@ -309,7 +309,7 @@ Real Claude Haiku 4.5 response:
 - Decider latency p50: 688.56 ms; p95: 1030.31 ms.
 - SILENT and REACT events both record `bedrock_called=false`; REPLY records
   `bedrock_called=true`.
-- Evidence: `data/m2_acceptance/20261016T071233Z/`.
+- Evidence: `data/archive/websocket_acceptance/20261016T071233Z/`.
 - Paid infrastructure launched: none. EC2/GPU launched: none.
 - Held-out evaluation dataset accessed or evaluated: no.
 
@@ -390,7 +390,7 @@ Memory evidence:
 - A real cross-architecture container load was intentionally not forced because
   Docker Desktop's VM memory is below the measured loader peak. Native Linux
   amd64 peak memory remains an M3 deployed-acceptance measurement.
-- Evidence: `data/m3_local_verification/20261016T190727Z/summary.json`.
+- Evidence: `data/archive/container_verification/20261016T190727Z/summary.json`.
 
 No AWS resources were created, no Bedrock invocation occurred, and the held-out
 evaluation dataset was not accessed. M3 remains pending paid deployment approval
@@ -442,7 +442,7 @@ deleted. Final verification returned zero active run-scoped instances, volumes,
 security groups, key pairs, Elastic IPs, NAT gateways, snapshots, IAM roles, or
 instance profiles.
 
-Evidence: `data/m3_acceptance/20261016T194448Z/`. This single-decision result is
+Evidence: `data/archive/cloud_deployment_acceptance/20261016T194448Z/`. This single-decision result is
 not production-readiness, load, concurrency, high-availability, durable-storage,
 or production-cost approval. The held-out dataset remains untouched and M4 has
 not begun. Technical M3 acceptance passed; final M3 approval remains with the
@@ -452,8 +452,8 @@ project owner.
 
 The project owner approved M3 as a final GO based on the successful controlled
 AWS deployment acceptance. All deployment evidence remains preserved under
-`data/m3_acceptance/20261016T194448Z/` and the local amd64 verification evidence
-remains under `data/m3_local_verification/20261016T190727Z/`.
+`data/archive/cloud_deployment_acceptance/20261016T194448Z/` and the local amd64 verification evidence
+remains under `data/archive/container_verification/20261016T190727Z/`.
 
 The accepted limitation remains explicit: M3 proves controlled deployment
 viability, not production readiness, high availability, concurrency,
@@ -514,7 +514,7 @@ Verification at the initial M4 checkpoint:
   `sha256:7a139786fa86601577d340d1e8467c068b3cc843fab905199f3ec0dd049f672f`.
 - Safe local mock-container frontend check: PASS; container removed.
 - Required M4 cost: $0.
-- Evidence: `data/m4_acceptance/20261016T213850Z/`.
+- Evidence: `data/archive/frontend_acceptance/20261016T213850Z/`.
 
 M4 proves interactive local frontend viability, not production readiness,
 authentication, multi-room isolation, durable history, sustained concurrency,
@@ -675,7 +675,7 @@ the cached model revision and all code/config hashes also matched.
 No held-out data was opened, no model was loaded, and no AWS or Bedrock call was
 made during the freeze. The one-time procedure and guarded unlock utility are
 prepared but unexecuted. Evidence: `M5_PREFLIGHT.md` and
-`data/m5_freeze/20261017T002835Z/preflight.json`.
+`data/archive/evaluation_freeze/20261017T002835Z/preflight.json`.
 
 M5 remains incomplete. A separate, explicit owner authorization is required
 before the one-time held-out unlock/evaluation, controlled deployment, or
@@ -947,7 +947,7 @@ Peak cgroup memory was 13,295,747,072 bytes with OOM false. The 878-second paid
 window is estimated at $0.10064 gross. The instance was terminated immediately,
 and post-run inventory confirmed zero unexpected billable resources. M6 remains
 NO-GO/incomplete. M5's performance NO-GO, frozen configuration, and protected
-data boundary remain unchanged. Evidence: `data/m6_acceptance/20261018T192248Z/`.
+data boundary remain unchanged. Evidence: `data/deployment_failure/20261018T192248Z/`.
 
 ## M6 offline IAM recovery investigation - 2026-10-18
 
@@ -974,7 +974,7 @@ all three models; and 4/4 offline least-privilege tests passed. It grants only
 `bedrock:InvokeModel`, with no wildcard, streaming, model-management, or admin
 access. No IAM change, EC2 launch, model invocation, protected-data access, or
 charge occurred. M6 remains NO-GO. Plan: `M6_IAM_RECOVERY_PLAN.md`; evidence:
-`data/m6_iam_recovery/20261018T195306Z/`.
+`data/iam_recovery/20261018T195306Z/`.
 
 ## M6 recovery pre-deployment preflight - NO-GO - 2026-10-18
 
@@ -1001,7 +1001,7 @@ management-account administrator supplies the requested dated clearance (or a
 separately approved real canary is authorized). Full report:
 `M6_RECOVERY_PREFLIGHT.md`; administrator request:
 `M6_SCP_CLEARANCE_REQUEST.md`; evidence:
-`data/m6_iam_recovery/20261018T200310Z/preflight.json`.
+`data/iam_recovery/20261018T200310Z/preflight.json`.
 
 ## M6 controlled recovery deployment - PASS, final owner GO pending - 2026-10-18
 
@@ -1029,8 +1029,8 @@ unexpected billable resources. Together with the preserved first deployment,
 the cumulative M6 controlled-deployment estimate is approximately `$0.15976`.
 
 The failed first deployment remains permanently preserved under
-`data/m6_acceptance/20261018T192248Z/`; it was not overwritten. Recovery
-evidence is under `data/m6_recovery_acceptance/20261018T201525Z/`. Frozen M5
+`data/deployment_failure/20261018T192248Z/`; it was not overwritten. Recovery
+evidence is under `data/deployment_recovery/20261018T201525Z/`. Frozen M5
 configuration and evidence were unchanged, protected evaluation data was not
 accessed, and M5's model-performance NO-GO remains. M6 deployed requirements
 now pass, but owner final GO, production readiness, and M7 authorization remain
@@ -1043,11 +1043,11 @@ successful controlled recovery deployment. M6 is technically closed. The
 three successful real-service replay transcripts, raw decisions, latency and
 token measurements, cost estimate, corrected least-privilege IAM evidence,
 and zero-resource cleanup verification remain preserved under
-`data/m6_recovery_acceptance/20261018T201525Z/` with a SHA-256 evidence
+`data/deployment_recovery/20261018T201525Z/` with a SHA-256 evidence
 manifest.
 
 The earlier failed deployment and its NO-GO record remain separately preserved
-under `data/m6_acceptance/20261018T192248Z/`; no artifact was overwritten or
+under `data/deployment_failure/20261018T192248Z/`; no artifact was overwritten or
 reclassified. M5's model-performance NO-GO and Bedrock-judge deviation remain
 unchanged. M6 FINAL GO is not production-readiness, high-availability,
 sustained-load, or model-quality approval. M7 implementation, new AWS

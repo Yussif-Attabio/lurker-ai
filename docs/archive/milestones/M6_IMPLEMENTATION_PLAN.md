@@ -35,7 +35,7 @@ Bedrock-baseline deviation. M6 must preserve all of the following:
 - the 105 protected reserve scenarios and original held-out scenarios remain
   unopened and unused;
 - no M6 artifact is written under `results/`; M6 runtime evidence goes under
-  `data/m6_acceptance/`;
+  `data/deployment_failure/`;
 - no accuracy, production-readiness, availability, or generalization claim is
   inferred from a successful demo replay.
 
@@ -104,7 +104,7 @@ not adjust thresholds or wording.
 
 ### D4. Versioned replay fixture
 
-Add `data/demo/m6_conversation_v1.json` containing only the public demo messages,
+Add `data/demo/three_action_conversation_v1.json` containing only the public demo messages,
 sender names, stable step IDs, expected actions, and delay values. It must not
 contain any M5 held-out or protected-reserve content.
 
@@ -132,7 +132,7 @@ The orchestrator must enforce:
 Write new evidence only to:
 
 ```text
-data/m6_acceptance/<timestamp>/
+data/deployment_failure/<timestamp>/
   run_manifest.json
   failure_drills/
     decider_timeout.json

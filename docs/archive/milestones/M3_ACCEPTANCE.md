@@ -58,7 +58,7 @@ All controls were confirmed before the application image was run.
 - [x] One real Decider decision succeeded through the deployed WebSocket pipeline.
 - [x] The acceptance case made zero Bedrock calls.
 - [x] Real external transcript, latency, hardware, and errors were saved under
-      `data/m3_acceptance/20261016T194448Z/`.
+      `data/archive/cloud_deployment_acceptance/20261016T194448Z/`.
 - [x] The instance was terminated immediately after evidence collection.
 - [x] Temporary infrastructure was deleted and a zero-resource cleanup check passed.
 - [x] No held-out scenario or M5 result was accessed.
@@ -101,13 +101,13 @@ profiles. The temporary SSH private key was deleted from the Mac.
 
 ## Evidence and limitations
 
-- Summary: `data/m3_acceptance/20261016T194448Z/summary.json`.
+- Summary: `data/archive/cloud_deployment_acceptance/20261016T194448Z/summary.json`.
 - WebSocket transcript:
-  `data/m3_acceptance/20261016T194448Z/websocket_transcript.json`.
+  `data/archive/cloud_deployment_acceptance/20261016T194448Z/websocket_transcript.json`.
 - Infrastructure/memory record:
-  `data/m3_acceptance/20261016T194448Z/deployment_measurements.json`.
+  `data/archive/cloud_deployment_acceptance/20261016T194448Z/deployment_measurements.json`.
 - Local amd64 preparation:
-  `data/m3_local_verification/20261016T190727Z/summary.json`.
+  `data/archive/container_verification/20261016T190727Z/summary.json`.
 
 This was one short, single-user, single-decision deployment check. It does not
 establish production security, availability, concurrency, autoscaling, durable

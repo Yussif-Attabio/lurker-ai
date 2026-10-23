@@ -47,9 +47,9 @@ phase launched no AWS resource and made no Decider or Bedrock call.
 - Bedrock calls: 0.
 
 Reproducible evidence:
-`data/m7_submission/20261018T213056Z/validation.json`.
+`data/submission_validation/20261018T213056Z/validation.json`.
 Recorder validation:
-`data/m7_submission/20261018T215531Z/demo_recorder_validation.json`.
+`data/submission_validation/20261018T215531Z/demo_recorder_validation.json`.
 
 ## Evidence boundaries
 

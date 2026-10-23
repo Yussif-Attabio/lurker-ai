@@ -4,12 +4,12 @@ This directory contains the small set of runtime artifacts needed to support
 the public submission. It is evidence, not application source code.
 
 - `demo/` contains the synthetic three-message replay fixture.
-- `m6_acceptance/` preserves the redacted failed deployment, including the
+- `deployment_failure/` preserves the redacted failed deployment, including the
   access-denied result and cleanup record.
-- `m6_iam_recovery/` preserves the least-privilege IAM diagnosis and preflight.
-- `m6_recovery_acceptance/` preserves the successful recovery deployment, all
+- `iam_recovery/` preserves the least-privilege IAM diagnosis and preflight.
+- `deployment_recovery/` preserves the successful recovery deployment, all
   three replay transcripts, measurements, cost estimate, and cleanup record.
-- `m7_submission/` contains the offline submission and recorder validations.
+- `submission_validation/` contains the offline submission and recorder checks.
 - `archive/` contains older M2-M5 evidence and superseded local M6 output. It
   is retained for auditability but is not part of the current evidence path.
 

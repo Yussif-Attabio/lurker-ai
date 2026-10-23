@@ -166,7 +166,7 @@ Preflight results:
 
 Freeze contract: `config/m5_frozen_evaluation.yaml`, SHA-256
 `52a54a7058f53886bc789d930670e6f74407603105b13c13d01238ca24658401`.
-Machine-readable preflight: `data/m5_freeze/20261017T002835Z/preflight.json`.
+Machine-readable preflight: `data/archive/evaluation_freeze/20261017T002835Z/preflight.json`.
 Human-readable preflight: `M5_PREFLIGHT.md`. The guarded procedure is prepared
 in `M5_HELDOUT_PROCEDURE.md` but has not been executed.
 

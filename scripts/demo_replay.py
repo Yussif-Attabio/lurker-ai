@@ -16,8 +16,8 @@ import httpx
 import websockets
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_FIXTURE = ROOT / "data" / "demo" / "m6_conversation_v1.json"
-DEFAULT_OUTPUT_ROOT = ROOT / "data" / "m6_local_verification" / "replays"
+DEFAULT_FIXTURE = ROOT / "data" / "demo" / "three_action_conversation_v1.json"
+DEFAULT_OUTPUT_ROOT = ROOT / "data" / "reliability_verification" / "replays"
 VALID_ACTIONS = {"SILENT", "REACT", "REPLY"}
 
 

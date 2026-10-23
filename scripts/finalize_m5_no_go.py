@@ -29,7 +29,14 @@ COMBINED_BASELINE = (
 COMBINED_PROVENANCE = (
     ROOT / "eval" / "recovery" / "combined_reference" / "provenance_manifest.json"
 )
-PIPELINE_EVIDENCE = ROOT / "data" / "m2_acceptance" / "20261016T071233Z" / "summary.json"
+PIPELINE_EVIDENCE = (
+    ROOT
+    / "data"
+    / "archive"
+    / "websocket_acceptance"
+    / "20261016T071233Z"
+    / "summary.json"
+)
 FROZEN_CONFIG = ROOT / "config" / "m5_frozen_evaluation.yaml"
 PUBLISHED = ROOT / "results" / "published.json"
 OUTPUT_ROOT = ROOT / "results" / "m5_finalization" / "closure"

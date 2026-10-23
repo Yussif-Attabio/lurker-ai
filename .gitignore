@@ -11,17 +11,14 @@ __pycache__/
 artifacts/demo-recordings/
 artifacts/repository-archive/
 data/*.jsonl
-data/m2_acceptance/
-data/m2_acceptance_runtime/
-data/m3_acceptance/
-data/m3_local_verification/
-data/m4_acceptance/
-data/m5_freeze/
-data/m6_acceptance/
-data/m6_iam_recovery/
-data/m6_local_verification/
-data/m6_recovery_acceptance/
-data/m7_submission/
+data/websocket_acceptance/
+data/websocket_runtime/
+data/deployment_acceptance/
+data/container_verification/
+data/frontend_acceptance/
+data/evaluation_freeze/
+data/reliability_acceptance/
+data/reliability_verification/
 results/**
 eval/labels/labels_a*.csv
 eval/labels/annotator_*.csv
@@ -42,9 +39,9 @@ results/m5_heldout/
 
 # The original failed M6 evidence is preserved locally. Publish only the
 # redacted denial record and summarized acceptance documents.
-data/m6_acceptance/20261018T192248Z/replays/20261018T193946930548Z/replay_01/post_failure_decisions.json
+data/deployment_failure/20261018T192248Z/replays/20261018T193946930548Z/replay_01/post_failure_decisions.json
 
 # Historical terminated-host address; the acceptance document carries the
 # measurements without publishing a public IP.
-data/m3_acceptance/20261016T194448Z/summary.json
-data/archive/m3_acceptance/20261016T194448Z/summary.json
+data/deployment_acceptance/20261016T194448Z/summary.json
+data/archive/cloud_deployment_acceptance/20261016T194448Z/summary.json

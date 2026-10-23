@@ -118,7 +118,7 @@ def test_m7_docs_cover_submission_contract_with_real_evidence() -> None:
         "numerator": 2, "denominator": 3, "rate": 2 / 3
     }
     recovery = json.loads(
-        (ROOT / "data" / "m6_recovery_acceptance" / "20261018T201525Z" / "summary.json").read_text()
+        (ROOT / "data" / "deployment_recovery" / "20261018T201525Z" / "summary.json").read_text()
     )
     assert recovery["authorized_replays"]["passed"] == 3
     assert recovery["bedrock_calls"] == 3
@@ -131,7 +131,7 @@ def test_m7_preserves_frozen_and_failed_evidence() -> None:
         "config/default.yaml": "7e36315af0cd8c389493a711b1b30cf9ca5ddee07b98ab42503a5a9d15e1b832",
         "decision_pattern/lurker_gate.py": "f3318f1ee95a661c720b1f6c770c926a3a1f8f7688e6b83f3825803dfb699a2b",
         "results/published.json": "35d97340eebba2a2a34ecdfd816246f8a81fdd00712531b2dba1d92ed239805c",
-        "data/m6_acceptance/20261018T192248Z/summary.json": "c34f2cfacdb4102e9d4ca8b290e141da3640784254e29db310bf8020501b384b",
+        "data/deployment_failure/20261018T192248Z/summary.json": "c34f2cfacdb4102e9d4ca8b290e141da3640784254e29db310bf8020501b384b",
     }
     assert {name: sha256(ROOT / name) for name in expected} == expected
     source = "\n".join(

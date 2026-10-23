@@ -8,7 +8,7 @@ Prepared: 2026-10-18
 
 The deployed M6 acceptance remains **NO-GO**. Its original configuration,
 replay, redacted and private error evidence, measurements, cleanup record, and
-cost record remain unchanged under `data/m6_acceptance/20261018T192248Z/`.
+cost record remain unchanged under `data/deployment_failure/20261018T192248Z/`.
 This investigation does not alter M5's model-performance NO-GO, does not access
 protected evaluation data, and does not imply production readiness.
 
@@ -87,7 +87,7 @@ wildcard-action, or wildcard-resource access. `Converse` uses
 - Offline regression checks assert exact action, profile, destination list,
   split-statement shape, required condition, and absence of broad grants.
 - AWS Access Analyzer validation and IAM simulation results are recorded in
-  `data/m6_iam_recovery/20261018T195306Z/verification.json`.
+  `data/iam_recovery/20261018T195306Z/verification.json`.
 - Original M6 and frozen M5 artifact hashes are recorded before and after the
   investigation to prove they were not modified.
 

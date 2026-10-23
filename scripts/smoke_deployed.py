@@ -14,7 +14,7 @@ import httpx
 import websockets
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT = ROOT / "data" / "m3_acceptance"
+DEFAULT_OUTPUT = ROOT / "data" / "deployment_acceptance"
 MESSAGE = {
     "type": "message",
     "sender": "Alex",

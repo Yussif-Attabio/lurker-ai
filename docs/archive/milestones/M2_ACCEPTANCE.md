@@ -60,7 +60,7 @@ Real Bedrock response:
 - Decider latency p95: 1030.31 ms
 - Downgraded decisions: 0
 - Errors: 0
-- Evidence directory: `data/m2_acceptance/20261016T071233Z/`
+- Evidence directory: `data/archive/websocket_acceptance/20261016T071233Z/`
 
 All M2 acceptance requirements pass. M2 is complete.
 

@@ -96,11 +96,11 @@ The pytest cache warning is environmental only: the sandbox could not write
 
 ## Evidence
 
-- Summary: `data/m4_acceptance/20261016T213850Z/summary.json`.
+- Summary: `data/archive/frontend_acceptance/20261016T213850Z/summary.json`.
 - Browser transcript:
-  `data/m4_acceptance/20261016T213850Z/browser_transcript.json`.
+  `data/archive/frontend_acceptance/20261016T213850Z/browser_transcript.json`.
 - 1280px screenshot:
-  `data/m4_acceptance/20261016T213850Z/live-dashboard-1280.jpg`.
+  `data/archive/frontend_acceptance/20261016T213850Z/live-dashboard-1280.jpg`.
 
 ## Remaining limitations
 

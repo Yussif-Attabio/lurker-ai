@@ -93,7 +93,7 @@ Both evidence trees remain byte-for-byte unchanged:
   matched.
 
 Machine-readable evidence is preserved at
-`data/m5_freeze/20261017T002835Z/preflight.json`.
+`data/archive/evaluation_freeze/20261017T002835Z/preflight.json`.
 
 ## One-time procedure readiness
 

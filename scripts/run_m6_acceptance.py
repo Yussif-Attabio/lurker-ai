@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 
 from scripts.demo_replay import DEFAULT_FIXTURE, ROOT, ReplayError, run_replay
 
-DEFAULT_OUTPUT_ROOT = ROOT / "data" / "m6_acceptance"
+DEFAULT_OUTPUT_ROOT = ROOT / "data" / "reliability_acceptance"
 
 
 def validate_acceptance_summaries(

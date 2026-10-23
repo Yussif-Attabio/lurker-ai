@@ -3,7 +3,7 @@
 Status: **IMPLEMENTED - TECHNICAL PASS, AWAITING OWNER FINAL M4 GO**
 
 The completed implementation and browser evidence are recorded in
-`M4_ACCEPTANCE.md` and `data/m4_acceptance/20261016T213850Z/`. Every technical
+`M4_ACCEPTANCE.md` and `data/archive/frontend_acceptance/20261016T213850Z/`. Every technical
 criterion below passed; only the project owner's final M4 GO remains open.
 
 ## Objective
@@ -82,7 +82,7 @@ must not call `/api/eval/latest`, show sample metrics, or touch held-out data.
 | `src/lurker/api.py` updates | Serve `/` and static assets; expose a non-secret `/api/about` contract sourced from backend constants |
 | `tests/test_m4_frontend.py` | Static route, About contract, security, and frontend contract tests |
 | `M4_ACCEPTANCE.md` | Human checklist, real observed UI outputs, screenshots/evidence paths, limitations, and final owner decision |
-| `data/m4_acceptance/<timestamp>/` | Acceptance summary, browser screenshot, and mock WebSocket transcript; no evaluation artifacts |
+| `data/archive/frontend_acceptance/<timestamp>/` | Acceptance summary, browser screenshot, and mock WebSocket transcript; no evaluation artifacts |
 | `README.md` and `NOTES.md` updates | Copy-paste local launch steps, verified results, provenance, and limitations |
 
 ## Work packages
@@ -255,7 +255,7 @@ check is reviewed, and the project owner gives a final M4 GO.
 - [x] About content comes from backend constants/config.
 - [x] The page is readable and operable at 1280px and by keyboard.
 - [x] Existing plus new offline tests pass with zero AWS calls.
-- [x] Browser acceptance evidence is saved under `data/m4_acceptance/`.
+- [x] Browser acceptance evidence is saved under `data/archive/frontend_acceptance/`.
 - [x] Held-out data remains untouched and M5 work has not started.
 - [ ] Project owner records the final M4 GO.
 
