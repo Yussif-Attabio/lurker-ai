@@ -21,7 +21,7 @@ participation observable, testable, and cheaper than replying to every message.
 
 > Status: hackathon prototype. The software and controlled deployment passed
 > their acceptance checks, but the frozen held-out model evaluation did not.
-> Lurker is not production-ready.
+> Lurker has no production readiness approval.
 
 ## Architecture
 
@@ -159,13 +159,16 @@ decision_pattern/ reusable Chime-In Gate and Strands intervention
 eval/             scenario, labeling, metric, and publication tooling
 scripts/          smoke tests, replay tools, evaluation, and demo recorder
 tests/            offline regression and contract tests
-data/             redacted deployment and reliability evidence
-results/          recorded evaluation outputs
+data/             curated, redacted acceptance evidence and demo fixture
+results/          frozen evaluation evidence and published M5 result
 config/           current and frozen experiment configurations
 ```
 
-Historical milestone plans and acceptance records remain in the repository as
-an audit trail. They are not claims of production readiness.
+The main branch keeps only evidence that supports the published claims. See
+[`data/README.md`](data/README.md) for the boundary. Superseded milestone notes
+are grouped under [`docs/archive/milestones/`](docs/archive/milestones/), while
+bulky intermediate outputs remain recoverable from Git history, particularly
+the pre-cleanup snapshot at commit `56f319f`.
 
 ## Submission limitations
 

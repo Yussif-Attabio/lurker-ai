@@ -116,7 +116,7 @@ Review `threshold_sweep.csv` and `threshold_recommendation.json`. A human must
 choose the thresholds and copy them into `config/default.yaml`; the script never
 changes configuration automatically. Rerun the tuning evaluation to generate
 the thresholded `report.md`, then the project owner records the final decision
-in `GO_NOGO.md`.
+in `docs/archive/milestones/GO_NOGO.md`.
 
 `run_eval.py --split heldout` is locked by default. Its explicit override is
 reserved for the approved M5 run.

@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from scripts.build_recovery_candidates import build_rows, normalized_text
-from scripts.labeling_server import public_dataset
+from scripts.labeling_server import public_scenarios
 
 ROOT = Path(__file__).resolve().parents[1]
 RECOVERY_ROOT = ROOT / "eval" / "recovery"
@@ -33,19 +33,27 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def verify_original_evidence() -> dict[str, Any]:
+def display_path(path: Path) -> str:
+    """Prefer a repository-relative path without rejecting temporary bundles."""
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
+def verify_original_evidence(evidence_root: Path = ORIGINAL_EVIDENCE) -> dict[str, Any]:
     """Verify bytes against the preserved manifest without parsing scenario content."""
-    checksum_file = ORIGINAL_EVIDENCE / "evidence.sha256"
+    checksum_file = evidence_root / "evidence.sha256"
     checks: list[dict[str, Any]] = []
     for raw_line in checksum_file.read_text(encoding="utf-8").splitlines():
         expected, relative = raw_line.split(maxsplit=1)
         relative = relative.lstrip("* ")
-        path = ORIGINAL_EVIDENCE / relative
+        path = evidence_root / relative
         observed = sha256(path)
         checks.append(
             {"path": relative, "expected": expected, "observed": observed, "pass": observed == expected}
         )
-    return {"manifest": str(checksum_file.relative_to(ROOT)), "checks": checks, "pass": all(item["pass"] for item in checks)}
+    return {"manifest": display_path(checksum_file), "checks": checks, "pass": all(item["pass"] for item in checks)}
 
 
 def cross_family_near_duplicates(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -62,21 +70,27 @@ def cross_family_near_duplicates(rows: list[dict[str, Any]]) -> list[dict[str, A
     return flags
 
 
-def audit() -> dict[str, Any]:
-    rows = load_jsonl(CANDIDATES)
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+def audit(
+    candidates_path: Path = CANDIDATES,
+    manifest_path: Path = MANIFEST,
+    label_dir: Path = LABEL_DIR,
+    original_evidence_path: Path = ORIGINAL_EVIDENCE,
+) -> dict[str, Any]:
+    """Audit a generated bundle; optional paths keep the check testable in isolation."""
+    rows = load_jsonl(candidates_path)
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     generated_rows, generated_manifest = build_rows()
-    payload = public_dataset("recovery")
+    public_rows = public_scenarios(candidates_path)
     templates: dict[str, Any] = {}
     orders: list[list[str]] = []
     for evaluator in ("a1", "a2", "a3"):
-        path = LABEL_DIR / f"recovery_labels_{evaluator}.csv"
+        path = label_dir / f"recovery_labels_{evaluator}.csv"
         with path.open(newline="", encoding="utf-8-sig") as stream:
             csv_rows = list(csv.DictReader(stream))
         order = [row["id"] for row in csv_rows]
         orders.append(order)
         templates[evaluator] = {
-            "path": str(path.relative_to(ROOT)),
+            "path": display_path(path),
             "row_count": len(csv_rows),
             "all_labels_blank": all(not row["label"].strip() for row in csv_rows),
             "unique_ids": len(set(order)),
@@ -90,11 +104,9 @@ def audit() -> dict[str, Any]:
         if row["family_id"] == "pf13" and not row["message"]["text"].rstrip().endswith("?")
     )
     near_duplicates = cross_family_near_duplicates(rows)
-    public_fields_safe = all(
-        set(row) == {"id", "history", "message"} for row in payload["scenarios"]
-    )
+    public_fields_safe = all(set(row) == {"id", "history", "message"} for row in public_rows)
     reproducible = rows == generated_rows and manifest["candidate_count"] == generated_manifest["candidate_count"]
-    original_evidence = verify_original_evidence()
+    original_evidence = verify_original_evidence(original_evidence_path)
     checks = {
         "candidate_count_195": len(rows) == 195,
         "family_count_39": len({row["family_id"] for row in rows}) == 39,
@@ -112,8 +124,8 @@ def audit() -> dict[str, Any]:
         "punctuation_boundary_present": no_question_mark_questions == 5,
         "generation_reproducible": reproducible,
         "original_nogo_evidence_unchanged": original_evidence["pass"],
-        "no_human_labels_created": not (RECOVERY_ROOT / "labeling" / "unanimous.jsonl").exists(),
-        "no_new_split_created": not (RECOVERY_ROOT / "split_manifest.json").exists(),
+        "no_human_labels_created": not (candidates_path.parent / "labeling" / "unanimous.jsonl").exists(),
+        "no_new_split_created": not (candidates_path.parent / "split_manifest.json").exists(),
     }
     return {
         "artifact_version": "lurker-m5-recovery-candidate-audit-v1",
@@ -127,8 +139,8 @@ def audit() -> dict[str, Any]:
         "semantic_questions_without_question_mark": no_question_mark_questions,
         "cross_family_near_duplicate_flags": near_duplicates,
         "label_templates": templates,
-        "candidate_sha256": sha256(CANDIDATES),
-        "design_manifest_sha256": sha256(MANIFEST),
+        "candidate_sha256": sha256(candidates_path),
+        "design_manifest_sha256": sha256(manifest_path),
         "original_evidence": original_evidence,
         "checks": checks,
         "model_calls": 0,

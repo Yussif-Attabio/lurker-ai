@@ -18,14 +18,42 @@ from scripts.merge_react_calibration_labels import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-CANDIDATES = ROOT / "eval" / "scenario_candidates.jsonl"
-MANIFEST = ROOT / "eval" / "split_manifest.json"
 CALIBRATION_CANDIDATES = ROOT / "eval" / "react_calibration_candidates.jsonl"
 CALIBRATION_MANIFEST = ROOT / "eval" / "react_calibration_manifest.json"
 
 
-def candidate_rows() -> list[dict]:
-    return [json.loads(line) for line in CANDIDATES.read_text().splitlines() if line]
+def candidate_files(tmp_path: Path) -> tuple[Path, Path]:
+    categories = ("direct_request", "joke", "technical_question")
+    rows = [
+        {
+            "id": f"c{index:03d}",
+            "category": categories[(index - 1) % len(categories)],
+            "history": [],
+            "message": {"sender": "Sam", "text": f"Synthetic candidate {index}"},
+        }
+        for index in range(1, 46)
+    ]
+    candidates = tmp_path / "candidates.jsonl"
+    candidates.write_text(
+        "".join(json.dumps(row) + "\n" for row in rows),
+        encoding="utf-8",
+    )
+    manifest = tmp_path / "split_manifest.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "tuning": [row["id"] for row in rows[:30]],
+                "heldout": [row["id"] for row in rows[30:]],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    return candidates, manifest
+
+
+def candidate_rows(path: Path) -> list[dict]:
+    return [json.loads(line) for line in path.read_text().splitlines() if line]
 
 
 def write_labels(path: Path, labels: dict[str, str]) -> None:
@@ -36,10 +64,11 @@ def write_labels(path: Path, labels: dict[str, str]) -> None:
             writer.writerow({"id": scenario_id, "label": label})
 
 
-def test_split_is_stratified_and_locked_30_15() -> None:
-    rows = candidate_rows()
+def test_split_is_stratified_and_locked_30_15(tmp_path: Path) -> None:
+    candidates, manifest_path = candidate_files(tmp_path)
+    rows = candidate_rows(candidates)
     by_id = {row["id"]: row["category"] for row in rows}
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = json.loads(manifest_path.read_text())
 
     assert len(manifest["tuning"]) == 30
     assert len(manifest["heldout"]) == 15
@@ -50,8 +79,9 @@ def test_split_is_stratified_and_locked_30_15() -> None:
     )
 
 
-def test_public_labeling_payload_hides_split_labels_and_predictions() -> None:
-    rows = public_scenarios(CANDIDATES)
+def test_public_labeling_payload_hides_split_labels_and_predictions(tmp_path: Path) -> None:
+    candidates, _ = candidate_files(tmp_path)
+    rows = public_scenarios(candidates)
     assert len(rows) == 45
     for row in rows:
         assert set(row) == {"id", "history", "message"}
@@ -84,8 +114,9 @@ def test_calibration_design_and_public_payload_are_separate() -> None:
 
 
 def test_blank_sheet_has_spec_columns_and_no_labels(tmp_path: Path) -> None:
+    candidates, _ = candidate_files(tmp_path)
     output = tmp_path / "labels_blank.csv"
-    assert write_blank_sheet(CANDIDATES, output) == 45
+    assert write_blank_sheet(candidates, output) == 45
     with output.open(newline="", encoding="utf-8") as stream:
         rows = list(csv.DictReader(stream))
     assert len(rows) == 45
@@ -94,7 +125,8 @@ def test_blank_sheet_has_spec_columns_and_no_labels(tmp_path: Path) -> None:
 
 
 def test_merge_requires_three_complete_independent_exports(tmp_path: Path) -> None:
-    ids = [row["id"] for row in candidate_rows()]
+    candidates, manifest = candidate_files(tmp_path)
+    ids = [row["id"] for row in candidate_rows(candidates)]
     files = [tmp_path / f"a{index}.csv" for index in range(1, 4)]
     labels = [{scenario_id: "SILENT" for scenario_id in ids} for _ in range(3)]
     labels[2]["c001"] = "REPLY"
@@ -102,7 +134,7 @@ def test_merge_requires_three_complete_independent_exports(tmp_path: Path) -> No
         write_labels(path, values)
 
     output = tmp_path / "scenarios.jsonl"
-    summary = merge_label_files(CANDIDATES, MANIFEST, files, output)
+    summary = merge_label_files(candidates, manifest, files, output)
     rows = [json.loads(line) for line in output.read_text().splitlines()]
     c001 = next(row for row in rows if row["id"] == "c001")
 
@@ -113,13 +145,14 @@ def test_merge_requires_three_complete_independent_exports(tmp_path: Path) -> No
     assert sum(row["split"] == "heldout" for row in rows) == 15
 
     majority_output = tmp_path / "majority.jsonl"
-    merge_label_files(CANDIDATES, MANIFEST, files, majority_output, min_agree=2)
+    merge_label_files(candidates, manifest, files, majority_output, min_agree=2)
     majority_rows = [json.loads(line) for line in majority_output.read_text().splitlines()]
     assert next(row for row in majority_rows if row["id"] == "c001")["consensus"] == "SILENT"
 
 
 def test_merge_rejects_incomplete_or_reused_exports(tmp_path: Path) -> None:
-    ids = [row["id"] for row in candidate_rows()]
+    candidates, manifest = candidate_files(tmp_path)
+    ids = [row["id"] for row in candidate_rows(candidates)]
     complete = tmp_path / "complete.csv"
     incomplete = tmp_path / "incomplete.csv"
     third = tmp_path / "third.csv"
@@ -128,9 +161,9 @@ def test_merge_rejects_incomplete_or_reused_exports(tmp_path: Path) -> None:
     write_labels(third, {scenario_id: "SILENT" for scenario_id in ids})
 
     with pytest.raises(ValueError, match="different file"):
-        merge_label_files(CANDIDATES, MANIFEST, [complete, complete, third], tmp_path / "x.jsonl")
+        merge_label_files(candidates, manifest, [complete, complete, third], tmp_path / "x.jsonl")
     with pytest.raises(ValueError, match="ids do not match"):
-        merge_label_files(CANDIDATES, MANIFEST, [complete, incomplete, third], tmp_path / "y.jsonl")
+        merge_label_files(candidates, manifest, [complete, incomplete, third], tmp_path / "y.jsonl")
 
 
 def test_calibration_merge_is_unanimous_tuning_only_and_separate(tmp_path: Path) -> None:

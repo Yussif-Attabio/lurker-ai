@@ -9,10 +9,25 @@ __pycache__/
 !.env.example
 .DS_Store
 artifacts/demo-recordings/
+artifacts/repository-archive/
 data/*.jsonl
+data/m2_acceptance/
+data/m2_acceptance_runtime/
+data/m3_acceptance/
+data/m3_local_verification/
+data/m4_acceptance/
+data/m5_freeze/
+data/m6_acceptance/
+data/m6_iam_recovery/
+data/m6_local_verification/
+data/m6_recovery_acceptance/
+data/m7_submission/
+results/**
 eval/labels/labels_a*.csv
 eval/labels/annotator_*.csv
 !data/.gitkeep
+!results/.gitkeep
+!results/README.md
 
 # Public-release privacy and evaluation-integrity guards. These files remain
 # available locally but must never enter Git history.
@@ -32,3 +47,4 @@ data/m6_acceptance/20261018T192248Z/replays/20261018T193946930548Z/replay_01/pos
 # Historical terminated-host address; the acceptance document carries the
 # measurements without publishing a public IP.
 data/m3_acceptance/20261016T194448Z/summary.json
+data/archive/m3_acceptance/20261016T194448Z/summary.json

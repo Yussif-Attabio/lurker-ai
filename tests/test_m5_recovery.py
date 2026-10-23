@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 from collections import Counter
 from pathlib import Path
@@ -10,8 +11,8 @@ from pathlib import Path
 import pytest
 
 from scripts.audit_recovery_candidates import audit
-from scripts.build_recovery_candidates import build_rows, evaluator_order
-from scripts.labeling_server import public_dataset
+from scripts.build_recovery_candidates import build_rows, evaluator_order, write_outputs
+from scripts.labeling_server import DATASETS, public_dataset
 from scripts.merge_recovery_labels import fleiss_kappa, merge_recovery_labels
 from scripts.prepare_single_rater_recovery import build_single_rater_split
 from scripts.prepare_combined_reference import build_combined_reference
@@ -49,7 +50,13 @@ def test_recovery_candidates_are_balanced_grouped_and_reproducible() -> None:
     )
 
 
-def test_recovery_public_payload_and_orders_are_blind() -> None:
+def test_recovery_public_payload_and_orders_are_blind(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    candidates = tmp_path / "candidates.jsonl"
+    write_outputs(candidates, tmp_path / "design_manifest.json", tmp_path / "labels")
+    recovery_config = {**DATASETS["recovery"], "candidate_path": candidates}
+    monkeypatch.setitem(DATASETS, "recovery", recovery_config)
     payload = public_dataset("recovery")
     assert payload["dataset"]["scenario_count"] == 195
     assert payload["dataset"]["export_prefix"] == "recovery_labels"
@@ -126,9 +133,21 @@ def test_family_grouped_split_can_reach_balanced_targets_without_leakage() -> No
     assert not ({row["family_id"] for row in development} & {row["family_id"] for row in heldout})
 
 
-def test_agreement_metric_and_candidate_audit() -> None:
+def test_agreement_metric_and_candidate_audit(tmp_path: Path) -> None:
     assert fleiss_kappa([["SILENT"] * 3, ["REACT"] * 3, ["REPLY"] * 3]) == pytest.approx(1.0)
-    report = audit()
+    candidates = tmp_path / "candidates.jsonl"
+    manifest = tmp_path / "design_manifest.json"
+    label_dir = tmp_path / "labels"
+    original_evidence = tmp_path / "original_evidence"
+    original_evidence.mkdir()
+    preserved = original_evidence / "acceptance.json"
+    preserved.write_text('{"model_performance":"NO_GO"}\n', encoding="utf-8")
+    digest = hashlib.sha256(preserved.read_bytes()).hexdigest()
+    (original_evidence / "evidence.sha256").write_text(
+        f"{digest}  acceptance.json\n", encoding="utf-8"
+    )
+    write_outputs(candidates, manifest, label_dir)
+    report = audit(candidates, manifest, label_dir, original_evidence)
     assert report["status"] == "PASS"
     assert report["checks"]["original_nogo_evidence_unchanged"] is True
     assert report["model_calls"] == 0
@@ -140,9 +159,12 @@ def test_development_loader_rejects_original_heldout_before_reading() -> None:
         load_recovery_development(ORIGINAL_HELDOUT)
 
 
-def test_label_templates_are_complete_blank_and_do_not_expose_family() -> None:
+def test_label_templates_are_complete_blank_and_do_not_expose_family(tmp_path: Path) -> None:
+    candidates = tmp_path / "candidates.jsonl"
+    label_dir = tmp_path / "labels"
+    write_outputs(candidates, tmp_path / "design_manifest.json", label_dir)
     for evaluator in ("a1", "a2", "a3"):
-        path = RECOVERY / "label_templates" / f"recovery_labels_{evaluator}.csv"
+        path = label_dir / f"recovery_labels_{evaluator}.csv"
         with path.open(newline="", encoding="utf-8-sig") as stream:
             rows = list(csv.DictReader(stream))
         assert len(rows) == 195
@@ -200,8 +222,31 @@ def test_wording_candidate_is_versioned_general_and_development_only() -> None:
     assert not any(f"rc{index:03d}" in wording for index in range(1, 196))
 
 
-def test_combined_reference_provenance_is_accurate_and_reserve_stays_locked() -> None:
-    rows, manifest = build_combined_reference()
+def test_combined_reference_provenance_is_accurate_and_reserve_stays_locked(
+    tmp_path: Path,
+) -> None:
+    development_path = RECOVERY / "single_rater" / "development" / "development.jsonl"
+    source_rows = [
+        json.loads(line)
+        for line in development_path.read_text(encoding="utf-8").splitlines()
+        if line
+    ]
+    development_families = sorted({row["family_id"] for row in source_rows})
+    source_manifest = {
+        "development": {"family_ids": development_families},
+        "locked_reserve": {
+            "count": 105,
+            "family_ids": [f"reserve-{index:02d}" for index in range(1, 22)],
+        },
+        "reserve_path": "protected/reserve.jsonl",
+        "reserve_sha256": "0" * 64,
+        "source_export": "private/combined-label-document.csv",
+        "source_export_sha256": "1" * 64,
+    }
+    source_manifest_path = tmp_path / "split_manifest.json"
+    source_manifest_path.write_text(json.dumps(source_manifest), encoding="utf-8")
+
+    rows, manifest = build_combined_reference(development_path, source_manifest_path)
     assert len(rows) == 90
     assert Counter(row["reference_label"] for row in rows) == Counter(
         {"SILENT": 30, "REACT": 30, "REPLY": 30}

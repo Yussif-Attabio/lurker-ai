@@ -143,14 +143,9 @@ billable resources. Evidence root:
 
 | Check | Result | Evidence |
 |---|---|---|
-| Decider timeout | PASS: final SILENT, timeout persisted, zero Bedrock calls, API healthy | `data/m6_local_verification/20261018T190701065803Z/decider_timeout.json` |
-| Injected Bedrock error | PASS: no fabricated reply, error persisted, subsequent request healthy | `data/m6_local_verification/20261018T190701065803Z/bedrock_error.json` |
-| WebSocket reconnect drill | PASS: reconnect and post-reconnect events exactly once | `data/m6_local_verification/20261018T190701065803Z/websocket_reconnect.json` |
-| Real browser reconnect | PASS: offline/online control state, REST reconciliation, one new REACT, zero duplicates/errors | `data/m6_local_verification/20261018T190701065803Z/browser_reconnect.json` |
-| Native safe regressions | PASS: 76 tests | `data/m6_local_verification/20261018T190701065803Z/test_summary.json` |
-| Linux `amd64` regressions | PASS: 76 tests | `data/m6_local_verification/20261018T190701065803Z/docker_verification.json` |
-| Network-isolated M6 suite | PASS: 9 tests and all drills with `--network none` | `data/m6_local_verification/20261018T190701065803Z/docker_verification.json` |
-| Realistic local MOCK replay | PASS; explicitly not acceptance eligible | `data/m6_local_verification/replays/20261018T191030972163Z/summary.json` |
+| Deterministic local failure drills | PASS: timeout fails closed, Bedrock error creates no reply, reconnect events occur once | `scripts/run_m6_failure_drills.py`, `tests/test_m6_reliability.py` |
+| Browser reconnect behavior | PASS: REST reconciliation and duplicate suppression are covered | `web/app.js`, `tests/test_m6_reliability.py` |
+| Linux `amd64` verification | PASS: recorded during M6 local acceptance | Historical snapshot at commit `56f319f` |
 | Deployed injected drills | PASS; zero real calls | `data/m6_acceptance/20261018T192248Z/failure_drills/summary.json` |
 | External real reconnect | PASS; SILENT → REACT, zero duplicates/Bedrock | `data/m6_acceptance/20261018T192248Z/deployed_reconnect/summary.json` |
 | Three-replay sequence | NO-GO on replay 1; replays 2-3 not started | `data/m6_acceptance/20261018T192248Z/summary.json` |
@@ -159,6 +154,10 @@ billable resources. Evidence root:
 | Recovery external reconnect | PASS; two connections, zero duplicates/Bedrock | `data/m6_recovery_acceptance/20261018T201525Z/deployed_reconnect/summary.json` |
 | Recovery three-replay sequence | PASS; 3/3 replays, exactly 3 successful Bedrock calls | `data/m6_recovery_acceptance/20261018T201525Z/real_replays/20261018T202359164678Z/summary.json` |
 | Recovery cleanup | PASS; zero unexpected billable resources | `data/m6_recovery_acceptance/20261018T201525Z/cleanup_inventory.json` |
+
+The main branch retains the complete redacted failed-deployment and successful
+recovery bundles, including all three successful replay transcripts. Superseded
+local-only drill output remains available in the pre-cleanup Git snapshot.
 
 The locally verified image is Linux `amd64`, runs as non-root UID/GID 999, has no broken
 Python requirements, and is identified by

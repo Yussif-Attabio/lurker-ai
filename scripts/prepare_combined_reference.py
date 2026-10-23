@@ -26,11 +26,14 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def build_combined_reference() -> tuple[list[dict[str, object]], dict[str, object]]:
-    source_manifest = json.loads(SOURCE_MANIFEST.read_text(encoding="utf-8"))
+def build_combined_reference(
+    source_development: Path = SOURCE_DEVELOPMENT,
+    source_manifest_path: Path = SOURCE_MANIFEST,
+) -> tuple[list[dict[str, object]], dict[str, object]]:
+    source_manifest = json.loads(source_manifest_path.read_text(encoding="utf-8"))
     source_rows = [
         json.loads(line)
-        for line in SOURCE_DEVELOPMENT.read_text(encoding="utf-8").splitlines()
+        for line in source_development.read_text(encoding="utf-8").splitlines()
         if line
     ]
     if len(source_rows) != 90 or len({row["id"] for row in source_rows}) != 90:
@@ -95,8 +98,8 @@ def build_combined_reference() -> tuple[list[dict[str, object]], dict[str, objec
         "family_leakage_count": 0,
         "source_combined_document": source_manifest["source_export"],
         "source_combined_document_sha256": source_manifest["source_export_sha256"],
-        "source_development_path": str(SOURCE_DEVELOPMENT.relative_to(ROOT)),
-        "source_development_sha256": sha256(SOURCE_DEVELOPMENT),
+        "source_development_path": str(source_development.relative_to(ROOT)),
+        "source_development_sha256": sha256(source_development),
         "development_path": str(OUTPUT_DEVELOPMENT.relative_to(ROOT)),
         "original_m5_heldout_opened": False,
         "reserve_opened": False,

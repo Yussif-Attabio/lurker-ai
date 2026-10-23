@@ -204,73 +204,36 @@ def test_malformed_published_result_fails_closed(tmp_path: Path) -> None:
 def test_published_no_go_closure_accepts_only_real_incomplete_baseline_status(
     tmp_path: Path,
 ) -> None:
-    heldout = json.loads(
-        (ROOT / "results" / "m5_heldout" / "20261017T053719Z" / "decider"
-         / "20261017T053818Z" / "results.json").read_text(encoding="utf-8")
-    )
-    manifest = json.loads(
-        (ROOT / "results" / "m5_heldout" / "20261017T053719Z" / "decider"
-         / "20261017T053818Z" / "run_manifest.json").read_text(encoding="utf-8")
-    )
-    question = json.loads(
-        (ROOT / "results" / "m5_finalization" / "heldout_question_baseline"
-         / "20261018T003000Z" / "always_questions_summary.json").read_text(encoding="utf-8")
-    )
-    closure = {
-        "artifact_version": "lurker-m5-closure-v1",
-        "publication_status": "published",
-        "split": "heldout",
-        "primary_context_k": 3,
-        "thresholds": heldout["thresholds"],
-        "context_metrics": heldout["context_metrics"],
-        "acceptance": {
-            "implementation_completion": "PENDING_OWNER_APPROVAL",
-            "model_performance": "NO_GO",
-            "strict_spec_completion": "INCOMPLETE_BEDROCK_BASELINE",
-        },
-        "baselines": {
-            "always_reply_to_questions": {
-                "status": "COMPLETE_HELDOUT",
-                "scope": "heldout",
-                "model_calls": 0,
-                "aws_or_bedrock_calls": 0,
-                "metrics": question["metrics"],
-            },
-            "bedrock_judge": {
-                "status": "NOT_RUN_REQUIRES_APPROVAL",
-                "model_calls": 0,
-                "max_calls": 15,
-                "metrics": None,
-            },
-        },
-        "run_manifest": manifest,
-        "reserve_opened": False,
-        "heldout_rerun": False,
-    }
-    validate_m5_closure(closure)
-    approved = deepcopy(closure)
-    approved["acceptance"]["implementation_completion"] = "TECHNICALLY_COMPLETE"
-    approved["owner_approval"] = {
-        "status": "APPROVED",
-        "approved_at": "2026-10-18T00:00:00Z",
-        "scope": "technical closure with performance NO-GO and Bedrock-baseline deviation",
-    }
+    approved = json.loads((ROOT / "results" / "published.json").read_text(encoding="utf-8"))
     validate_m5_closure(approved)
-    del approved["owner_approval"]
+    primary = approved["context_metrics"]["3"]
+    assert primary["accuracy"]["rate"] == pytest.approx(2 / 3)
+    assert primary["unnecessary_interruption_rate"]["rate"] == pytest.approx(2 / 3)
+    assert approved["baselines"]["bedrock_judge"]["metrics"] is None
+
+    pending = deepcopy(approved)
+    pending["acceptance"]["implementation_completion"] = "PENDING_OWNER_APPROVAL"
+    pending.pop("owner_approval")
+    validate_m5_closure(pending)
+
+    missing_approval = deepcopy(approved)
+    del missing_approval["owner_approval"]
     with pytest.raises(ValueError, match="requires recorded owner approval"):
-        validate_m5_closure(approved)
+        validate_m5_closure(missing_approval)
     cfg = config(tmp_path)
     cfg.results_dir.mkdir(parents=True)
     (cfg.results_dir / "published.json").write_text(
-        json.dumps(closure) + "\n", encoding="utf-8"
+        json.dumps(approved) + "\n", encoding="utf-8"
     )
     app = create_app(config=cfg, adapter=MockDecider(), replier=MockBedrockReplier())
     with TestClient(app) as client:
         response = client.get("/api/eval/latest")
         assert response.status_code == 200
         assert response.json()["acceptance"]["model_performance"] == "NO_GO"
-    broken = deepcopy(closure)
-    broken["baselines"]["bedrock_judge"]["metrics"] = question["metrics"]
+    broken = deepcopy(approved)
+    broken["baselines"]["bedrock_judge"]["metrics"] = approved["baselines"][
+        "always_reply_to_questions"
+    ]["metrics"]
     with pytest.raises(ValueError, match="must not contain fabricated"):
         validate_m5_closure(broken)
 

@@ -162,7 +162,8 @@ instance quota must allow at least eight vCPUs.
 6. Save the external transcript, real Decider latency, instance type, image
    identifier, and any errors under `data/m3_acceptance/<timestamp>/`.
 7. Stop or terminate the instance immediately after the evidence is collected.
-8. Mark M3 complete only if every item in `M3_ACCEPTANCE.md` passes.
+8. Mark M3 complete only if every item in
+   `docs/archive/milestones/M3_ACCEPTANCE.md` passes.
 
 ## Security and reproducibility constraints
 

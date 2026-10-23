@@ -146,7 +146,8 @@ def build_report(summary: dict[str, Any]) -> str:
             "",
             "## Decision status",
             "",
-            "This report is evidence only. The project owner must record the final decision in `GO_NOGO.md`.",
+            "This report is evidence only. The project owner must record the final decision in "
+            "`docs/archive/milestones/GO_NOGO.md`.",
             "",
         ]
     )

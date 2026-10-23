@@ -40,7 +40,7 @@ def test_provisional_m1_thresholds_are_human_approved_and_rollback_is_preserved(
     assert rollback["context_k"] == 3
     assert rollback["reply_threshold"] is None
     assert rollback["react_threshold"] is None
-    decision = (ROOT / "GO_NOGO.md").read_text()
+    decision = (ROOT / "docs/archive/milestones/GO_NOGO.md").read_text()
     assert "Decision: **PROVISIONAL GO**" in decision
 
 
@@ -62,15 +62,21 @@ def test_only_adapter_imports_strands_decider() -> None:
     assert offenders == []
 
 
-def test_real_scenario_file_has_no_unreviewed_rows() -> None:
-    rows = [line for line in (ROOT / "eval/scenarios.jsonl").read_text().splitlines() if line]
+def test_public_tuning_file_has_no_unreviewed_rows() -> None:
+    rows = [
+        line
+        for line in (ROOT / "eval/tuning_scenarios.jsonl").read_text().splitlines()
+        if line
+    ]
+    assert len(rows) == 30
     for line in rows:
         row = json.loads(line)
+        assert row["split"] == "tuning"
         assert set(row["labels"]) == {"a1", "a2", "a3"}
         assert row["consensus"] in {"SILENT", "REACT", "REPLY", "AMBIGUOUS"}
 
 
-def test_candidate_scenarios_are_unlabeled_and_well_formed() -> None:
+def test_public_calibration_candidates_are_unlabeled_and_well_formed() -> None:
     allowed_categories = {
         "direct_request",
         "joke",
@@ -83,10 +89,10 @@ def test_candidate_scenarios_are_unlabeled_and_well_formed() -> None:
     }
     rows = [
         json.loads(line)
-        for line in (ROOT / "eval/scenario_candidates.jsonl").read_text().splitlines()
+        for line in (ROOT / "eval/react_calibration_candidates.jsonl").read_text().splitlines()
         if line
     ]
-    assert len(rows) >= 40
+    assert len(rows) == 15
     assert len({row["id"] for row in rows}) == len(rows)
     for row in rows:
         assert row["category"] in allowed_categories
