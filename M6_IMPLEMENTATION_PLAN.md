@@ -419,8 +419,8 @@ M6 supplies the reproducible technical proof needed by M7:
   model-quality evaluation remains NO-GO and production readiness is not
   claimed.
 
-M6 does not itself create `ARTICLE_NOTES.md`, `DEMO_SCRIPT.md`, or the final
-submission README changes; those are explicit M7 deliverables.
+M6 does not itself create `BUILDER_CENTER_ARTICLE.md`, `DEMO_SCRIPT.md`, or the
+final submission README changes; those are explicit M7 deliverables.
 
 ## 11. Decision gate before deployed acceptance
 

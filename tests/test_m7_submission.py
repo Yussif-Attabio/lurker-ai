@@ -90,7 +90,7 @@ def test_official_strands_intervention_allows_only_reply() -> None:
 
 def test_m7_docs_cover_submission_contract_with_real_evidence() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    article = (ROOT / "ARTICLE_NOTES.md").read_text(encoding="utf-8")
+    article = (ROOT / "BUILDER_CENTER_ARTICLE.md").read_text(encoding="utf-8")
     demo = (ROOT / "DEMO_SCRIPT.md").read_text(encoding="utf-8")
     pattern = (ROOT / "decision_pattern" / "README.md").read_text(encoding="utf-8")
     acceptance = (ROOT / "M7_ACCEPTANCE.md").read_text(encoding="utf-8")
@@ -139,7 +139,7 @@ def test_m7_preserves_frozen_and_failed_evidence() -> None:
         for path in (
             "decision_pattern/chime_in_gate.py",
             "decision_pattern/strands_hook.py",
-            "ARTICLE_NOTES.md",
+            "BUILDER_CENTER_ARTICLE.md",
             "DEMO_SCRIPT.md",
         )
     ).lower()

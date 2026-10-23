@@ -1122,3 +1122,25 @@ Only the sanitized validation summary is public. No AWS resource, real Decider
 call, or Bedrock call was used. Final recording and video publication remain
 pending separate approval. The complete offline regression suite passed 132
 tests in 4.38 seconds, and the final-mode no-approval guard passed.
+
+## M7 public demo video publication - 2026-10-22
+
+The owner authorized one final local real-service recording with a maximum of
+one Bedrock call. The guarded capture passed on its first and only attempt with
+the frozen k=3 / REPLY 0.20 / REACT 0.04 policy. It showed the expected
+SILENT, REACT, and REPLY actions, made exactly one Bedrock call, avoided two,
+and recorded zero errors. The preserved M5 model-performance NO-GO remained
+visible.
+
+The owner supplied an edited 1:09 MOV for publication. It decoded cleanly at
+1152x720 with HEVC video and AAC audio. Representative frames contained only
+the synthetic interface, recorded project evidence, reusable pattern, and
+honest evaluation disclosure. YouTube processing and copyright checks passed
+with no issues. The video was published as Public on 2026-10-22 at
+`https://youtu.be/hmZlMHcUCZc`, with the approved title, project description,
+repository and decision-pattern links, `#strands-decider-2b` and `#policy`,
+and an explicit non-production-ready/model-performance NO-GO disclosure.
+
+No AWS resource or additional Bedrock call was used for editing or publication.
+The Builder Center article, entrant/eligibility confirmation, final hackathon
+submission, and owner final M7 GO remain pending.

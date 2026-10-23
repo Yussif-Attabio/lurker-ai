@@ -325,7 +325,7 @@ M5 must preserve the evidence M7 will need, but it will not submit an entry:
   experimental/synthetic-data limitations.
 - README evidence: setup commands, text architecture diagram, exact results
   copied from the final run bundle, costs/tokens, limitations, and MIT license.
-- `ARTICLE_NOTES.md`: concise claims and real numbers for the Builder Center
+- `BUILDER_CENTER_ARTICLE.md`: evidence-backed article for the Builder Center
   article, each traceable to M5 evidence.
 - `DEMO_SCRIPT.md`: a shot list for a video under three minutes using only real
   outputs; M6 supplies three clean deployed replays.

@@ -1,6 +1,8 @@
 # Lurker AI demo script
 
-Status: **AUTOMATED PREVIEW PASSED - FINAL REAL-SERVICE RECORDING PENDING**
+Status: **FINAL REAL-SERVICE VIDEO PUBLISHED**
+
+Public video: <https://youtu.be/hmZlMHcUCZc> (1:09)
 
 Target runtime: **2 minutes 45 seconds maximum**. Use no third-party logos,
 copyrighted music, private chat, mock output, or fabricated overlays.
@@ -13,10 +15,11 @@ not launch AWS infrastructure unless separately authorized. Label preserved
 evidence as recorded evidence rather than pretending it is live.
 
 The guarded workflow is documented in `DEMO_RECORDING.md`. Its 62.04-second
-MOCK preview passed locally at 1440×900 with SILENT, REACT, and REPLY in order,
-zero errors, and zero Bedrock calls. The MOCK banner and reply remain visible,
-so that preview is intentionally **not submission eligible**. Final capture
-still requires separate approval for one Bedrock call and the real Decider.
+MOCK preview passed locally but remains intentionally **not submission
+eligible**. The separately authorized final capture used the real Decider,
+showed SILENT, REACT, and REPLY in order, and made exactly one permitted
+Bedrock call. The edited 1:09 version was reviewed, passed YouTube's copyright
+check, and was published publicly at <https://youtu.be/hmZlMHcUCZc>.
 
 ## Shot list
 

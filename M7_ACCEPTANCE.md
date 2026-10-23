@@ -1,6 +1,6 @@
 # Milestone M7 local submission-package acceptance
 
-Status: **PUBLIC REPOSITORY PUBLISHED - ARTICLE, VIDEO, AND FINAL GO PENDING**
+Status: **PUBLIC REPOSITORY AND VIDEO PUBLISHED - ARTICLE AND FINAL GO PENDING**
 
 Date: 2026-10-18
 
@@ -14,7 +14,8 @@ phase launched no AWS resource and made no Decider or Bedrock call.
 
 - [x] Submission-facing README additions: setup, text architecture, results,
   limitations, license, and evidence links.
-- [x] `ARTICLE_NOTES.md` with article facts and real numbers.
+- [x] `BUILDER_CENTER_ARTICLE.md` with the complete article, source links,
+  measured results, and explicit limitations.
 - [x] `DEMO_SCRIPT.md` with a sub-three-minute real-output shot list.
 - [x] Reusable package guide, standalone gate wrapper, minimal example, and
   official Strands intervention wiring.
@@ -23,6 +24,7 @@ phase launched no AWS resource and made no Decider or Bedrock call.
   real-service modes; generated video artifacts remain local and ignored.
 - [x] Public MIT-licensed source repository:
   `https://github.com/Yussif-Attabio/lurker-ai`.
+- [x] Public 1:09 demo video: `https://youtu.be/hmZlMHcUCZc`.
 - [ ] Human review and final M7 GO/NO-GO.
 
 ## Local verification
@@ -66,14 +68,15 @@ qualification failure:
 1. Publish the article on AWS Builder Center.
 2. ~~Publish this repository publicly under the MIT License.~~ Completed at
    `https://github.com/Yussif-Attabio/lurker-ai`.
-3. Record and publicly upload a demo video under three minutes.
+3. ~~Record and publicly upload a demo video under three minutes.~~ Completed
+   at `https://youtu.be/hmZlMHcUCZc` (1:09).
 4. Add `#strands-decider-2b` and `#policy` to the entry.
 5. Confirm entrant eligibility, ownership, and the final submitter.
 6. Submit before October 23, 2026 at 11:59 p.m. PT.
 
-The owner separately authorized this public GitHub publication. Article and
-video publication, final hackathon submission, AWS deployment, and Bedrock
-invocation still require their applicable approvals.
+The owner separately authorized the public GitHub publication and public demo
+video. Article publication, final hackathon submission, AWS deployment, and
+Bedrock invocation still require their applicable approvals.
 
 ## Acceptance gate
 
