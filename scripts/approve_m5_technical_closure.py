@@ -44,7 +44,7 @@ def main() -> int:
     output = OUTPUT_ROOT / stamp
     output.mkdir(parents=True)
     result_path = output / "results.json"
-    report_path = output / "M5_FINAL_ACCEPTANCE.md"
+    report_path = output / "EVALUATION_ACCEPTANCE.md"
     result_path.write_text(json.dumps(approved, indent=2) + "\n", encoding="utf-8")
     report_path.write_text(report(approved), encoding="utf-8")
     PUBLISHED.write_text(json.dumps(approved, indent=2) + "\n", encoding="utf-8")

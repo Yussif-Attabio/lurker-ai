@@ -1,4 +1,4 @@
-# Milestone M7 local submission-package acceptance
+# Submission package acceptance report
 
 Status: **PUBLIC REPOSITORY AND VIDEO PUBLISHED - ARTICLE AND FINAL GO PENDING**
 

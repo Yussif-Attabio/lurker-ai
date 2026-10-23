@@ -1,4 +1,4 @@
-# Milestone M6 acceptance
+# Reliability acceptance report
 
 Status: **FINAL GO - OWNER APPROVED**
 

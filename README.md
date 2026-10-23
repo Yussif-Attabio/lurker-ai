@@ -146,8 +146,8 @@ recovery. All temporary AWS resources were deleted after testing.
 Primary evidence:
 
 - [published M5 evaluation bundle](results/published.json)
-- [M5 final acceptance report](M5_FINAL_ACCEPTANCE.md)
-- [M6 reliability and recovery report](M6_ACCEPTANCE.md)
+- [evaluation acceptance report](EVALUATION_ACCEPTANCE.md)
+- [reliability and recovery report](RELIABILITY_ACCEPTANCE.md)
 - [public-release boundaries](PUBLIC_RELEASE.md)
 
 ## Project map

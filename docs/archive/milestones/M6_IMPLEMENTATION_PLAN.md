@@ -160,7 +160,7 @@ runs in a separate timestamped directory; never overwrite them.
 
 Prepare, but do not approve in advance:
 
-- `M6_ACCEPTANCE.md` with checklist, evidence links, costs, limitations, and
+- `RELIABILITY_ACCEPTANCE.md` with checklist, evidence links, costs, limitations, and
   final owner-decision placeholder;
 - an additive `NOTES.md` entry after real execution;
 - concise run instructions in `README.md` only after the commands have passed
@@ -241,7 +241,7 @@ Estimated paid window: 20-40 minutes; hard stop at 50 minutes.
 
 1. Validate the evidence bundle and raw-count consistency.
 2. Confirm frozen M5 checksums/status were not changed.
-3. Update `M6_ACCEPTANCE.md` and `NOTES.md` with real outputs only.
+3. Update `RELIABILITY_ACCEPTANCE.md` and `NOTES.md` with real outputs only.
 4. Present the pass/fail result and limitations for owner GO/NO-GO.
 5. Do not mark M6 complete until the owner approves the evidence.
 
@@ -425,7 +425,7 @@ final submission README changes; those are explicit M7 deliverables.
 ## 11. Decision gate before deployed acceptance
 
 The local/offline implementation and checks are complete; see
-`M6_ACCEPTANCE.md`. No deployed work begins until the project owner separately
+`RELIABILITY_ACCEPTANCE.md`. No deployed work begins until the project owner separately
 approves the duration, spend, real Decider use, and three Bedrock calls. That
 preflight must show the exact image identifier, test results, replay fixture,
 security controls, current prices, call budget, and cleanup procedure before

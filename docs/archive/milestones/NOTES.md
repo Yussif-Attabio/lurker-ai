@@ -901,7 +901,7 @@ M5 technical closure was approved by the project owner on 2026-10-18 as
 BEDROCK-BASELINE DEVIATION**. The original held-out evidence remains unchanged;
 model performance remains NO-GO, the strict checklist still lacks the Bedrock
 judge baseline, and production readiness is not approved. No AWS resources or
-Bedrock calls were used for closure. Full report: `M5_FINAL_ACCEPTANCE.md`.
+Bedrock calls were used for closure. Full report: `EVALUATION_ACCEPTANCE.md`.
 
 ## M6 local/offline implementation - PASS - 2026-10-18
 
@@ -926,7 +926,7 @@ AWS resources, Bedrock calls, real Decider calls, and AWS cost were all zero.
 The frozen k=3 / REPLY 0.20 / REACT 0.04 configuration and all M5 evidence and
 limitations remain unchanged. M6 is not complete: the required three
 consecutive deployed real replays remain unapproved and unrun. Full local
-record: `M6_ACCEPTANCE.md`.
+record: `RELIABILITY_ACCEPTANCE.md`.
 
 ## M6 controlled deployed acceptance - NO-GO - 2026-10-18
 

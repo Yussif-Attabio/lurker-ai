@@ -93,7 +93,7 @@ def test_m7_docs_cover_submission_contract_with_real_evidence() -> None:
     article = (ROOT / "BUILDER_CENTER_ARTICLE.md").read_text(encoding="utf-8")
     demo = (ROOT / "DEMO_SCRIPT.md").read_text(encoding="utf-8")
     pattern = (ROOT / "decision_pattern" / "README.md").read_text(encoding="utf-8")
-    acceptance = (ROOT / "M7_ACCEPTANCE.md").read_text(encoding="utf-8")
+    acceptance = (ROOT / "SUBMISSION_ACCEPTANCE.md").read_text(encoding="utf-8")
 
     for required in (
         "## Architecture", "## Quick start", "## Reusable policy pattern",

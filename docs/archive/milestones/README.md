@@ -9,9 +9,9 @@ Current submission-facing documentation remains at the repository root:
 - `README.md`
 - `BUILDER_CENTER_ARTICLE.md`
 - `DEMO_SCRIPT.md`
-- `M5_FINAL_ACCEPTANCE.md`
-- `M6_ACCEPTANCE.md`
-- `M7_ACCEPTANCE.md`
+- `EVALUATION_ACCEPTANCE.md`
+- `RELIABILITY_ACCEPTANCE.md`
+- `SUBMISSION_ACCEPTANCE.md`
 
 The `M` prefix means **milestone**. It was useful while the prototype was built,
 but keeping superseded milestone documents in this archive prevents them from
